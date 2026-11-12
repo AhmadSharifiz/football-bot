@@ -7,8 +7,9 @@ Instant alerts, checked on every loop (every ~2 minutes), outside the normal new
 
 2. Ottawa urgent alerts -> Ottawa channel (sources file: `ottawa_alerts: true`).
    - Environment Canada weather warnings/watches for Ottawa
-   - City of Ottawa special advisories (winter parking bans, emergencies, boil-water advisories...)
-   - School bus cancellations from the Ottawa Student Transportation Authority (OSTA)
+   - City of Ottawa winter parking bans, boil-water advisories and states of emergency
+   - School bus cancellations (OSTA)
+   The City and OSTA websites block GitHub's servers, so those two come from Bing News headlines.
 
 The first run only records what is already out, so nothing old is posted.
 """
@@ -211,11 +212,15 @@ def ee_run(state, token, channel, url, check=False):
 
 # ---------------------------------------------------------------- Ottawa alerts
 
-CITY_NEWS = "https://ottawa.ca/en/city-hall/city-news/newsroom"
-CITY_URGENT = re.compile(r"parking ban|special advisory|emergency|boil water|state of emergency|evacuat|"
-                         r"warming cent|cooling cent|heat warning|extreme cold|water main break|snow clearing|"
-                         r"service disruption|outage", re.I)
-OSTA_DATA = "https://www.ottawaschoolbus.ca/wp-content/themes/osta/bus-data.json"
+BING = "https://www.bing.com/news/search?format=rss&setlang=en-CA&cc=CA&qft=sortbydate%3d%221%22&q="
+NEWS_ALERTS = [  # (kind, Bing News query, the headline must match)
+    ("city", "%22parking+ban%22+Ottawa",
+     re.compile(r"parking ban", re.I)),
+    ("city", "Ottawa+%22boil+water%22+OR+%22state+of+emergency%22",
+     re.compile(r"boil.water|state of emergency", re.I)),
+    ("school", "Ottawa+school+buses+cancelled",
+     re.compile(r"(school )?bus(es)?.{0,40}(cancel|not running)|cancel.{0,40}school bus", re.I)),
+]
 OSTA_PAGE = "https://www.ottawaschoolbus.ca/bus-van-zone/school-bus-delays-and-cancellations/delays-canncellations/"
 EC_PAGE = "https://weather.gc.ca/en/location/index.html?coords=45.403,-75.687"
 
@@ -232,31 +237,25 @@ def _ottawa_items():
             items.append((_key("ec", w, day), "weather", w, EC_PAGE))
     except Exception as ex:
         bot.log(f"   alerts: EC failed: {ex}")
-    # 2) City of Ottawa special advisories
-    for e in bot.fetch_page_links(CITY_NEWS, "/newsroom/"):
-        if CITY_URGENT.search(e["title"]):
-            items.append((_key("city", e["link"]), "city", e["title"], e["link"]))
-    # 3) OSTA school bus general cancellations
-    try:
-        r = bot.requests.get(OSTA_DATA, headers={"User-Agent": "Mozilla/5.0"}, timeout=bot.TIMEOUT)
-        r.raise_for_status()
-        data = r.json()
-        for part in ("general", "school"):
-            for it in data.get(part) or []:
-                text = it if isinstance(it, str) else " - ".join(
-                    str(v) for v in (it.values() if isinstance(it, dict) else it) if isinstance(v, (str, int)) and str(v).strip())
-                text = bot.norm(re.sub(r"<[^>]+>", " ", text))
-                if text:
-                    items.append((_key("osta", part, text), "school", text, OSTA_PAGE))
-    except Exception as ex:
-        bot.log(f"   alerts: OSTA failed: {ex}")
+    # 2) + 3) The City of Ottawa and OSTA websites block GitHub's servers (403), so their announcements are
+    # picked up from Bing News instead (news outlets repeat them within minutes). One alert per topic per day.
+    day = datetime.now(TZ).strftime("%Y-%m-%d")
+    for kind, query, pattern in NEWS_ALERTS:
+        for e in bot.fetch_feed(BING + query):
+            title = bot.norm(e.get("title", ""))
+            pub = e.get("published_parsed")
+            if not pattern.search(title) or not pub or time.time() - time.mktime(pub) > 12 * 3600:
+                continue
+            link = bot.resolve_link(e.get("link", "")) if hasattr(bot, "resolve_link") else e.get("link", "")
+            items.append((_key(kind, pattern.pattern, day), kind, title, link or e.get("link", "")))
+            break  # newest matching story is enough
     return items
 
 
 KIND = {
     "weather": ("⛈", "هشدار هواشناسی کانادا", "#هشدار_هواشناسی #آب_و_هوا"),
     "city": ("🏛", "اطلاعیه فوری شهرداری اتاوا", "#شهرداری"),
-    "school": ("🚌", "لغو سرویس مدارس اتاوا (OSTA)", "#مدارس #سرویس_مدرسه"),
+    "school": ("🚌", "سرویس مدارس اتاوا", "#مدارس #سرویس_مدرسه"),
 }
 
 
