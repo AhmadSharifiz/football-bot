@@ -100,8 +100,57 @@ def collect():
             jobs.append({"id": jid, "title": title, "link": link, "updated": e.get("updated", ""),
                          "location": _field(s, "Location"), "employer": _field(s, "Employer"),
                          "salary": _field(s, "Salary")})
+    jobs += collect_adzuna(ids)
     jobs.sort(key=lambda j: j["updated"])  # oldest first
     return jobs
+
+
+# Adzuna (optional): used only when the ADZUNA_APP_ID and ADZUNA_APP_KEY secrets exist. Its terms ask that each
+# listing be labelled "Adzuna" with a link to Adzuna; format_job does that.
+ADZUNA_URL = "https://api.adzuna.com/v1/api/jobs/ca/search/1"
+ADZUNA_QUERIES = ["construction project manager", "project coordinator construction", "construction scheduler",
+                  "construction estimator"]
+PROVINCE_CODES = {v.lower(): k for k, v in {
+    "ON": "Ontario", "QC": "Quebec", "BC": "British Columbia", "AB": "Alberta", "MB": "Manitoba",
+    "SK": "Saskatchewan", "NS": "Nova Scotia", "NB": "New Brunswick", "NL": "Newfoundland and Labrador",
+    "PE": "Prince Edward Island", "YT": "Yukon", "NT": "Northwest Territories", "NU": "Nunavut"}.items()}
+
+
+def collect_adzuna(ids):
+    app_id, key = os.environ.get("ADZUNA_APP_ID", "").strip(), os.environ.get("ADZUNA_APP_KEY", "").strip()
+    if not app_id or not key:
+        return []
+    out = []
+    for q in ADZUNA_QUERIES:
+        try:
+            r = bot.requests.get(ADZUNA_URL, params={"app_id": app_id, "app_key": key, "what": q, "max_days_old": 2,
+                                                     "results_per_page": 50, "sort_by": "date",
+                                                     "content-type": "application/json"}, timeout=bot.TIMEOUT)
+            r.raise_for_status()
+            results = r.json().get("results", [])
+        except Exception as ex:
+            bot.log(f"   adzuna {q} failed: {ex}")
+            continue
+        for a in results:
+            title = bot.norm(re.sub(r"<[^>]+>", "", a.get("title", "")))
+            jid = "az" + str(a.get("id", ""))
+            if jid in ids or not KEEP.search(title) or SKIP.search(title):
+                continue
+            ids.add(jid)
+            area = (a.get("location") or {}).get("area") or []
+            prov = PROVINCE_CODES.get((area[1] if len(area) > 1 else "").lower(), "")
+            city = area[-1] if len(area) > 2 else ""
+            loc = f"{city} ({prov})" if city and prov else ((a.get("location") or {}).get("display_name") or "")
+            sal = ""
+            if a.get("salary_min") and str(a.get("salary_is_predicted", "0")) == "0":
+                lo, hi = a["salary_min"], a.get("salary_max") or a["salary_min"]
+                sal = f"${lo:,.0f} to ${hi:,.0f} annually" if lo != hi else f"${lo:,.0f} annually"
+            out.append({"id": jid, "title": title, "link": a.get("redirect_url", ""), "updated": a.get("created", ""),
+                        "location": loc, "employer": bot.norm((a.get("company") or {}).get("display_name", "")),
+                        "salary": sal, "snippet": bot.norm(re.sub(r"<[^>]+>", " ", a.get("description", ""))),
+                        "adzuna": True})
+    bot.log(f"   adzuna: {len(out)} matching jobs")
+    return out
 
 
 def details(link):
@@ -150,13 +199,41 @@ def _clean(s, label):
     return bot.norm(re.sub(rf"^{label}\s*", "", s or "", flags=re.I))
 
 
+def _place(loc):
+    return re.sub(r"\s*\((\w\w)\)", r", \1", loc or "").strip()
+
+
+def annual_pay(salary, hours=""):
+    """(low, high) yearly pay from Job Bank's salary text, e.g. '$55.56 hourly' -> (115565, 115565). None if unknown."""
+    nums = [float(x.replace(",", "")) for x in re.findall(r"\$\s?([\d,]+(?:\.\d+)?)", salary or "")]
+    if not nums:
+        return None
+    low, high = nums[0], nums[-1]
+    s = (salary or "").lower()
+    if "hour" in s:
+        low, high = low * 2080, high * 2080
+    elif "week" in s:
+        low, high = low * 52, high * 52
+    elif "month" in s:
+        low, high = low * 12, high * 12
+    return (low, high) if low >= 20000 else None
+
+
+def is_hot(j):
+    pay = annual_pay(j.get("salary", ""))
+    return bool((pay and pay[1] >= 100000) or re.search(r"\b(senior|sr\.?|director|principal|lead|head of)\b",
+                                                      j["title"], re.I))
+
+
 def format_job(j, d):
     title = re.sub(r"\b([a-z])", lambda m: m.group(1).upper(), j["title"])  # Title Case
-    lines = [f"💼 <b>{html.escape(title)}</b>"]
-    if j["employer"]:
+    hot = is_hot(j)
+    lines = (["🔥 <b>HOT JOB</b>"] if hot else []) + [f"💼 <b>{html.escape(title)}</b>"]
+    if j["employer"] and j["employer"].lower() not in ("not available", "n/a"):
         lines.append(f"🏢 {html.escape(j['employer'])}")
-    if j["location"]:
-        lines.append(f"📍 {html.escape(re.sub(r"\s*\((\w\w)\)", r", \1", j['location']).strip())}")
+    locs = j.get("locations") or ([j["location"]] if j["location"] else [])
+    if locs:
+        lines.append(f"📍 {html.escape(' · '.join(_place(x) for x in locs))}")
     pay = j["salary"]
     if d.get("hours"):
         pay = f"{pay} · {d['hours']}" if pay else d["hours"]
@@ -173,12 +250,16 @@ def format_job(j, d):
     if d.get("tasks"):
         lines.append("\n📝 <b>Main duties</b>")
         lines += [f"• {html.escape(t)}" for t in d["tasks"]]
+    elif j.get("snippet"):
+        lines.append("\n📝 " + html.escape(bot.shorten(j["snippet"], 350)))
     elif d.get("source"):
         lines.append(f"\n📝 Full description on {html.escape(d['source'])} (link below)")
     if d.get("until"):
         lines.append(f"\n⏳ Apply by: {html.escape(d['until'][:10])}")
     lines.append(f'🔗 <a href="{html.escape(j["link"], quote=True)}">View the job and apply</a>')
-    tags = ["#CanadaJobs"]
+    if j.get("adzuna"):
+        lines.append('🔎 Jobs by <a href="https://www.adzuna.ca">Adzuna</a>')
+    tags = ["#CanadaJobs"] + (["#HotJob"] if hot else [])
     low = j["title"].lower()
     title_tag = _tag(re.split(r"[,(]", j["title"])[0])  # job title, e.g. #ConstructionProjectCoordinator
     if title_tag:
@@ -186,12 +267,16 @@ def format_job(j, d):
     tags.append(next((t for p, t in ROLE_TAGS if re.search(p, low)), "#ProjectManagement"))
     if "construction" in low:
         tags.append("#Construction")
-    m = re.search(r"\((\w\w)\)", j["location"])
-    city = _tag(re.sub(r"\s*\(.*$", "", j["location"]))  # city, e.g. #Ottawa
-    if city and city != "#VariousLocations":
-        tags.append(city)
-    if m and m.group(1) in PROVINCES:
-        tags.append("#" + PROVINCES[m.group(1)])
+    if d.get("setting") in ("Remote", "Hybrid"):
+        tags.append("#" + d["setting"])
+    for loc in locs[:4]:
+        city = _tag(re.sub(r"\s*\(.*$", "", loc))  # city, e.g. #Ottawa
+        if city and city != "#VariousLocations":
+            tags.append(city)
+    for loc in locs[:4]:
+        m = re.search(r"\((\w\w)\)", loc)
+        if m and m.group(1) in PROVINCES:
+            tags.append("#" + PROVINCES[m.group(1)])
     lines.append("\n" + " ".join(dict.fromkeys(tags)) + (f"\n{CHANNEL}" if CHANNEL else ""))
     return "\n".join(lines)
 
@@ -330,7 +415,8 @@ def daily_list(st, token):
     for city in sorted(by_city, key=lambda c: (c.split(", ")[-1], c)):  # by province, then city
         lines = [f"📍 <b>{html.escape(city)}</b>"]
         for j in by_city[city]:
-            emp = f" · {html.escape(j['employer'])}" if j.get("employer") else ""
+            emp = j.get("employer") or ""
+            emp = f" · {html.escape(emp)}" if emp and emp.lower() not in ("not available", "n/a") else ""
             lines.append(f'• <a href="https://t.me/{handle}/{j["msg"]}">{html.escape(j["title"])}</a>{emp}')
         blocks.append("\n".join(lines))
     foot = f"#DailyJobList #CanadaJobs\n{CHANNEL}"
@@ -347,16 +433,77 @@ def daily_list(st, token):
     bot.log(f"daily job list posted: {len(jobs)} jobs, {len(msgs)} message(s)")
 
 
+# ---------------------------------------------------------------- weekly salary snapshot (Sundays)
+SALARY_DAY, SALARY_TIME = 6, os.environ.get("JOBS_SALARY_TIME", "18:00")  # Sunday 6 PM Ottawa time
+ROLE_NAMES = [(r"schedul|planner", "Scheduler / Planner"), (r"coordinator", "Project Coordinator"),
+              (r"superintendent|site supervisor", "Superintendent"), (r"estimat|quantity surveyor", "Estimator / QS"),
+              (r"contract", "Contract Administrator"), (r"project control|cost", "Project Controls"),
+              (r"engineer", "Project / Site Engineer"), (r"construction manager", "Construction Manager"),
+              (r"director|program manager|portfolio", "Director / Program Manager"),
+              (r"manager", "Project Manager")]
+
+
+def _record_pay(st, j):
+    pay = annual_pay(j.get("salary", ""))
+    m = re.search(r"\((\w\w)\)", j.get("location", ""))
+    if not pay or not m:
+        return
+    role = next((n for p, n in ROLE_NAMES if re.search(p, j["title"], re.I)), None)
+    if role:
+        st.setdefault("pay", []).append({"t": time.time(), "role": role, "prov": m.group(1),
+                                         "low": round(pay[0]), "high": round(pay[1])})
+
+
+def salary_snapshot(st, token):
+    now = datetime.now(TZ)
+    h, m = map(int, SALARY_TIME.split(":"))
+    week = now.strftime("%G-W%V")
+    if now.weekday() != SALARY_DAY or (now.hour, now.minute) < (h, m) or st.get("salary_week") == week:
+        return
+    st["salary_week"] = week
+    rows = [p for p in st.get("pay", []) if time.time() - p["t"] < 7 * 86400]
+    st["pay"] = rows
+    groups = {}
+    for p in rows:
+        groups.setdefault((p["role"], p["prov"]), []).append(p)
+    groups = {k: v for k, v in groups.items() if len(v) >= 2}
+    if not groups:
+        return
+    def k(x):
+        return f"${x / 1000:.0f}K"
+    lines = [f"💰 <b>Weekly salary snapshot</b>",
+             f"Posted pay in this week's jobs ({len(rows)} jobs with a salary), yearly, by role and province.\n"]
+    for role in [n for _, n in ROLE_NAMES]:
+        rs = sorted((pv, v) for (r, pv), v in groups.items() if r == role)
+        if not rs:
+            continue
+        lines.append(f"<b>{role}</b>")
+        for pv, v in rs:
+            lo = sum(p["low"] for p in v) / len(v)
+            hi = sum(p["high"] for p in v) / len(v)
+            rng = k(lo) if abs(hi - lo) < 1000 else f"{k(lo)} to {k(hi)}"
+            lines.append(f"• {PROVINCES.get(pv, pv)}: {rng} <i>({len(v)} jobs)</i>")
+        lines.append("")
+    lines.append("<i>Averages of the pay employers listed on Job Bank this week; hourly pay counted as 2,080 hours a year. "
+                 "A guide, not an official survey.</i>")
+    lines.append(f"\n#SalarySnapshot #CanadaJobs\n{CHANNEL}")
+    _send_get_id(token, "\n".join(lines)[:4000], preview=False)
+    bot.log(f"salary snapshot posted: {len(groups)} groups")
+
+
 def main():
     check = "--check" in sys.argv
     token = os.environ.get("TELEGRAM_BOT_TOKEN", "")
     st = load()
-    if not check and CHANNEL and st.get("summary_day") != datetime.now(TZ).strftime("%Y-%m-%d"):
+    if not check and CHANNEL:
+        before = (st.get("summary_day"), st.get("salary_week"))
         try:
             daily_list(st, token)  # checked on every call, so it goes out right at SUMMARY_TIME
+            salary_snapshot(st, token)
         except Exception as ex:
-            bot.log(f"daily job list failed: {ex}")
-        save(st)
+            bot.log(f"daily job list / salary snapshot failed: {ex}")
+        if (st.get("summary_day"), st.get("salary_week")) != before:
+            save(st)
     if not check and time.time() - st.get("last_run", 0) < EVERY:
         return
     jobs = collect()
@@ -372,16 +519,35 @@ def main():
     st["last_run"] = time.time()
     seen = set(st["seen"])
     new = [j for j in jobs if j["id"] not in seen]
+    # the same employer + title in several cities -> one post listing all the cities;
+    # and the same employer + title already posted in the last 3 days -> not posted again
+    pairs = {k: t for k, t in st.get("pairs", {}).items() if time.time() - t < 3 * 86400}
+    groups, order = {}, []
+    for j in new:
+        key = f"{j['employer'].lower()}|{j['title'].lower()}" if j["employer"] else j["id"]
+        if key not in groups:
+            groups[key] = []
+            order.append(key)
+        groups[key].append(j)
     posted = 0
-    for j in new[-MAX_PER_RUN:]:  # newest MAX_PER_RUN, posted oldest first
-        msg_id = _send_get_id(token, format_job(j, details(j["link"])))
-        if msg_id:
-            st["seen"].append(j["id"])
-            _remember(st, j, msg_id)
+    batch = order[-MAX_PER_RUN:]  # newest MAX_PER_RUN posts, oldest first
+    for key in order:
+        g = groups[key]
+        if key in batch and key not in pairs:
+            first = dict(g[-1])
+            first["locations"] = list(dict.fromkeys(x["location"] for x in g if x["location"]))
+            d = {} if first.get("adzuna") else details(first["link"])
+            msg_id = _send_get_id(token, format_job(first, d))
+            if not msg_id:
+                continue
+            pairs[key] = time.time()
+            for j in g:
+                _remember(st, j, msg_id)
+            _record_pay(st, first)
             posted += 1
             time.sleep(3)
-    for j in new[:-MAX_PER_RUN]:  # older backlog beyond the cap: skip, don't flood the channel
-        st["seen"].append(j["id"])
+        st["seen"] += [j["id"] for j in g]  # posted, a repeat, or older backlog beyond the cap
+    st["pairs"] = pairs
     bot.log(f"jobs posted: {posted}")
     try:
         run_news(st, token, False)
