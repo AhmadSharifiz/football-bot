@@ -402,7 +402,37 @@
   "425e49dc232e9aea",
   "t:42b35e9c40d7801a",
   "253df219d59d2b49",
-  "t:57ba6a8ec079acd9"
+  "t:57ba6a8ec079acd9",
+  "db1b394e5e42f8f5",
+  "t:4876e9376b1b18d8",
+  "7d13d7ec5ce1a61d",
+  "t:0da70137904914ea",
+  "04295a414d511b75",
+  "t:69a01137f80ae52b",
+  "1662b1f85777a785",
+  "t:2f122bffba962942",
+  "d9fa1fb409a63d42",
+  "t:c237e9c202b639ac",
+  "c280ea1edfa44707",
+  "t:b9e978560f1893c3",
+  "35debd6d93c2d846",
+  "t:5b7ce4d03a122c6b",
+  "984755330bcf6287",
+  "t:8fd2f9d5fd68075c",
+  "8de69bd815b5e67f",
+  "t:cb2f22db7651887a",
+  "4820dcdaa775a245",
+  "t:ccd34e177e4fac19",
+  "957928f978a6429c",
+  "t:341e0ce1d66336fa",
+  "9e6f61454f5d83f3",
+  "t:531a97bb23931a2a",
+  "e342f70663ffd240",
+  "t:a8a0e04aa3fe7c43",
+  "ef7e61ce48f539f5",
+  "t:10a56bc8910885a0",
+  "ce6d0baec971da2f",
+  "t:0824cc550ba62177"
  ],
  "initialized": true,
  "sources": [
@@ -419,7 +449,7 @@
   "tg:ottawaevents",
   "tg:pandcommunity"
  ],
- "last_run": 1794445752.4209938,
+ "last_run": 1794446160.213588,
  "weather_day": "2026-11-11",
  "blog_seen": [
   "https://asharifi.wordpress.com/2026/08/19/construction-project-management-the-lakeshore-heights-series/",
@@ -433,6 +463,6 @@
   "https://asharifi.wordpress.com/2022/04/17/negative-float-in-the-schedule/",
   "https://asharifi.wordpress.com/2022/03/30/no-plan-same-result/"
  ],
- "alerts_checked": 1794445746.610208,
+ "alerts_checked": 1794445986.7097578,
  "alerts_seen": []
 }
