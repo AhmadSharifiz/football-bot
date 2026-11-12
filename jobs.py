@@ -4,6 +4,7 @@ scheduling, posted to a Telegram channel (English): title, employer, location, s
 
 Source: Job Bank (Government of Canada) official job-search feeds, which include Job Bank's own postings and
 its partner sites. Checked once an hour; each job is posted once.
+Also posts recent news about Canadian construction projects (trade magazines + news search), up to 4 an hour.
 
 Run from the Ottawa workflow loop:  JOBS_CHANNEL="@yourchannel" python jobs.py
 Env: TELEGRAM_BOT_TOKEN, JOBS_CHANNEL, JOBS_STATE (default state-jobs.json), JOBS_EVERY (seconds, default 3600),
@@ -133,6 +134,14 @@ def details(link):
     return out
 
 
+def _tag(text):
+    """'saint-jean-sur-richelieu' -> '#SaintJeanSurRichelieu' (letters and digits only, accents removed)."""
+    import unicodedata
+    plain = "".join(c for c in unicodedata.normalize("NFKD", text or "") if not unicodedata.combining(c))
+    words = re.findall(r"[A-Za-z0-9]+", plain)
+    return "#" + "".join(w[:1].upper() + w[1:].lower() for w in words) if words else ""
+
+
 def _clean(s, label):
     return bot.norm(re.sub(rf"^{label}\s*", "", s or "", flags=re.I))
 
@@ -167,14 +176,107 @@ def format_job(j, d):
     lines.append(f'🔗 <a href="{html.escape(j["link"], quote=True)}">View the job and apply</a>')
     tags = ["#CanadaJobs"]
     low = j["title"].lower()
+    title_tag = _tag(re.split(r"[,(]", j["title"])[0])  # job title, e.g. #ConstructionProjectCoordinator
+    if title_tag:
+        tags.append(title_tag)
     tags.append(next((t for p, t in ROLE_TAGS if re.search(p, low)), "#ProjectManagement"))
     if "construction" in low:
         tags.append("#Construction")
     m = re.search(r"\((\w\w)\)", j["location"])
+    city = _tag(re.sub(r"\s*\(.*$", "", j["location"]))  # city, e.g. #Ottawa
+    if city and city != "#VariousLocations":
+        tags.append(city)
     if m and m.group(1) in PROVINCES:
         tags.append("#" + PROVINCES[m.group(1)])
     lines.append("\n" + " ".join(dict.fromkeys(tags)) + (f"\n{CHANNEL}" if CHANNEL else ""))
     return "\n".join(lines)
+
+
+# ---------------------------------------------------------------- Canadian construction project news
+NEWS_FEEDS = [  # (source name, feed)
+    ("ReNew Canada", "https://www.renewcanada.net/feed/"),
+    ("On-Site Magazine", "https://www.on-sitemag.com/feed/"),
+    ("Construction Canada", "https://www.constructioncanada.net/feed/"),
+    ("Canadian Architect", "https://www.canadianarchitect.com/feed/"),
+    ("", "https://www.bing.com/news/search?format=rss&setlang=en-CA&cc=CA&q=%22construction+project%22+Canada"),
+    ("", "https://www.bing.com/news/search?format=rss&setlang=en-CA&cc=CA&q=Canada+infrastructure+project+contract+awarded"),
+]
+NEWS_MAX_PER_RUN = int(os.environ.get("NEWS_MAX_PER_RUN", "4"))
+NEWS_MAX_AGE = 3 * 24 * 3600
+CANADA = re.compile(r"canad|ontario|quebec|qu\u00e9bec|british columbia|\bb\.?c\.?\b|alberta|manitoba|saskatchewan|"
+                    r"nova scotia|new brunswick|newfoundland|prince edward|yukon|nunavut|northwest territories|ottawa|"
+                    r"toronto|montreal|montr\u00e9al|vancouver|calgary|edmonton|winnipeg|halifax|hamilton|mississauga|"
+                    r"gatineau|kitchener|london, ont|saskatoon|regina|victoria|surrey|brampton|metrolinx|infrastructure ontario", re.I)
+BUILD = re.compile(r"construct|build|project|infrastructure|contract|tender|transit|hospital|bridge|highway|housing|"
+                   r"tower|condo|development|renovat|groundbreaking|ground broken|rfp|rfq|p3|reactor|pipeline|"
+                   r"subway|lrt|rail|airport|school|plant", re.I)
+NEWS_SKIP = re.compile(r"webinar|podcast|sponsored|advertorial|award nominations|subscribe|job posting|obituar", re.I)
+NEWS_TAGS = [(r"transit|subway|lrt|rail|metrolinx", "#Transit"), (r"hospital|health", "#Healthcare"),
+             (r"housing|condo|residential|tower|apartment", "#Housing"), (r"bridge|highway|road", "#Roads"),
+             (r"nuclear|reactor|energy|hydro|power", "#Energy"), (r"school|universit|college", "#Education"),
+             (r"infrastructure", "#Infrastructure")]
+
+
+def collect_news():
+    items, keys = [], set()
+    now = time.time()
+    for source, url in NEWS_FEEDS:
+        for e in bot.fetch_feed(url):
+            title = bot.norm(e.get("title", ""))
+            pub = e.get("published_parsed") or e.get("updated_parsed")
+            if not title or not pub or now - time.mktime(pub) > NEWS_MAX_AGE or NEWS_SKIP.search(title):
+                continue
+            summary = bot.norm(re.sub(r"<[^>]+>", " ", bot.clean_summary(e.get("summary", ""))))
+            text = f"{title} {summary}"
+            if not BUILD.search(text) or (not source and not CANADA.search(text)):
+                continue  # trade magazines are Canadian; general news must mention Canada
+            key = bot.title_key(title)
+            if key in keys:
+                continue
+            keys.add(key)
+            src = source or bot.norm((e.get("source") or {}).get("title", "")) or "News"
+            items.append({"key": key, "title": title, "summary": summary, "link": e.get("link", ""),
+                          "source": src, "time": time.mktime(pub)})
+    items.sort(key=lambda n: n["time"])  # oldest first
+    return items
+
+
+def format_news(n):
+    summary = n["summary"]
+    if len(summary) < 120:  # thin feed summary: use the article's own description or first paragraph
+        summary = bot.article_summary(n["link"]) or bot.article_paragraph(n["link"]) or summary
+    summary = bot.shorten(summary, 500)
+    tags = ["#ConstructionNews", "#CanadaConstruction"]
+    low = f"{n['title']} {summary}".lower()
+    tags += [t for p, t in NEWS_TAGS if re.search(p, low)][:2]
+    lines = [f"🏗 <b>{html.escape(n['title'])}</b>"]
+    if summary and summary[:60].lower() != n["title"][:60].lower():
+        lines.append("\n" + html.escape(summary))
+    lines.append(f'\n🔗 <a href="{html.escape(n["link"], quote=True)}">Read more</a> | {html.escape(n["source"])}')
+    lines.append("\n" + " ".join(dict.fromkeys(tags)) + (f"\n{CHANNEL}" if CHANNEL else ""))
+    return "\n".join(lines)
+
+
+def run_news(st, token, check):
+    items = collect_news()
+    bot.log(f"news: {len(items)} Canadian construction stories in the last 3 days")
+    if check:
+        for n in items[-3:]:
+            bot.log("\n=== news preview\n" + format_news(n))
+        return
+    seen = st.get("news_seen")
+    if seen is None:  # first run: post only the newest few
+        seen = [n["key"] for n in items[:-NEWS_MAX_PER_RUN]]
+    new = [n for n in items if n["key"] not in set(seen)]
+    posted = 0
+    for n in new[-NEWS_MAX_PER_RUN:]:
+        if bot.send(token, CHANNEL, format_news(n)):
+            seen.append(n["key"])
+            posted += 1
+            time.sleep(3)
+    seen += [n["key"] for n in new[:-NEWS_MAX_PER_RUN]]
+    st["news_seen"] = seen[-2000:]
+    bot.log(f"news posted: {posted}")
 
 
 def main():
@@ -188,6 +290,7 @@ def main():
     if check:
         for j in jobs[-3:]:
             bot.log("\n=== job preview\n" + format_job(j, details(j["link"])))
+        run_news(st, token, True)
         return
     if not CHANNEL:
         bot.log("jobs: JOBS_CHANNEL not set, nothing posted")
@@ -204,6 +307,10 @@ def main():
     for j in new[:-MAX_PER_RUN]:  # older backlog beyond the cap: skip, don't flood the channel
         st["seen"].append(j["id"])
     bot.log(f"jobs posted: {posted}")
+    try:
+        run_news(st, token, False)
+    except Exception as ex:
+        bot.log(f"news failed: {ex}")
     save(st)
 
 
