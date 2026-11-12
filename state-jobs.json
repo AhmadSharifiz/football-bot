@@ -49,9 +49,12 @@
   "50712402",
   "50712419",
   "50712515",
-  "50713595"
+  "50713595",
+  "50714034",
+  "50714042",
+  "50714164"
  ],
- "last_run": 1794507472.6976728,
+ "last_run": 1794511117.612493,
  "today": {
   "date": "2026-11-12",
   "jobs": [
@@ -138,6 +141,24 @@
     "city": "Fort St. John, BC",
     "employer": "Kalmar Construction Ltd",
     "msg": 37
+   },
+   {
+    "title": "Construction General Manager",
+    "city": "Mississauga, ON",
+    "employer": "Right Choice Builders Inc.",
+    "msg": 39
+   },
+   {
+    "title": "Construction Project Manager",
+    "city": "Rosslyn, ON",
+    "employer": "Smart Modular Canada",
+    "msg": 40
+   },
+   {
+    "title": "Deputy Chief Executive Officer - Goods Production, Utilities, Transportation And Construction",
+    "city": "Montréal, QC",
+    "employer": "Hydro-quebec",
+    "msg": 41
    }
   ]
  },
@@ -218,6 +239,20 @@
    "prov": "BC",
    "low": 72800,
    "high": 83200
+  },
+  {
+   "t": 1794511119.0577273,
+   "role": "Project Manager",
+   "prov": "ON",
+   "low": 126880,
+   "high": 126880
+  },
+  {
+   "t": 1794511123.2729611,
+   "role": "Project Manager",
+   "prov": "ON",
+   "low": 85000,
+   "high": 95000
   }
  ],
  "pairs": {
@@ -234,7 +269,10 @@
   "dole contracting|assistant project manager": 1794507474.0214088,
   "enercon builders inc|construction project manager": 1794507478.3731456,
   "gta general contractors|estimator, construction": 1794507482.585542,
-  "kalmar construction ltd|superintendent, construction": 1794507486.848567
+  "kalmar construction ltd|superintendent, construction": 1794507486.848567,
+  "right choice builders inc.|construction general manager": 1794511119.0571735,
+  "smart modular canada|construction project manager": 1794511123.2728562,
+  "hydro-quebec|deputy chief executive officer - goods production, utilities, transportation and construction": 1794511127.5227175
  },
  "news_seen": [
   "t:264755b1702ef5db",
