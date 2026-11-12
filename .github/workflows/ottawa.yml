@@ -43,6 +43,8 @@ jobs:
         env:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHANNEL: "@ottawanews_fa"
+          ADZUNA_APP_ID: ${{ secrets.ADZUNA_APP_ID }}
+          ADZUNA_APP_KEY: ${{ secrets.ADZUNA_APP_KEY }}
           MAX_POSTS_PER_RUN: "5"
           SOURCES_FILE: sources-ottawa.yml
           STATE_FILE: state-ottawa.json
