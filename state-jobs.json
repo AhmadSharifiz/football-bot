@@ -54,9 +54,10 @@
   "50714042",
   "50714164",
   "50715313",
-  "50715343"
+  "50715343",
+  "50715721"
  ],
- "last_run": 1794514766.4503071,
+ "last_run": 1794518423.6860108,
  "today": {
   "date": "2026-11-12",
   "jobs": [
@@ -173,6 +174,12 @@
     "city": "Sicamous, BC",
     "employer": "DCS TECHNOLOGIES INC.",
     "msg": 42
+   },
+   {
+    "title": "Business Development Manager",
+    "city": "Edmonton, AB",
+    "employer": "Florists Supply",
+    "msg": 43
    }
   ]
  },
@@ -274,6 +281,13 @@
    "prov": "BC",
    "low": 140400,
    "high": 140400
+  },
+  {
+   "t": 1794518424.5600095,
+   "role": "Project Manager",
+   "prov": "AB",
+   "low": 50000,
+   "high": 60000
   }
  ],
  "pairs": {
@@ -294,7 +308,8 @@
   "right choice builders inc.|construction general manager": 1794511119.0571735,
   "smart modular canada|construction project manager": 1794511123.2728562,
   "hydro-quebec|deputy chief executive officer - goods production, utilities, transportation and construction": 1794511127.5227175,
-  "dcs technologies inc.|it (information technology) development manager": 1794514767.9105654
+  "dcs technologies inc.|it (information technology) development manager": 1794514767.9105654,
+  "florists supply|business development manager": 1794518424.5596497
  },
  "news_seen": [
   "t:264755b1702ef5db",
