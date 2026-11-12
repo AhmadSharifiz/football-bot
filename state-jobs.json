@@ -35,7 +35,44 @@
   "50704812",
   "50704723",
   "50704650",
-  "50704966"
+  "50704966",
+  "50711430"
  ],
- "last_run": 1794492856.1557422
+ "last_run": 1794496520.154927,
+ "today": {
+  "date": "2026-11-12",
+  "jobs": [
+   {
+    "title": "Construction Estimator",
+    "city": "Fort St. John, BC",
+    "employer": "Objective Recruiting",
+    "msg": 20
+   }
+  ]
+ },
+ "pay": [
+  {
+   "t": 1794496521.3933954,
+   "role": "Estimator / QS",
+   "prov": "BC",
+   "low": 100000,
+   "high": 150000
+  }
+ ],
+ "pairs": {
+  "objective recruiting|construction estimator": 1794496521.3931074
+ },
+ "news_seen": [
+  "t:264755b1702ef5db",
+  "t:86c88e717f297cd4",
+  "t:3150e244a59ac94e",
+  "t:dca82c21aaccf7ce",
+  "t:95bb3539a985ce22",
+  "t:5e0bac389d1cefc9",
+  "t:bf44fa1f4cd75399",
+  "t:945e6e52be9d4acc",
+  "t:88237ead68a9c866",
+  "t:caa4cb4aac65fa61",
+  "t:acb3db3ffd311e30"
+ ]
 }
