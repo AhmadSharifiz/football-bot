@@ -16,7 +16,9 @@ import os
 import re
 import sys
 import time
+from datetime import datetime
 from pathlib import Path
+from zoneinfo import ZoneInfo
 from urllib.parse import quote_plus
 
 import bot
@@ -24,6 +26,8 @@ import bot
 CHANNEL = os.environ.get("JOBS_CHANNEL", "")
 STATE = Path(os.environ.get("JOBS_STATE", "state-jobs.json"))
 EVERY = int(os.environ.get("JOBS_EVERY", "3600"))
+TZ = ZoneInfo("America/Toronto")
+SUMMARY_TIME = os.environ.get("JOBS_SUMMARY_TIME", "21:00")  # end-of-day list of the day's jobs, Ottawa time
 MAX_PER_RUN = int(os.environ.get("JOBS_MAX_PER_RUN", "15"))
 FEED = "https://www.jobbank.gc.ca/jobsearch/feed/jobSearchRSSfeed?fage=2&sort=D&rows=100&searchstring="
 
@@ -160,7 +164,7 @@ def format_job(j, d):
         lines.append(f"💰 {html.escape(pay)}")
     terms = " · ".join(x for x in (_clean(d.get("type"), ""), d.get("setting", "")) if x)
     if terms:
-        terms = re.sub(r"employment(?=\S)", "employment, ", terms).replace("employmentFull", "employment, Full")
+        terms = re.sub(r"employment\s*(?=(Full|Part) time)", "employment, ", terms)
         lines.append(f"📄 {html.escape(terms)}")
     req = " · ".join(x for x in (_clean(d.get("education"), "qualification"),
                                    _clean(d.get("experience"), "qualification")) if x)
@@ -279,10 +283,80 @@ def run_news(st, token, check):
     bot.log(f"news posted: {posted}")
 
 
+# ---------------------------------------------------------------- end-of-day list
+def _send_get_id(token, text, preview=True):
+    """Send and return the Telegram message id (needed to link to the post), or None."""
+    r = bot.requests.post(f"https://api.telegram.org/bot{token}/sendMessage",
+                          json={"chat_id": CHANNEL, "text": text, "parse_mode": "HTML",
+                                "disable_web_page_preview": not preview}, timeout=bot.TIMEOUT)
+    if r.status_code == 429:
+        time.sleep(r.json().get("parameters", {}).get("retry_after", 30))
+        return _send_get_id(token, text, preview)
+    if not r.ok:
+        bot.log(f"   telegram error {r.status_code}: {r.text[:200]}")
+        return None
+    return r.json()["result"]["message_id"]
+
+
+def _remember(st, j, msg_id):
+    today = datetime.now(TZ).strftime("%Y-%m-%d")
+    day = st.setdefault("today", {"date": today, "jobs": []})
+    if day["date"] != today:
+        st["today"] = day = {"date": today, "jobs": []}
+    city = re.sub(r"\s*\((\w\w)\)", r", \1", j["location"]).strip() or "Various locations"
+    title = re.sub(r"\b([a-z])", lambda m: m.group(1).upper(), j["title"])
+    day["jobs"].append({"title": title, "city": city, "employer": j["employer"], "msg": msg_id})
+
+
+def daily_list(st, token):
+    """At SUMMARY_TIME, post today's jobs as a simple list grouped by city, each linking to its post."""
+    now = datetime.now(TZ)
+    h, m = map(int, SUMMARY_TIME.split(":"))
+    today = now.strftime("%Y-%m-%d")
+    if (now.hour, now.minute) < (h, m) or st.get("summary_day") == today:
+        return
+    day = st.get("today") or {}
+    jobs = day.get("jobs", []) if day.get("date") == today else []
+    st["summary_day"] = today
+    if not jobs:
+        return
+    handle = CHANNEL.lstrip("@")
+    by_city = {}
+    for j in jobs:
+        by_city.setdefault(j["city"], []).append(j)
+    head = (f"📋 <b>Today's jobs: {now:%B} {now.day}, {now.year}</b>\n"
+            f"{len(jobs)} new job{'s' if len(jobs) != 1 else ''} posted today, by city. Tap a job to open its post.")
+    blocks = []
+    for city in sorted(by_city, key=lambda c: (c.split(", ")[-1], c)):  # by province, then city
+        lines = [f"📍 <b>{html.escape(city)}</b>"]
+        for j in by_city[city]:
+            emp = f" · {html.escape(j['employer'])}" if j.get("employer") else ""
+            lines.append(f'• <a href="https://t.me/{handle}/{j["msg"]}">{html.escape(j["title"])}</a>{emp}')
+        blocks.append("\n".join(lines))
+    foot = f"#DailyJobList #CanadaJobs\n{CHANNEL}"
+    msgs, cur = [], head
+    for b in blocks:
+        if len(cur) + len(b) + len(foot) > 3900:
+            msgs.append(cur)
+            cur = "📋 <b>Today's jobs (continued)</b>"
+        cur += "\n\n" + b
+    msgs.append(cur + "\n\n" + foot)
+    for t in msgs:
+        _send_get_id(token, t, preview=False)
+        time.sleep(2)
+    bot.log(f"daily job list posted: {len(jobs)} jobs, {len(msgs)} message(s)")
+
+
 def main():
     check = "--check" in sys.argv
     token = os.environ.get("TELEGRAM_BOT_TOKEN", "")
     st = load()
+    if not check and CHANNEL and st.get("summary_day") != datetime.now(TZ).strftime("%Y-%m-%d"):
+        try:
+            daily_list(st, token)  # checked on every call, so it goes out right at SUMMARY_TIME
+        except Exception as ex:
+            bot.log(f"daily job list failed: {ex}")
+        save(st)
     if not check and time.time() - st.get("last_run", 0) < EVERY:
         return
     jobs = collect()
@@ -300,8 +374,10 @@ def main():
     new = [j for j in jobs if j["id"] not in seen]
     posted = 0
     for j in new[-MAX_PER_RUN:]:  # newest MAX_PER_RUN, posted oldest first
-        if bot.send(token, CHANNEL, format_job(j, details(j["link"]))):
+        msg_id = _send_get_id(token, format_job(j, details(j["link"])))
+        if msg_id:
             st["seen"].append(j["id"])
+            _remember(st, j, msg_id)
             posted += 1
             time.sleep(3)
     for j in new[:-MAX_PER_RUN]:  # older backlog beyond the cap: skip, don't flood the channel
