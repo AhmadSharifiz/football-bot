@@ -57,6 +57,7 @@ jobs:
           save() {
             git add state-ottawa.json
             git add state-pm*.json state-immigration.json 2>/dev/null || true
+            git add state-jobs.json 2>/dev/null || true
             git diff --cached --quiet && return 0
             git commit -q -m "update state"
             git pull -q --rebase && git push -q || echo "state push failed, will retry"
@@ -71,6 +72,8 @@ jobs:
             SOURCES_FILE=sources-immigration.yml STATE_FILE=state-immigration.json TELEGRAM_CHANNEL="@canadaimmigration_fa" \
               SUMMARY_LEN=600 ICON="🍁" MAX_POSTS_PER_RUN=40 RUN_EVERY=3600 FIRST_RUN_POSTS=10 \
               python bot.py || echo "immigration run failed, continuing"
+            # Project Management Jobs Canada: Job Bank feeds, checked once an hour (jobs.py)
+            JOBS_CHANNEL="@pmjobscanada" python jobs.py || echo "jobs run failed, continuing"
             n=$((n + 1))
             [ $((n % 3)) -eq 0 ] && save
             wait=$((120 - (SECONDS - start)))
