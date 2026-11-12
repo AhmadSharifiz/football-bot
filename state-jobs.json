@@ -45,9 +45,13 @@
   "50712284",
   "50711817",
   "50711818",
-  "50712335"
+  "50712335",
+  "50712402",
+  "50712419",
+  "50712515",
+  "50713595"
  ],
- "last_run": 1794503810.8761423,
+ "last_run": 1794507472.6976728,
  "today": {
   "date": "2026-11-12",
   "jobs": [
@@ -110,6 +114,30 @@
     "city": "Surrey, BC",
     "employer": "JEMESON CONSTRUCTION LTD.",
     "msg": 33
+   },
+   {
+    "title": "Assistant Project Manager",
+    "city": "Woodbridge, ON",
+    "employer": "DOLE CONTRACTING",
+    "msg": 34
+   },
+   {
+    "title": "Construction Project Manager",
+    "city": "Mount Pearl, NL",
+    "employer": "EnerCon Builders Inc",
+    "msg": 35
+   },
+   {
+    "title": "Estimator, Construction",
+    "city": "Toronto, ON",
+    "employer": "GTA General Contractors",
+    "msg": 36
+   },
+   {
+    "title": "Superintendent, Construction",
+    "city": "Fort St. John, BC",
+    "employer": "Kalmar Construction Ltd",
+    "msg": 37
    }
   ]
  },
@@ -162,6 +190,34 @@
    "prov": "BC",
    "low": 78000,
    "high": 78000
+  },
+  {
+   "t": 1794507474.0220413,
+   "role": "Project Manager",
+   "prov": "ON",
+   "low": 45760,
+   "high": 72800
+  },
+  {
+   "t": 1794507478.3732429,
+   "role": "Project Manager",
+   "prov": "NL",
+   "low": 50000,
+   "high": 125000
+  },
+  {
+   "t": 1794507482.585627,
+   "role": "Estimator / QS",
+   "prov": "ON",
+   "low": 90000,
+   "high": 125000
+  },
+  {
+   "t": 1794507486.8486567,
+   "role": "Superintendent",
+   "prov": "BC",
+   "low": 72800,
+   "high": 83200
   }
  ],
  "pairs": {
@@ -174,7 +230,11 @@
   "fed manutech|engineering service project manager": 1794503823.4108486,
   "kex express (canada)|business development manager": 1794503827.2352054,
   "fed supply|contract manager": 1794503831.1028368,
-  "jemeson construction ltd.|construction site supervisor": 1794503835.0964816
+  "jemeson construction ltd.|construction site supervisor": 1794503835.0964816,
+  "dole contracting|assistant project manager": 1794507474.0214088,
+  "enercon builders inc|construction project manager": 1794507478.3731456,
+  "gta general contractors|estimator, construction": 1794507482.585542,
+  "kalmar construction ltd|superintendent, construction": 1794507486.848567
  },
  "news_seen": [
   "t:264755b1702ef5db",
@@ -187,6 +247,7 @@
   "t:945e6e52be9d4acc",
   "t:88237ead68a9c866",
   "t:caa4cb4aac65fa61",
-  "t:acb3db3ffd311e30"
+  "t:acb3db3ffd311e30",
+  "t:7b8a3dca69ed58a0"
  ]
 }
