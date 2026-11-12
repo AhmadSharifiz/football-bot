@@ -591,6 +591,20 @@ def send(token, channel, text):
 def main():
     check = "--check" in sys.argv
     run_every = int(os.environ.get("RUN_EVERY", "0"))  # seconds between source checks (0 = every call)
+    # instant alerts run on every call, before the RUN_EVERY wait (alerts.py)
+    cfg0 = yaml.safe_load(SOURCES_FILE.read_text(encoding="utf-8")) or {}
+    if cfg0.get("ee_alert") or cfg0.get("ottawa_alerts"):
+        import alerts
+        st = load_state()
+        try:
+            if cfg0.get("ee_alert"):
+                alerts.ee_run(st, os.environ.get("TELEGRAM_BOT_TOKEN", ""), CHANNEL, cfg0["ee_alert"]["url"], check)
+            if cfg0.get("ottawa_alerts"):
+                alerts.ottawa_run(st, os.environ.get("TELEGRAM_BOT_TOKEN", ""), CHANNEL, check)
+        except Exception as ex:
+            log(f"alerts failed: {ex}")
+        if not check:
+            save_state(st)
     if not check and run_every:
         st = load_state()
         if time.time() - st.get("last_run", 0) < run_every:

@@ -51,6 +51,11 @@ hashtags:
   آلبرتا: [Alberta, AAIP, آلبرتا]
   زمان_بررسی: [processing time, processing times, backlog, زمان بررسی]
 
+
+# Instant Express Entry draw alert (alerts.py): checked every ~2 minutes, posted within minutes of IRCC
+# publishing a new round, with a chart of the last 10 minimum CRS scores.
+ee_alert: {url: "https://www.canada.ca/content/dam/ircc/documents/json/ee_rounds_123_en.json"}
+
 sources:
   # Official: Immigration, Refugees and Citizenship Canada news releases
   - name: IRCC
@@ -64,10 +69,7 @@ sources:
     pattern: /news/notices/
     local: true
 
-  # Express Entry rounds of invitations - IRCC's own data behind the rounds page
-  - name: IRCC
-    ee_rounds: https://www.canada.ca/content/dam/ircc/documents/json/ee_rounds_123_en.json
-    local: true
+  # Express Entry draws are not read here any more: they go out as instant alerts (ee_alert, top of file).
 
   - name: CIC News
     feeds: [https://www.cicnews.com/feed]
