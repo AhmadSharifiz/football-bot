@@ -38,9 +38,16 @@
   "50704966",
   "50711430",
   "50711716",
-  "50711741"
+  "50711741",
+  "50711790",
+  "50711843",
+  "50712219",
+  "50712284",
+  "50711817",
+  "50711818",
+  "50712335"
  ],
- "last_run": 1794500164.459355,
+ "last_run": 1794503810.8761423,
  "today": {
   "date": "2026-11-12",
   "jobs": [
@@ -61,6 +68,48 @@
     "city": "Edmonton, AB",
     "employer": "Rushton Gas & Oil Equipment Ltd.",
     "msg": 26
+   },
+   {
+    "title": "Project Co-Ordinator, Construction",
+    "city": "Sidney, BC",
+    "employer": "Victoria Airport Authority",
+    "msg": 27
+   },
+   {
+    "title": "Engineering Service Project Manager",
+    "city": "Saguenay, QC",
+    "employer": "Groupe Pylium",
+    "msg": 28
+   },
+   {
+    "title": "Project Manager, Construction",
+    "city": "Moose Jaw, SK",
+    "employer": "Defence Construction Canada",
+    "msg": 29
+   },
+   {
+    "title": "Engineering Service Project Manager",
+    "city": "Laval, QC",
+    "employer": "Fed Manutech",
+    "msg": 30
+   },
+   {
+    "title": "Business Development Manager",
+    "city": "Brampton, ON",
+    "employer": "KEX Express (Canada)",
+    "msg": 31
+   },
+   {
+    "title": "Contract Manager",
+    "city": "Longueuil, QC",
+    "employer": "Fed Supply",
+    "msg": 32
+   },
+   {
+    "title": "Construction Site Supervisor",
+    "city": "Surrey, BC",
+    "employer": "JEMESON CONSTRUCTION LTD.",
+    "msg": 33
    }
   ]
  },
@@ -71,12 +120,61 @@
    "prov": "BC",
    "low": 100000,
    "high": 150000
+  },
+  {
+   "t": 1794503815.710652,
+   "role": "Project / Site Engineer",
+   "prov": "QC",
+   "low": 75000,
+   "high": 100000
+  },
+  {
+   "t": 1794503819.5112555,
+   "role": "Project Manager",
+   "prov": "SK",
+   "low": 80886,
+   "high": 105152
+  },
+  {
+   "t": 1794503823.4109433,
+   "role": "Project / Site Engineer",
+   "prov": "QC",
+   "low": 90000,
+   "high": 95000
+  },
+  {
+   "t": 1794503827.235303,
+   "role": "Project Manager",
+   "prov": "ON",
+   "low": 60000,
+   "high": 60000
+  },
+  {
+   "t": 1794503831.1029167,
+   "role": "Contract Administrator",
+   "prov": "QC",
+   "low": 120000,
+   "high": 140000
+  },
+  {
+   "t": 1794503835.0966134,
+   "role": "Superintendent",
+   "prov": "BC",
+   "low": 78000,
+   "high": 78000
   }
  ],
  "pairs": {
   "objective recruiting|construction estimator": 1794496521.3931074,
   "north america electrical energy equipments co., ltd|sales vice-president - goods production, utilities, transportation and construction": 1794500165.781689,
-  "rushton gas & oil equipment ltd.|project co-ordinator, construction": 1794500170.0815392
+  "rushton gas & oil equipment ltd.|project co-ordinator, construction": 1794500170.0815392,
+  "victoria airport authority|project co-ordinator, construction": 1794503811.766707,
+  "groupe pylium|engineering service project manager": 1794503815.7105284,
+  "defence construction canada|project manager, construction": 1794503819.5111618,
+  "fed manutech|engineering service project manager": 1794503823.4108486,
+  "kex express (canada)|business development manager": 1794503827.2352054,
+  "fed supply|contract manager": 1794503831.1028368,
+  "jemeson construction ltd.|construction site supervisor": 1794503835.0964816
  },
  "news_seen": [
   "t:264755b1702ef5db",
