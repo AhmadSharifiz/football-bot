@@ -1,0 +1,65 @@
+name: Post football news
+
+on:
+  schedule:
+    - cron: "*/30 * * * *"   # starts a new 28-minute session every 30 minutes
+  workflow_dispatch:          # "Run workflow" button for manual runs
+    inputs:
+      check_only:
+        description: "Only test sources, don't post"
+        type: boolean
+        default: true
+
+permissions:
+  contents: write
+  actions: write
+
+concurrency:
+  group: poster
+  cancel-in-progress: false
+
+jobs:
+  post:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install -r requirements.txt
+      - name: Check sources only
+        if: ${{ inputs.check_only }}
+        run: python bot.py --check
+      - name: Post (checks every minute for ~28 minutes)
+        if: ${{ !inputs.check_only }}
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHANNEL: "@footballonline_fa"
+          MAX_POSTS_PER_RUN: "10"
+        run: |
+          git config user.name "football-bot"
+          git config user.email "bot@users.noreply.github.com"
+          save() {
+            git add state.json
+            git diff --cached --quiet && return 0
+            git commit -q -m "update state"
+            git pull -q --rebase && git push -q || echo "state push failed, will retry"
+          }
+          end=$((SECONDS + 1680))
+          n=0
+          while [ $SECONDS -lt $end ]; do
+            start=$SECONDS
+            python bot.py || echo "run failed, continuing"
+            n=$((n + 1))
+            [ $((n % 5)) -eq 0 ] && save
+            wait=$((60 - (SECONDS - start)))
+            [ $wait -lt 5 ] && wait=5
+            sleep $wait
+          done
+          save
+      - name: Start next session
+        if: ${{ !cancelled() && !inputs.check_only }}
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh workflow run post.yml -R ${{ github.repository }} -f check_only=false

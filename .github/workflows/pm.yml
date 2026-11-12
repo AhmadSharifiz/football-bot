@@ -1,0 +1,32 @@
+name: Test project management digest
+
+on:
+  workflow_dispatch:   # test only: shows which sources work and sample posts, posts nothing
+
+concurrency:
+  group: pm-check
+  cancel-in-progress: false
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install -r requirements.txt
+      - name: Immigration sources
+        env:
+          SOURCES_FILE: sources-immigration.yml
+          STATE_FILE: state-immigration.json
+          FILTER_MODE: keywords
+          TRANSLATE: "1"
+          FETCH_SUMMARY: "1"
+          SUMMARY_LEN: "600"
+          ICON: "🍁"
+          TELEGRAM_CHANNEL: "@canadaimmigration_fa"
+        run: python bot.py --check
+      - name: English sources digest
+        run: python digest.py --check

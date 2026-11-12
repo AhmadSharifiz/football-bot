@@ -1,0 +1,85 @@
+name: Post Ottawa news
+
+on:
+  schedule:
+    - cron: "*/30 * * * *"   # starts a new 28-minute session every 30 minutes
+  workflow_dispatch:          # "Run workflow" button for manual runs
+    inputs:
+      check_only:
+        description: "Only test sources, don't post"
+        type: boolean
+        default: true
+
+permissions:
+  contents: write
+  actions: write
+
+concurrency:
+  group: ottawa
+  cancel-in-progress: false
+
+jobs:
+  post:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install -r requirements.txt
+      - name: Check sources only
+        if: ${{ inputs.check_only }}
+        env:
+          SOURCES_FILE: sources-ottawa.yml
+          STATE_FILE: state-ottawa.json
+          FILTER_MODE: keywords
+          TRANSLATE: "1"
+          FETCH_SUMMARY: "1"
+          SUMMARY_LEN: "350"
+        run: python bot.py --check
+      - name: Post (checks every 2 minutes for ~28 minutes)
+        if: ${{ !inputs.check_only }}
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHANNEL: "@ottawanews_fa"
+          MAX_POSTS_PER_RUN: "5"
+          SOURCES_FILE: sources-ottawa.yml
+          STATE_FILE: state-ottawa.json
+          FILTER_MODE: keywords
+          TRANSLATE: "1"
+          FETCH_SUMMARY: "1"
+          SUMMARY_LEN: "350"
+          ICON: "📰"
+        run: |
+          git config user.name "football-bot"
+          git config user.email "bot@users.noreply.github.com"
+          save() {
+            git add state-ottawa.json
+            git add state-pm*.json state-immigration.json 2>/dev/null || true
+            git diff --cached --quiet && return 0
+            git commit -q -m "update state"
+            git pull -q --rebase && git push -q || echo "state push failed, will retry"
+          }
+          end=$((SECONDS + 1680))
+          n=0
+          while [ $SECONDS -lt $end ]; do
+            start=$SECONDS
+            python bot.py || echo "run failed, continuing"
+            DIGEST_CHANNEL="@sharifizcom" POST_TIME="07:30" python digest.py || echo "digest failed, continuing"
+            # Canada immigration news: checks all sources once an hour
+            SOURCES_FILE=sources-immigration.yml STATE_FILE=state-immigration.json TELEGRAM_CHANNEL="@canadaimmigration_fa" \
+              SUMMARY_LEN=600 ICON="🍁" MAX_POSTS_PER_RUN=40 RUN_EVERY=3600 FIRST_RUN_POSTS=10 \
+              python bot.py || echo "immigration run failed, continuing"
+            n=$((n + 1))
+            [ $((n % 3)) -eq 0 ] && save
+            wait=$((120 - (SECONDS - start)))
+            [ $wait -lt 5 ] && wait=5
+            sleep $wait
+          done
+          save
+      - name: Start next session
+        if: ${{ !cancelled() && !inputs.check_only }}
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh workflow run ottawa.yml -R ${{ github.repository }} -f check_only=false
