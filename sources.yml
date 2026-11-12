@@ -1,0 +1,131 @@
+# Persian football news sources.
+#   feeds:         RSS URLs
+#   football_only: true  -> feed is football-only, post everything (futsal etc. still dropped)
+#                  false -> general/sports feed, only post items matching football keywords
+#
+# Run the workflow with "Only test sources" ticked to see which feeds return items.
+#
+# Not included (checked 2026-11-11):
+#   Varzesh3, Tasnim, Navad  - unreachable from GitHub's servers
+#   Football 360, IRNA, Iran International - no RSS feed found
+
+# Summary length per post; long enough to read without opening the link.
+summary_len: 500
+fetch_summary: true      # open the article when the feed's summary is short
+translate: true          # English sources -> Persian title and summary (Persian text is left as is)
+daily_fixtures: true     # morning fixtures list + overnight results, Tehran time (fixtures.py)
+
+# Hashtags: every post gets the defaults, plus a tag for each topic it mentions (English or Persian).
+default_hashtags: [فوتبال]
+hashtags:
+  لیگ_برتر_انگلیس: [Premier League, لیگ برتر انگلیس, پریمیرلیگ]
+  لالیگا: [La Liga, LaLiga, لالیگا]
+  سری_آ: [Serie A, سری آ]
+  بوندسلیگا: [Bundesliga, بوندسلیگا]
+  لوشامپیونه: [Ligue 1, لوشامپیونه, لیگ ۱ فرانسه]
+  لیگ_قهرمانان_اروپا: [Champions League, لیگ قهرمانان اروپا]
+  لیگ_اروپا: [Europa League, لیگ اروپا]
+  لیگ_برتر_ایران: [لیگ برتر ایران, لیگ برتر خلیج فارس, Persian Gulf Pro League]
+  لیگ_نخبگان_آسیا: [AFC Champions League, لیگ نخبگان آسیا, لیگ قهرمانان آسیا]
+  تیم_ملی: [تیم ملی, Team Melli, national team]
+  جام_جهانی: [World Cup, جام جهانی]
+  نقل_و_انتقالات: [transfer, transfers, signs, signing, loan, نقل و انتقالات, قرارداد, جذب, انتقال]
+  مصدومیت: [injury, injured, مصدومیت, مصدوم]
+  سرمربی: [manager, head coach, sacked, سرمربی, برکنار]
+  پرسپولیس: [Persepolis, پرسپولیس]
+  استقلال: [Esteghlal, استقلال]
+  سپاهان: [Sepahan, سپاهان]
+  تراکتور: [Tractor, تراکتور]
+  رئال_مادرید: [Real Madrid, رئال مادرید]
+  بارسلونا: [Barcelona, Barca, بارسلونا, بارسا]
+  اتلتیکو_مادرید: [Atletico, Atlético, اتلتیکو]
+  منچستر_یونایتد: [Manchester United, Man Utd, Man United, منچستر یونایتد, منچستریونایتد]
+  منچستر_سیتی: [Manchester City, Man City, منچستر سیتی, منچسترسیتی]
+  لیورپول: [Liverpool, لیورپول]
+  آرسنال: [Arsenal, آرسنال]
+  چلسی: [Chelsea, چلسی]
+  تاتنهام: [Tottenham, Spurs, تاتنهام]
+  بایرن_مونیخ: [Bayern, بایرن]
+  دورتموند: [Dortmund, دورتموند]
+  یوونتوس: [Juventus, یوونتوس]
+  اینتر: [Inter Milan, Internazionale, اینتر]
+  میلان: [AC Milan, میلان]
+  پاری_سن_ژرمن: [PSG, Paris Saint-Germain, پاری سن ژرمن, پی اس جی]
+  مسی: [Messi, مسی]
+  رونالدو: [Ronaldo, رونالدو]
+  طارمی: [Taremi, طارمی]
+
+sources:
+  # --- English sources (translated to Persian) ---
+  # live blogs, podcasts, quizzes and betting items are skipped
+  - name: BBC Sport
+    feeds: [https://feeds.bbci.co.uk/sport/football/rss.xml]
+    football_only: true
+    exclude: &eng_exclude [live, LIVE, as it happened, podcast, quiz, betting, odds, tips, predictions,
+                           fantasy, FPL, "Football Weekly", minute-by-minute, "Football Daily", gossip column, how to watch]
+  - name: The Guardian
+    feeds: [https://www.theguardian.com/football/rss]
+    football_only: true
+    exclude: *eng_exclude
+  - name: Sky Sports
+    feeds: [https://www.skysports.com/rss/11095]
+    football_only: true
+    exclude: *eng_exclude
+  - name: ESPN
+    feeds: [https://www.espn.com/espn/rss/soccer/news]
+    football_only: true
+    exclude: *eng_exclude
+  - name: Goal
+    feeds: [https://www.goal.com/feeds/en/news]
+    football_only: true
+    exclude: *eng_exclude
+
+  # --- Persian sources ---
+  - name: خبر ورزشی
+    homepage: https://www.khabarvarzeshi.com
+    feeds:
+      - https://www.khabarvarzeshi.com/rss/tp/1      # فوتبال (all football)
+    football_only: true
+
+  - name: خبرگزاری مهر
+    homepage: https://www.mehrnews.com
+    feeds:
+      - https://www.mehrnews.com/rss/tp/24           # فوتبال ایران
+      - https://www.mehrnews.com/rss/tp/30           # فوتبال جهان
+    football_only: true
+
+  - name: ایسنا
+    homepage: https://www.isna.ir
+    feeds:
+      - https://www.isna.ir/rss/tp/119               # فوتبال، فوتسال
+    football_only: true
+
+  - name: ایسنا
+    homepage: https://www.isna.ir
+    feeds:
+      - https://www.isna.ir/rss/tp/125               # جهان ورزش (all sports, filtered)
+    football_only: false
+
+  - name: بی‌بی‌سی فارسی
+    homepage: https://www.bbc.com/persian
+    feeds:
+      - https://feeds.bbci.co.uk/persian/rss.xml     # general news, filtered
+    football_only: false
+
+  # Public Telegram channels from your Football folder (read via t.me/s/<name>).
+  # Other sports, ads, promos and reposts are skipped.
+  # Only a short excerpt + link to the original post is published.
+  - name: کانال‌های تلگرام
+    telegram:
+      - varzesh3
+      - ft360_ir
+      - tarafdari
+      - footballiapp
+      - FootFun2020
+      - FarhikhteganSport
+      - varzeshmediatl
+      - stadium19
+      - takbehtak
+      - NimkatYT
+      - alefball1
+    football_only: true

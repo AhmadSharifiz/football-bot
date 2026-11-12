@@ -1,0 +1,94 @@
+# Ottawa news sources for @ottawanews_fa. English items are translated to Persian.
+# Run the "Post Ottawa news" workflow with "Only test sources" ticked to see which feeds work.
+
+#
+# Not included (checked 2026-11-11): CBC Ottawa (times out from GitHub), CTV Ottawa (feed removed),
+# OttawaMatters (empty feed). Their stories still come in through Bing News below.
+
+# Stories from sources without "local: true" are posted only if they mention one of these.
+keywords: [Ottawa, Ottawan, Ottawans, Gatineau, Kanata, Orléans, Barrhaven, Nepean, Stittsville,
+           Vanier, Westboro, Glebe, ByWard, Centretown, "Riverside South", Manotick,
+           Rockcliffe, Hintonburg, Alta Vista, Hunt Club, Bells Corners, Greely,
+           "OC Transpo", O-Train, "Rideau Canal", "Rideau Centre", "Carleton University",
+           "uOttawa", "Algonquin College", "Ottawa Senators", "Ottawa Redblacks",
+           اتاوا, اوتاوا, گاتینو, کاناتا]
+
+# ...and are dropped if they mention any of these (federal politics, or Ottawa in Kansas/Illinois/Ohio/Michigan).
+exclude: [federal, feds, Carney, Poilievre, Parliament, "Parliament Hill", "House of Commons", "Prime Minister",
+          Liberals, Conservatives, NDP, "Bloc", senator, Senate, cabinet, minister, ministers, Trump,
+          "Canada-U.S.", Washington, diplomat, embassy, ambassador,
+          Kansas, Kan, KS, Illinois, Ohio, Michigan, Iowa, Minnesota, "Ottawa County", "LaSalle County",
+          "Franklin County", Putnam, Chicago, "Kansas City", Topeka, Holland, "Grand Haven",
+          FOX4KC, WDAF, KMBC, KSHB, WGEM, WQAD, WTOL, WGN, "Shaw Local", "Ottawa Herald", "Times Bulletin",
+          "Starved Rock", "MyWebTimes", "Ottawa Times", "Streator", "Peru",
+          "Ottawa Valley", Durham, Halton, Simcoe, "Cornwall Seaway News", "Inside Halton"]
+
+# Summary length per post (characters before translation); long enough to read without opening the link.
+summary_len: 800
+fetch_summary: true
+daily_weather: true     # Persian Ottawa forecast every morning at 6:30 (weather.py)
+# NOT an Ottawa job: Ahmad's weblog -> his PM channel @sharifizcom (English title, summary, link), checked
+# once a night at 20:30 Ottawa time (blog.py). It only lives in this file because this loop runs around the clock.
+blog_feed: {url: "https://asharifi.wordpress.com/feed/", channel: "@sharifizcom", time: "20:30"}
+
+# Hashtags: every post gets the defaults, plus a tag for each topic it mentions.
+default_hashtags: [اخبار_اتاوا]
+hashtags:
+  پلیس: [police, OPS, shooting, stabbing, arrested, charged, crash, collision, پلیس]
+  حمل_و_نقل: [OC Transpo, O-Train, LRT, bus, transit, اتوبوس, قطار شهری]
+  ترافیک: [traffic, road closure, highway, 417, 416, construction, ترافیک]
+  آب_و_هوا: [weather, snow, storm, rain, cold, heat, Environment Canada, برف, هوا]
+  مسکن: [housing, rent, rental, home prices, real estate, apartment, مسکن, اجاره]
+  شهرداری: [city council, councillor, mayor, Sutcliffe, budget, شهردار, شورای شهر]
+  مدارس: [school, OCDSB, OCSB, students, teachers, university, college, مدرسه, دانشگاه]
+  سلامت: [hospital, health, CHEO, Ottawa Hospital, بیمارستان]
+  رویدادها: [festival, event, concert, Winterlude, Bluesfest, جشنواره]
+  ورزش: [Senators, Redblacks, Atlético Ottawa, سناتورز]
+  کسب_و_کار: [business, jobs, company, layoffs, opening, closing, restaurant]
+  گاتینو: [Gatineau, گاتینو]
+  کاناتا: [Kanata, کاناتا]
+  بارهیون: [Barrhaven]
+  اورلئان: [Orléans, Orleans]
+  نپین: [Nepean]
+
+sources:
+  - name: اتاوا سیتیزن
+    feeds:
+      - https://ottawacitizen.com/category/news/local-news/feed
+    local: true
+
+  - name: سیتی‌نیوز اتاوا
+    feeds:
+      - https://ottawa.citynews.ca/feed/
+
+  - name: اتاوا بیزنس ژورنال
+    feeds:
+      - https://obj.ca/feed/
+
+  # "the whole web": Bing News search for local Ottawa stories (real article links + summaries)
+  - name: بینگ نیوز
+    feeds:
+      - "https://www.bing.com/news/search?q=Ottawa+(police+OR+council+OR+%22OC+Transpo%22+OR+Kanata+OR+Barrhaven+OR+Nepean+OR+Orl%C3%A9ans+OR+%22City+of+Ottawa%22+OR+Gatineau)&format=rss&setlang=en-CA&cc=CA&qft=sortbydate%3d%221%22"
+      - "https://www.bing.com/news/search?q=Ottawa&format=rss&setlang=en-CA&cc=CA&qft=sortbydate%3d%221%22"
+
+  # Ottawa-only outlets
+  - name: اتاوا سان
+    feeds:
+      - https://ottawasun.com/category/news/local-news/feed
+    local: true
+
+  - name: کیچیسیپی تایمز
+    feeds:
+      - https://kitchissippi.com/feed/
+    local: true
+
+  # Tested 2026-11-11 and not usable from GitHub: Reddit r/ottawa (blocks GitHub servers, 403),
+  # CBC Ottawa (times out), OttawaMatters (empty), Apt613 (403), Capital Current (times out),
+  # Barrhaven Independent / Manotick Messenger (sites not found).
+
+  # Public Telegram channels from your Ottawa folder (Persian, posted as-is)
+  - name: کانال‌های تلگرام
+    telegram:
+      - pandcommunity
+      - ottawaevents
+    local: true

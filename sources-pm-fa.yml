@@ -1,0 +1,41 @@
+# Daily Persian-language project-management / construction-management digest for @sharifizcom.
+# Persian sources only. "focused: true" sources are about PM/CM already; others must match a keyword in the headline.
+# Tested 2026-11-11, not usable: Civil808 (empty), Civilica (no feed).
+# Iranian sites are often unreachable from GitHub; run "Test project management digest" to see which work.
+
+keywords: [مدیریت پروژه, کنترل پروژه, مدیر پروژه, برنامه ریزی پروژه, زمان بندی, پریماورا, primavera, MSP,
+           PMP, PMBOK, پروژه عمرانی, پروژه های عمرانی, پروژه ساختمانی, عمرانی, پیمانکار, پیمانکاران, پیمانکاری,
+           قرارداد, قراردادهای, ساخت و ساز, صنعت ساختمان, ساختمان سازی, انبوه سازان, مسکن ملی, نهضت ملی مسکن,
+           زیرساخت, BIM, اسکرام, چابک, ریسک پروژه, ارزش کسب شده, مهندسی ارزش, تاخیرات, ادعا, کلیم, EPC]
+
+# dropped if title or summary mentions any of these (job ads, games, entertainment)
+exclude: [استخدام, آگهی, بازی, بازی های, گیم, GTA, فوتبال, فیلم, سریال, موبایل, گوشی, قرعه کشی, خودرو]
+
+sources:
+  # --- Project management (فارسی) ---
+  - name: وبلاگ برنامه ریزی و کنترل پروژه
+    topic: pm
+    focused: true
+    feeds: [https://saeeddarabi64.blogfa.com/rss]
+  - name: مجله فرادرس
+    topic: pm
+    feeds: [https://blog.faradars.org/feed/]
+  - name: مجله مکتب خونه
+    topic: pm
+    feeds: [https://maktabkhooneh.org/mag/feed/]
+  - name: بینگ نیوز
+    topic: pm
+    feeds:
+      - "https://www.bing.com/news/search?q=%22%D9%85%D8%AF%DB%8C%D8%B1%DB%8C%D8%AA+%D9%BE%D8%B1%D9%88%DA%98%D9%87%22+OR+%22%DA%A9%D9%86%D8%AA%D8%B1%D9%84+%D9%BE%D8%B1%D9%88%DA%98%D9%87%22+OR+%22%D8%A8%D8%B1%D9%86%D8%A7%D9%85%D9%87+%D8%B1%DB%8C%D8%B2%DB%8C+%D9%88+%DA%A9%D9%86%D8%AA%D8%B1%D9%84+%D9%BE%D8%B1%D9%88%DA%98%D9%87%22&format=rss&setlang=fa&qft=sortbydate%3d%221%22"
+
+  # --- Construction management (فارسی) ---
+  - name: خبرگزاری مهر
+    topic: cm
+    feeds: [https://www.mehrnews.com/rss/tp/25]
+  - name: ایسنا
+    topic: cm
+    feeds: [https://www.isna.ir/rss/tp/34]
+  - name: بینگ نیوز
+    topic: cm
+    feeds:
+      - "https://www.bing.com/news/search?q=%22%D9%BE%D8%B1%D9%88%DA%98%D9%87+%D8%B9%D9%85%D8%B1%D8%A7%D9%86%DB%8C%22+OR+%22%D9%BE%D8%B1%D9%88%DA%98%D9%87+%D9%87%D8%A7%DB%8C+%D8%B9%D9%85%D8%B1%D8%A7%D9%86%DB%8C%22+OR+%22%D9%BE%DB%8C%D9%85%D8%A7%D9%86%DA%A9%D8%A7%D8%B1%D8%A7%D9%86%22+OR+%22%D8%B5%D9%86%D8%B9%D8%AA+%D8%B3%D8%A7%D8%AE%D8%AA%D9%85%D8%A7%D9%86%22&format=rss&setlang=fa&qft=sortbydate%3d%221%22"

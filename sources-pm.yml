@@ -1,0 +1,94 @@
+# Daily project-management / construction-management digest for @sharifizcom.
+# "topic: pm" or "topic: cm" balances the digest (about half each).
+# Tested 2026-11-11, not usable: Procore Jobsite (empty), BuiltWorlds (undated old posts), On-Site Magazine,
+# Oracle blog (403), Wrike (times out), Atlassian (empty), Autodesk Construction Cloud (403), Fieldwire, BIMplus,
+# Lean Construction Blog, Ron Winter (no feed), Construction Executive, Herding Cats, Digital Project Manager (403),
+# People and Projects podcast (drops connection), PM World Library (empty), Teamwork (no feed).
+# Sources with "focused: true" are about PM/CM already; others must match a keyword in the headline.
+
+keywords: [project, projects, "project management", "project manager", schedule, scheduling, schedules,
+           construction, contractor, contractors, contract, contracts, cost, costs, budget, estimating,
+           estimate, risk, planning, planner, BIM, Primavera, P6, "critical path", CPM, agile, scrum,
+           PMP, stakeholder, stakeholders, delay, delays, claims, infrastructure, megaproject,
+           "earned value", procurement, "lean construction", builder, builders, jobsite, site, owner]
+
+sources:
+  # --- Construction management ---
+  - name: Construction Dive
+    topic: cm
+    focused: true
+    feeds: [https://www.constructiondive.com/feeds/news/]
+  - name: ENR
+    topic: cm
+    focused: true
+    feeds: [https://www.enr.com/rss/articles]
+  - name: For Construction Pros
+    topic: cm
+    focused: true
+    feeds: [https://www.forconstructionpros.com/rss]
+  - name: Global Construction Review
+    topic: cm
+    focused: true
+    feeds: [https://www.globalconstructionreview.com/feed/]
+  - name: Construction News
+    topic: cm
+    focused: true
+    feeds: [https://www.constructionnews.co.uk/feed]
+  - name: AEC Magazine
+    topic: cm
+    focused: true
+    feeds: [https://aecmag.com/feed/]
+  - name: Bing News
+    topic: cm
+    feeds:
+      - "https://www.bing.com/news/search?q=%22construction+project%22+OR+%22construction+industry%22+OR+%22construction+management%22&format=rss&setlang=en-US&qft=sortbydate%3d%221%22"
+
+  - name: Planning Planet
+    topic: cm
+    focused: true
+    feeds: [https://planningplanet.com/rss.xml]
+  - name: Daily Commercial News
+    topic: cm
+    focused: true
+    feeds: [https://canada.constructconnect.com/dcn/feed]
+
+  # --- Project management ---
+  - name: Nader K. Rad
+    topic: pm
+    focused: true
+    feeds: [https://nader.pm/index.xml]
+  - name: Rebel's Guide to PM (Elizabeth Harrin)
+    topic: pm
+    focused: true
+    feeds: [https://rebelsguidetopm.com/feed/]
+  - name: PMWorld 360
+    topic: pm
+    focused: true
+    feeds: [https://www.pmworld360.com/feed/]
+  - name: ProjectManager
+    topic: pm
+    focused: true
+    feeds: [https://www.projectmanager.com/blog/feed]
+  - name: Project Times
+    topic: pm
+    focused: true
+    feeds: [https://www.projecttimes.com/feed/]
+  - name: Mosaic Projects
+    topic: pm
+    focused: true
+    feeds: [https://mosaicprojects.wordpress.com/feed/]
+  - name: Harvard Business Review
+    topic: pm
+    keywords: [project, projects, "project management", "project manager", agile, scrum, "project leaders"]
+    feeds: [http://feeds.hbr.org/harvardbusiness]
+  - name: Plan Academy
+    topic: pm
+    focused: true
+    feeds: [https://www.planacademy.com/feed/]
+  - name: Planview
+    topic: pm
+    feeds: [https://blog.planview.com/feed/]
+  - name: Bing News
+    topic: pm
+    feeds:
+      - "https://www.bing.com/news/search?q=%22project+management%22+OR+%22project+manager%22+OR+%22project+delivery%22&format=rss&setlang=en-US&qft=sortbydate%3d%221%22"

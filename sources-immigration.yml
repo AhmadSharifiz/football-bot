@@ -1,0 +1,112 @@
+# Canada immigration news for @canadaimmigration_fa. English items are translated to Persian.
+# Sources with "local: true" are about Canadian immigration already; others must mention a keyword
+# (in the headline, or anywhere in the post when "match_text: true").
+
+keywords: [IRCC, immigration, immigrant, immigrants, "permanent resident", "permanent residents", "permanent residence",
+           "Express Entry", CRS, "Provincial Nominee", PNP, OINP, BCPNP, AAIP, SINP, MPNP, "work permit", "work permits",
+           "study permit", "study permits", "international student", "international students", PGWP, LMIA,
+           "temporary resident", "temporary residents", "temporary foreign worker", "temporary foreign workers",
+           visa, visas, "visitor visa", "super visa", refugee, refugees, asylum, citizenship, sponsorship, caregiver,
+           caregivers, "Atlantic Immigration", "Start-up Visa", CBSA, deportation, "immigration levels",
+           مهاجرت, مهاجرتی, اقامت, اقامت دائم, ویزا, ویزای, اکسپرس انتری, قرعه کشی, ورک پرمیت, استادی پرمیت,
+           مجوز کار, مجوز تحصیل, پناهندگی, پناهنده, شهروندی, اسپانسرشیپ, دانشجویان بین المللی, پرمیت, PR]
+
+# dropped if they mention any of these (other countries' immigration systems, ads)
+exclude: [USCIS, "green card", "H-1B", Schengen, "UK visa", "Home Office", Australia, "New Zealand",
+          Trump, ICE, GOP, "Border Patrol", "Homeland Security", deportation flights, Norway, Germany, Ireland,
+          تخفیف, ثبت نام وبینار, لینک وبینار, "to make an announcement", "media advisory",
+          # agency ads
+          جهت دریافت اطلاعات, جهت مشاوره, مشاوره رایگان, تماس بگیرید, تماس حاصل, واتساپ, WhatsApp,
+          اخذ انواع, پرداخت هزینه‌ها بعد از, پرداخت هزینه های آن بعد]
+
+# Tested 2026-11-11, not usable: Immigration News Canada (empty feed), @IRCC_Delay_IranianPR (no public posts).
+# Removed at your request: @immigrationiranians (agency ads).
+
+# Telegram posts that share an article link to that article (so duplicates of the same story are caught).
+telegram_external_links: true
+
+# Summary length per post (characters before translation); long enough to read without opening the link.
+summary_len: 900
+
+# Hashtags: every post gets the defaults, plus a tag for each topic it mentions.
+default_hashtags: [مهاجرت_کانادا]
+hashtag_ignore: ["Immigration, Refugees and Citizenship Canada", "Refugees and Citizenship", "مهاجرت، پناهندگان و شهروندی کانادا", "مهاجرت، پناهندگان و شهروندی"]
+hashtags:
+  اکسپرس_انتری: [Express Entry, CRS, اکسپرس انتری, اکسپرس اینتری]
+  قرعه_کشی: [draw, draws, invitations to apply, ITA, قرعه‌کشی, قرعه کشی, دعوت‌نامه]
+  پی_ان_پی: [PNP, Provincial Nominee, OINP, BC PNP, AINP, SINP, MPNP, NLPNP, نامزدی استانی]
+  اقامت_دائم: [permanent residence, permanent resident, PR card, اقامت دائم]
+  ورک_پرمیت: [work permit, PGWP, LMIA, open work permit, ورک پرمیت, مجوز کار]
+  ویزای_تحصیلی: [study permit, international student, international students, ویزای تحصیلی, دانشجو]
+  ویزای_توریستی: [visitor visa, visitor record, eTA, TRV, super visa, ویزای توریستی, سوپر ویزا]
+  اسپانسرشیپ: [sponsorship, sponsor, spousal, family class, parents and grandparents, اسپانسر]
+  شهروندی: [citizenship, citizenship test, oath, شهروندی]
+  پناهندگی: [refugee, refugees, asylum, پناهندگی, پناهجو]
+  آی_آر_سی_سی: [IRCC, "Immigration, Refugees and Citizenship Canada"]
+  سطوح_مهاجرت: [immigration levels, levels plan, سطوح مهاجرت]
+  کبک: [Quebec, Québec, Arrima, کبک]
+  آتلانتیک: [Atlantic Immigration, AIP, Nova Scotia, New Brunswick, PEI, Prince Edward Island, Newfoundland]
+  انتاریو: [Ontario, OINP, انتاریو]
+  بریتیش_کلمبیا: [British Columbia, BC PNP, بریتیش کلمبیا]
+  آلبرتا: [Alberta, AAIP, آلبرتا]
+  زمان_بررسی: [processing time, processing times, backlog, زمان بررسی]
+
+sources:
+  # Official: Immigration, Refugees and Citizenship Canada news releases
+  - name: IRCC
+    feeds:
+      - "https://api.io.canada.ca/io-server/gc/news/en/v2?dept=departmentofcitizenshipandimmigration&sort=publishedDate&orderBy=desc&publishedDate%3E=2021-07-23&pick=50&format=atom&atomtitle=Immigration,%20Refugees%20and%20Citizenship%20Canada"
+    # not "local": the minister's feed also carries budget/tax items, so the headline must be about immigration
+
+  # IRCC notices (policy changes, special measures) - no feed, read from the notices page
+  - name: IRCC
+    page: https://www.canada.ca/en/immigration-refugees-citizenship/news/notices.html
+    pattern: /news/notices/
+    local: true
+
+  # Express Entry rounds of invitations - IRCC's own data behind the rounds page
+  - name: IRCC
+    ee_rounds: https://www.canada.ca/content/dam/ircc/documents/json/ee_rounds_123_en.json
+    local: true
+
+  - name: CIC News
+    feeds: [https://www.cicnews.com/feed]
+    local: true
+
+  - name: Canadim
+    feeds: [https://www.canadim.com/feed/]
+    local: true
+
+  - name: Immigration.ca
+    feeds: [https://www.immigration.ca/feed/]
+    local: true
+
+  - name: Moving2Canada
+    feeds: [https://moving2canada.com/feed/]
+
+  # "the whole web": Bing News searches (headline must match a keyword)
+  - name: Bing News
+    require: [Canada, Canadian, Canadians, IRCC, Ottawa, Ontario, Quebec, "British Columbia", Alberta, Manitoba,
+              Saskatchewan, "Nova Scotia", "New Brunswick", Newfoundland, "Prince Edward Island", PEI, Toronto,
+              Vancouver, Montreal, Calgary, Edmonton, Winnipeg, "Express Entry"]
+    feeds:
+      - "https://www.bing.com/news/search?q=IRCC&format=rss&setlang=en-CA&cc=CA&qft=sortbydate%3d%221%22"
+      - "https://www.bing.com/news/search?q=%22Express+Entry%22+OR+%22Provincial+Nominee+Program%22+OR+%22PNP+draw%22&format=rss&setlang=en-CA&cc=CA&qft=sortbydate%3d%221%22"
+      - "https://www.bing.com/news/search?q=Canada+%22work+permit%22+OR+%22study+permit%22+OR+%22international+students%22+OR+PGWP&format=rss&setlang=en-CA&cc=CA&qft=sortbydate%3d%221%22"
+      - "https://www.bing.com/news/search?q=Canada+immigration+OR+%22permanent+residents%22+OR+%22temporary+residents%22&format=rss&setlang=en-CA&cc=CA&qft=sortbydate%3d%221%22"
+      - "https://www.bing.com/news/search?q=Canada+refugees+OR+asylum+OR+citizenship+OR+%22family+sponsorship%22&format=rss&setlang=en-CA&cc=CA&qft=sortbydate%3d%221%22"
+
+  # Telegram channels (from your Telegram + well-known Persian Canada-immigration channels); only immigration posts
+  - name: کانال‌های تلگرام
+    telegram:
+      - immigratic
+      - Hesam_Kazemi_Immigration_inc
+      - Canada_channel
+      - BehfarCanada
+      - meisamca
+      - Canada_Information
+      - maple_IRCC
+      - irccnewsupdates
+      - canadaimmigrationnews
+    match_text: true
+
