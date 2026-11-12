@@ -1841,7 +1841,12 @@
   "f552156a059e321b",
   "2e3430a5ce0892d3",
   "t:ac0e0ac7bbeb5565",
-  "2e3430a5ce0892d3"
+  "2e3430a5ce0892d3",
+  "2c7a1f00b7477ebe",
+  "t:2be3616c03886f03",
+  "2c7a1f00b7477ebe",
+  "7c2a7dd9c9f4eb19",
+  "t:be25c184acb3db01"
  ],
  "initialized": true,
  "sources": [
@@ -1868,7 +1873,7 @@
   "tg:varzesh3",
   "tg:varzeshmediatl"
  ],
- "last_run": 1794497708.6949735,
+ "last_run": 1794497886.182615,
  "team_fa": {},
  "results_day": "2026-11-11",
  "fixtures_day": "2026-11-12"
