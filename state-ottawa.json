@@ -456,7 +456,27 @@
   "1bac799f84cb82d0",
   "t:219986a01055ce4d",
   "8b4fdbaf6d59d693",
-  "t:6c892ebfb2d023f7"
+  "t:6c892ebfb2d023f7",
+  "172b028fc828d7d7",
+  "t:6d2f6771fb08ca6e",
+  "1928c4601dd2544e",
+  "t:de31b6e7fe5ccfb8",
+  "8d3225077a31bde1",
+  "t:02d626036b422f0b",
+  "72f4e57da2d79236",
+  "t:9babca26bbc2d348",
+  "cd39a47f9a1bbbfa",
+  "t:48d2ed9a2bf8a316",
+  "f5b7ea3929112641",
+  "t:9c2f1d875248f41b",
+  "273653208a4c8c80",
+  "t:9949ac3da9026593",
+  "77b7b26e57ff9f1d",
+  "t:71037ec61baec3fd",
+  "849faf43bc30e415",
+  "t:6e365547cbf89f51",
+  "6b57c229eaacf4ca",
+  "t:b390c8f5560d6cec"
  ],
  "initialized": true,
  "sources": [
@@ -473,7 +493,7 @@
   "tg:ottawaevents",
   "tg:pandcommunity"
  ],
- "last_run": 1794452584.9355922,
+ "last_run": 1794452985.8629854,
  "weather_day": "2026-11-11",
  "blog_seen": [
   "https://asharifi.wordpress.com/2026/08/19/construction-project-management-the-lakeshore-heights-series/",
@@ -488,7 +508,7 @@
   "https://asharifi.wordpress.com/2022/03/30/no-plan-same-result/",
   "https://asharifi.wordpress.com/2026/11/11/dcma-14-point-schedule-check-construction/"
  ],
- "alerts_checked": 1794452569.3117957,
+ "alerts_checked": 1794452809.5400183,
  "alerts_seen": [
   "1718fbba19213ecd"
  ],
