@@ -61,167 +61,32 @@
   "50716767",
   "50717233",
   "50717818",
-  "50719276"
+  "50719276",
+  "50720662",
+  "50719712",
+  "50720214"
  ],
- "last_run": 1794551272.3843446,
+ "last_run": 1794554923.6784801,
  "today": {
-  "date": "2026-11-12",
+  "date": "2026-11-13",
   "jobs": [
    {
-    "title": "Construction Estimator",
-    "city": "Fort St. John, BC",
-    "employer": "Objective Recruiting",
-    "msg": 20
-   },
-   {
-    "title": "Sales Vice-President - Goods Production, Utilities, Transportation And Construction",
-    "city": "Bolton, ON",
-    "employer": "North America Electrical Energy Equipments Co., Ltd",
-    "msg": 25
-   },
-   {
-    "title": "Project Co-Ordinator, Construction",
-    "city": "Edmonton, AB",
-    "employer": "Rushton Gas & Oil Equipment Ltd.",
-    "msg": 26
-   },
-   {
-    "title": "Project Co-Ordinator, Construction",
-    "city": "Sidney, BC",
-    "employer": "Victoria Airport Authority",
-    "msg": 27
-   },
-   {
-    "title": "Engineering Service Project Manager",
-    "city": "Saguenay, QC",
-    "employer": "Groupe Pylium",
-    "msg": 28
-   },
-   {
-    "title": "Project Manager, Construction",
-    "city": "Moose Jaw, SK",
-    "employer": "Defence Construction Canada",
-    "msg": 29
-   },
-   {
-    "title": "Engineering Service Project Manager",
-    "city": "Laval, QC",
-    "employer": "Fed Manutech",
-    "msg": 30
-   },
-   {
-    "title": "Business Development Manager",
-    "city": "Brampton, ON",
-    "employer": "KEX Express (Canada)",
-    "msg": 31
-   },
-   {
-    "title": "Contract Manager",
-    "city": "Longueuil, QC",
-    "employer": "Fed Supply",
-    "msg": 32
-   },
-   {
-    "title": "Construction Site Supervisor",
-    "city": "Surrey, BC",
-    "employer": "JEMESON CONSTRUCTION LTD.",
-    "msg": 33
-   },
-   {
-    "title": "Assistant Project Manager",
-    "city": "Woodbridge, ON",
-    "employer": "DOLE CONTRACTING",
-    "msg": 34
-   },
-   {
-    "title": "Construction Project Manager",
-    "city": "Mount Pearl, NL",
-    "employer": "EnerCon Builders Inc",
-    "msg": 35
-   },
-   {
-    "title": "Estimator, Construction",
-    "city": "Toronto, ON",
-    "employer": "GTA General Contractors",
-    "msg": 36
-   },
-   {
-    "title": "Superintendent, Construction",
-    "city": "Fort St. John, BC",
-    "employer": "Kalmar Construction Ltd",
-    "msg": 37
-   },
-   {
-    "title": "Construction General Manager",
-    "city": "Mississauga, ON",
-    "employer": "Right Choice Builders Inc.",
-    "msg": 39
-   },
-   {
-    "title": "Construction Project Manager",
-    "city": "Rosslyn, ON",
-    "employer": "Smart Modular Canada",
-    "msg": 40
-   },
-   {
-    "title": "Deputy Chief Executive Officer - Goods Production, Utilities, Transportation And Construction",
-    "city": "Montréal, QC",
-    "employer": "Hydro-quebec",
-    "msg": 41
-   },
-   {
-    "title": "IT (Information Technology) Development Manager",
-    "city": "Surrey, BC",
-    "employer": "DCS TECHNOLOGIES INC.",
-    "msg": 42
-   },
-   {
-    "title": "IT (Information Technology) Development Manager",
-    "city": "Sicamous, BC",
-    "employer": "DCS TECHNOLOGIES INC.",
-    "msg": 42
-   },
-   {
-    "title": "Business Development Manager",
-    "city": "Edmonton, AB",
-    "employer": "Florists Supply",
-    "msg": 43
-   },
-   {
     "title": "Planner",
-    "city": "Montréal, QC",
-    "employer": "Kronos Consulting",
-    "msg": 44
+    "city": "Toronto, ON",
+    "employer": "Mercor",
+    "msg": 51
    },
    {
-    "title": "Construction Site Supervisor",
-    "city": "Brampton, ON",
-    "employer": "Zgemi Inc.",
-    "msg": 45
+    "title": "Maintenance Planner",
+    "city": "Québec, QC",
+    "employer": "Société Immobilière Bélanger",
+    "msg": 52
    },
    {
-    "title": "Construction Project Manager",
-    "city": "Winnipeg, MB",
-    "employer": "Vermette Contracting Ltd",
-    "msg": 46
-   },
-   {
-    "title": "Construction Manager",
-    "city": "Mississauga, ON",
-    "employer": "Maple Reinders",
-    "msg": 47
-   },
-   {
-    "title": "Estimator, Construction",
-    "city": "Surrey, BC",
-    "employer": "Cobra Rebar Services Ltd",
-    "msg": 48
-   },
-   {
-    "title": "Cost Engineer",
-    "city": "Ottawa, ON",
-    "employer": "PCL Construction",
-    "msg": 50
+    "title": "Mill Superintendent",
+    "city": "Lévis, QC",
+    "employer": "Acier Bouchard - Québec",
+    "msg": 53
    }
   ]
  },
@@ -372,6 +237,27 @@
    "prov": "ON",
    "low": 82500,
    "high": 123700
+  },
+  {
+   "t": 1794554925.0324647,
+   "role": "Scheduler / Planner",
+   "prov": "ON",
+   "low": 166400,
+   "high": 166400
+  },
+  {
+   "t": 1794554929.0937388,
+   "role": "Scheduler / Planner",
+   "prov": "QC",
+   "low": 70000,
+   "high": 80000
+  },
+  {
+   "t": 1794554933.2228277,
+   "role": "Superintendent",
+   "prov": "QC",
+   "low": 47840,
+   "high": 52000
   }
  ],
  "pairs": {
@@ -399,7 +285,10 @@
   "vermette contracting ltd|construction project manager": 1794522088.0168679,
   "maple reinders|construction manager": 1794525728.8653884,
   "cobra rebar services ltd|estimator, construction": 1794529376.043871,
-  "pcl construction|cost engineer": 1794543989.9222841
+  "pcl construction|cost engineer": 1794543989.9222841,
+  "mercor|planner": 1794554925.032295,
+  "société immobilière bélanger|maintenance planner": 1794554929.0936527,
+  "acier bouchard - québec|mill superintendent": 1794554933.22262
  },
  "news_seen": [
   "t:264755b1702ef5db",
