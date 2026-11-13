@@ -69,9 +69,11 @@
   "50720821",
   "50720822",
   "50721074",
-  "50721094"
+  "50721094",
+  "50721354",
+  "50721384"
  ],
- "last_run": 1794576830.71168,
+ "last_run": 1794580469.0342128,
  "today": {
   "date": "2026-11-13",
   "jobs": [
@@ -122,6 +124,18 @@
     "city": "Lively, ON",
     "employer": "ETC INC",
     "msg": 57
+   },
+   {
+    "title": "Project Manager, Construction",
+    "city": "Bromont, QC",
+    "employer": "Consab International inc.",
+    "msg": 58
+   },
+   {
+    "title": "Crew Scheduler - Aeronautics",
+    "city": "St. John's, NL",
+    "employer": "PAL Airlines",
+    "msg": 59
    }
   ]
  },
@@ -321,6 +335,20 @@
    "prov": "ON",
    "low": 61700,
    "high": 100000
+  },
+  {
+   "t": 1794580470.6372547,
+   "role": "Project Manager",
+   "prov": "QC",
+   "low": 106018,
+   "high": 106018
+  },
+  {
+   "t": 1794580474.8539064,
+   "role": "Scheduler / Planner",
+   "prov": "NL",
+   "low": 49587,
+   "high": 49587
   }
  ],
  "pairs": {
@@ -355,7 +383,9 @@
   "mainland masonry|construction project manager": 1794558563.4106276,
   "peter lucas project management inc.|construction manager": 1794569549.731127,
   "avl construction group inc|estimator, construction": 1794576832.0103507,
-  "etc inc|vfx project manager": 1794576836.1926856
+  "etc inc|vfx project manager": 1794576836.1926856,
+  "consab international inc.|project manager, construction": 1794580470.6368005,
+  "pal airlines|crew scheduler - aeronautics": 1794580474.8538184
  },
  "news_seen": [
   "t:264755b1702ef5db",
@@ -369,7 +399,9 @@
   "t:88237ead68a9c866",
   "t:caa4cb4aac65fa61",
   "t:acb3db3ffd311e30",
-  "t:7b8a3dca69ed58a0"
+  "t:7b8a3dca69ed58a0",
+  "t:e087903a0e1e04cb",
+  "t:dd1f4a66d3396d0c"
  ],
  "summary_day": "2026-11-12"
 }
