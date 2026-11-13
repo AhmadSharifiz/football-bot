@@ -64,9 +64,10 @@
   "50719276",
   "50720662",
   "50719712",
-  "50720214"
+  "50720214",
+  "50720699"
  ],
- "last_run": 1794554923.6784801,
+ "last_run": 1794558562.3376334,
  "today": {
   "date": "2026-11-13",
   "jobs": [
@@ -87,6 +88,12 @@
     "city": "Lévis, QC",
     "employer": "Acier Bouchard - Québec",
     "msg": 53
+   },
+   {
+    "title": "Construction Project Manager",
+    "city": "Langley, BC",
+    "employer": "Mainland Masonry",
+    "msg": 54
    }
   ]
  },
@@ -258,6 +265,13 @@
    "prov": "QC",
    "low": 47840,
    "high": 52000
+  },
+  {
+   "t": 1794558563.4111905,
+   "role": "Project Manager",
+   "prov": "BC",
+   "low": 79040,
+   "high": 93600
   }
  ],
  "pairs": {
@@ -288,7 +302,8 @@
   "pcl construction|cost engineer": 1794543989.9222841,
   "mercor|planner": 1794554925.032295,
   "société immobilière bélanger|maintenance planner": 1794554929.0936527,
-  "acier bouchard - québec|mill superintendent": 1794554933.22262
+  "acier bouchard - québec|mill superintendent": 1794554933.22262,
+  "mainland masonry|construction project manager": 1794558563.4106276
  },
  "news_seen": [
   "t:264755b1702ef5db",
