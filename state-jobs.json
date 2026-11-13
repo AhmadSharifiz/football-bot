@@ -77,9 +77,10 @@
   "50721880",
   "50722091",
   "50722106",
-  "50722173"
+  "50722173",
+  "50722756"
  ],
- "last_run": 1794591408.8630173,
+ "last_run": 1794595073.5951276,
  "today": {
   "date": "2026-11-13",
   "jobs": [
@@ -172,6 +173,12 @@
     "city": "Edmonton, AB",
     "employer": "Victory Homes Ltd",
     "msg": 69
+   },
+   {
+    "title": "Transportation Planner",
+    "city": "Edmonton, AB",
+    "employer": "Invistec Consulting Ltd",
+    "msg": 70
    }
   ]
  },
@@ -413,6 +420,13 @@
    "prov": "AB",
    "low": 95000,
    "high": 110000
+  },
+  {
+   "t": 1794595074.5120013,
+   "role": "Scheduler / Planner",
+   "prov": "AB",
+   "low": 70000,
+   "high": 80000
   }
  ],
  "pairs": {
@@ -454,7 +468,8 @@
   "defence construction canada|construction manager": 1794584117.6554055,
   "centurion fondation|construction general superintendent": 1794591410.434542,
   "jmk constructions|construction project manager": 1794591414.9019876,
-  "victory homes ltd|residential construction manager": 1794591419.1124728
+  "victory homes ltd|residential construction manager": 1794591419.1124728,
+  "invistec consulting ltd|transportation planner": 1794595074.5118454
  },
  "news_seen": [
   "t:264755b1702ef5db",
