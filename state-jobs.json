@@ -71,9 +71,11 @@
   "50721074",
   "50721094",
   "50721354",
-  "50721384"
+  "50721384",
+  "50721499",
+  "50721528"
  ],
- "last_run": 1794580469.0342128,
+ "last_run": 1794584112.5907087,
  "today": {
   "date": "2026-11-13",
   "jobs": [
@@ -136,6 +138,18 @@
     "city": "St. John's, NL",
     "employer": "PAL Airlines",
     "msg": 59
+   },
+   {
+    "title": "Construction Project Coordinator",
+    "city": "Sainte-Adèle, QC",
+    "employer": "Ville de Sainte-Adèle",
+    "msg": 62
+   },
+   {
+    "title": "Construction Manager",
+    "city": "Moose Jaw, SK",
+    "employer": "Defence Construction Canada",
+    "msg": 63
    }
   ]
  },
@@ -349,6 +363,13 @@
    "prov": "NL",
    "low": 49587,
    "high": 49587
+  },
+  {
+   "t": 1794584117.6559489,
+   "role": "Construction Manager",
+   "prov": "SK",
+   "low": 69578,
+   "high": 90451
   }
  ],
  "pairs": {
@@ -385,7 +406,9 @@
   "avl construction group inc|estimator, construction": 1794576832.0103507,
   "etc inc|vfx project manager": 1794576836.1926856,
   "consab international inc.|project manager, construction": 1794580470.6368005,
-  "pal airlines|crew scheduler - aeronautics": 1794580474.8538184
+  "pal airlines|crew scheduler - aeronautics": 1794580474.8538184,
+  "ville de sainte-adèle|construction project coordinator": 1794584113.6761394,
+  "defence construction canada|construction manager": 1794584117.6554055
  },
  "news_seen": [
   "t:264755b1702ef5db",
@@ -401,7 +424,10 @@
   "t:acb3db3ffd311e30",
   "t:7b8a3dca69ed58a0",
   "t:e087903a0e1e04cb",
-  "t:dd1f4a66d3396d0c"
+  "t:dd1f4a66d3396d0c",
+  "t:9a895cc0fd1b3fc1",
+  "t:0b4f2876318f8909",
+  "t:4197350b361ec1eb"
  ],
  "summary_day": "2026-11-12"
 }
