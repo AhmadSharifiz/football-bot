@@ -65,9 +65,11 @@
   "50720662",
   "50719712",
   "50720214",
-  "50720699"
+  "50720699",
+  "50720821",
+  "50720822"
  ],
- "last_run": 1794565862.2335432,
+ "last_run": 1794569548.2618153,
  "today": {
   "date": "2026-11-13",
   "jobs": [
@@ -94,6 +96,18 @@
     "city": "Langley, BC",
     "employer": "Mainland Masonry",
     "msg": 54
+   },
+   {
+    "title": "Construction Manager",
+    "city": "Williams Lake, BC",
+    "employer": "Peter Lucas Project Management Inc.",
+    "msg": 55
+   },
+   {
+    "title": "Construction Manager",
+    "city": "Prince George, BC",
+    "employer": "Peter Lucas Project Management Inc.",
+    "msg": 55
    }
   ]
  },
@@ -272,6 +286,13 @@
    "prov": "BC",
    "low": 79040,
    "high": 93600
+  },
+  {
+   "t": 1794569549.7316134,
+   "role": "Construction Manager",
+   "prov": "BC",
+   "low": 145600,
+   "high": 166400
   }
  ],
  "pairs": {
@@ -303,7 +324,8 @@
   "mercor|planner": 1794554925.032295,
   "société immobilière bélanger|maintenance planner": 1794554929.0936527,
   "acier bouchard - québec|mill superintendent": 1794554933.22262,
-  "mainland masonry|construction project manager": 1794558563.4106276
+  "mainland masonry|construction project manager": 1794558563.4106276,
+  "peter lucas project management inc.|construction manager": 1794569549.731127
  },
  "news_seen": [
   "t:264755b1702ef5db",
