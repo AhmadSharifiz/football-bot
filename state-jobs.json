@@ -59,9 +59,10 @@
   "50716422",
   "50716324",
   "50716767",
-  "50717233"
+  "50717233",
+  "50717818"
  ],
- "last_run": 1794525728.0421574,
+ "last_run": 1794529374.679948,
  "today": {
   "date": "2026-11-12",
   "jobs": [
@@ -208,6 +209,12 @@
     "city": "Mississauga, ON",
     "employer": "Maple Reinders",
     "msg": 47
+   },
+   {
+    "title": "Estimator, Construction",
+    "city": "Surrey, BC",
+    "employer": "Cobra Rebar Services Ltd",
+    "msg": 48
    }
   ]
  },
@@ -344,6 +351,13 @@
    "prov": "ON",
    "low": 120000,
    "high": 145000
+  },
+  {
+   "t": 1794529376.0441012,
+   "role": "Estimator / QS",
+   "prov": "BC",
+   "low": 83699,
+   "high": 93600
   }
  ],
  "pairs": {
@@ -369,7 +383,8 @@
   "kronos consulting|planner": 1794522079.4206157,
   "zgemi inc.|construction site supervisor": 1794522083.7848,
   "vermette contracting ltd|construction project manager": 1794522088.0168679,
-  "maple reinders|construction manager": 1794525728.8653884
+  "maple reinders|construction manager": 1794525728.8653884,
+  "cobra rebar services ltd|estimator, construction": 1794529376.043871
  },
  "news_seen": [
   "t:264755b1702ef5db",
