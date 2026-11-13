@@ -74,9 +74,12 @@
   "50721384",
   "50721499",
   "50721528",
-  "50721880"
+  "50721880",
+  "50722091",
+  "50722106",
+  "50722173"
  ],
- "last_run": 1794587763.2267532,
+ "last_run": 1794591408.8630173,
  "today": {
   "date": "2026-11-13",
   "jobs": [
@@ -151,6 +154,24 @@
     "city": "Moose Jaw, SK",
     "employer": "Defence Construction Canada",
     "msg": 63
+   },
+   {
+    "title": "Construction General Superintendent",
+    "city": "Sainte-Catherine-de-la-Jacques-Cartier, QC",
+    "employer": "Centurion Fondation",
+    "msg": 67
+   },
+   {
+    "title": "Construction Project Manager",
+    "city": "Edmonton, AB",
+    "employer": "JMK Constructions",
+    "msg": 68
+   },
+   {
+    "title": "Residential Construction Manager",
+    "city": "Edmonton, AB",
+    "employer": "Victory Homes Ltd",
+    "msg": 69
    }
   ]
  },
@@ -371,6 +392,27 @@
    "prov": "SK",
    "low": 69578,
    "high": 90451
+  },
+  {
+   "t": 1794591410.4347703,
+   "role": "Superintendent",
+   "prov": "QC",
+   "low": 90000,
+   "high": 90000
+  },
+  {
+   "t": 1794591414.9023612,
+   "role": "Project Manager",
+   "prov": "AB",
+   "low": 100818,
+   "high": 100818
+  },
+  {
+   "t": 1794591419.112558,
+   "role": "Construction Manager",
+   "prov": "AB",
+   "low": 95000,
+   "high": 110000
   }
  ],
  "pairs": {
@@ -409,7 +451,10 @@
   "consab international inc.|project manager, construction": 1794580470.6368005,
   "pal airlines|crew scheduler - aeronautics": 1794580474.8538184,
   "ville de sainte-adèle|construction project coordinator": 1794584113.6761394,
-  "defence construction canada|construction manager": 1794584117.6554055
+  "defence construction canada|construction manager": 1794584117.6554055,
+  "centurion fondation|construction general superintendent": 1794591410.434542,
+  "jmk constructions|construction project manager": 1794591414.9019876,
+  "victory homes ltd|residential construction manager": 1794591419.1124728
  },
  "news_seen": [
   "t:264755b1702ef5db",
