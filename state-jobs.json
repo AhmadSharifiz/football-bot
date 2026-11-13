@@ -81,9 +81,12 @@
   "50722756",
   "50723075",
   "50723214",
-  "50723227"
+  "50723227",
+  "50723637",
+  "50723665",
+  "50723792"
  ],
- "last_run": 1794602375.4937959,
+ "last_run": 1794606015.842192,
  "today": {
   "date": "2026-11-13",
   "jobs": [
@@ -200,6 +203,24 @@
     "city": "Calgary, AB",
     "employer": "Ridgeline Project Management",
     "msg": 73
+   },
+   {
+    "title": "Internal Audit Project Manager",
+    "city": "Vancouver, BC",
+    "employer": "Invictus Accounting",
+    "msg": 74
+   },
+   {
+    "title": "Marketing Project Manager",
+    "city": "Alma, QC",
+    "employer": "Société d'histoire du lac-st-jean inc.",
+    "msg": 75
+   },
+   {
+    "title": "Estimator, Construction",
+    "city": "Surrey, BC",
+    "employer": "Allteck Limited Partnership",
+    "msg": 76
    }
   ]
  },
@@ -469,6 +490,27 @@
    "prov": "AB",
    "low": 83200,
    "high": 83200
+  },
+  {
+   "t": 1794606017.1480148,
+   "role": "Project Manager",
+   "prov": "BC",
+   "low": 90000,
+   "high": 140000
+  },
+  {
+   "t": 1794606021.1255205,
+   "role": "Project Manager",
+   "prov": "QC",
+   "low": 46197,
+   "high": 46197
+  },
+  {
+   "t": 1794606025.2294476,
+   "role": "Estimator / QS",
+   "prov": "BC",
+   "low": 130000,
+   "high": 160000
   }
  ],
  "pairs": {
@@ -514,7 +556,10 @@
   "invistec consulting ltd|transportation planner": 1794595074.5118454,
   "village of masset|public works superintendent": 1794598732.6295562,
   "city homemakers service society|scheduler - transit system": 1794598736.4460115,
-  "ridgeline project management|construction site supervisor": 1794598740.3095624
+  "ridgeline project management|construction site supervisor": 1794598740.3095624,
+  "invictus accounting|internal audit project manager": 1794606017.1477315,
+  "société d'histoire du lac-st-jean inc.|marketing project manager": 1794606021.12543,
+  "allteck limited partnership|estimator, construction": 1794606025.2293966
  },
  "news_seen": [
   "t:264755b1702ef5db",
