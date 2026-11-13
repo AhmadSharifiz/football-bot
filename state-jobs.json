@@ -84,9 +84,14 @@
   "50723227",
   "50723637",
   "50723665",
-  "50723792"
+  "50723792",
+  "50724086",
+  "50724037",
+  "50724107",
+  "50724137",
+  "50724116"
  ],
- "last_run": 1794606015.842192,
+ "last_run": 1794609655.972901,
  "today": {
   "date": "2026-11-13",
   "jobs": [
@@ -221,6 +226,36 @@
     "city": "Surrey, BC",
     "employer": "Allteck Limited Partnership",
     "msg": 76
+   },
+   {
+    "title": "Construction Project Manager",
+    "city": "Calgary, AB",
+    "employer": "Allteck Limited Partnership",
+    "msg": 77
+   },
+   {
+    "title": "Construction Project Manager",
+    "city": "Saskatoon, SK",
+    "employer": "Allteck Limited Partnership",
+    "msg": 77
+   },
+   {
+    "title": "Construction Project Manager",
+    "city": "Surrey, BC",
+    "employer": "Allteck Limited Partnership",
+    "msg": 77
+   },
+   {
+    "title": "Production Planner",
+    "city": "Kitchener, ON",
+    "employer": "Strassburger Windows & Doors",
+    "msg": 78
+   },
+   {
+    "title": "Estimator, Construction",
+    "city": "Regina, SK",
+    "employer": "Hipperson Construction",
+    "msg": 79
    }
   ]
  },
@@ -511,6 +546,27 @@
    "prov": "BC",
    "low": 130000,
    "high": 160000
+  },
+  {
+   "t": 1794609656.723996,
+   "role": "Project Manager",
+   "prov": "BC",
+   "low": 160000,
+   "high": 175000
+  },
+  {
+   "t": 1794609660.4334395,
+   "role": "Scheduler / Planner",
+   "prov": "ON",
+   "low": 55000,
+   "high": 65000
+  },
+  {
+   "t": 1794609664.2320037,
+   "role": "Estimator / QS",
+   "prov": "SK",
+   "low": 52324,
+   "high": 115368
   }
  ],
  "pairs": {
@@ -559,7 +615,10 @@
   "ridgeline project management|construction site supervisor": 1794598740.3095624,
   "invictus accounting|internal audit project manager": 1794606017.1477315,
   "société d'histoire du lac-st-jean inc.|marketing project manager": 1794606021.12543,
-  "allteck limited partnership|estimator, construction": 1794606025.2293966
+  "allteck limited partnership|estimator, construction": 1794606025.2293966,
+  "allteck limited partnership|construction project manager": 1794609656.7235289,
+  "strassburger windows & doors|production planner": 1794609660.4333663,
+  "hipperson construction|estimator, construction": 1794609664.2319279
  },
  "news_seen": [
   "t:264755b1702ef5db",
