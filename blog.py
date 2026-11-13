@@ -1,8 +1,8 @@
 """
 New weblog post -> Telegram (English: title, summary, link).
 Called from bot.py when the sources file has a `blog_feed:` block, e.g.
-  blog_feed: {url: "https://asharifi.wordpress.com/feed/", channel: "@sharifizcom"}
-Checks once a night at 8:30 PM (Ottawa time) and posts each new article once. Existing articles are never re-posted.
+  blog_feed: {url: "https://asharifi.wordpress.com/feed/", channel: "@sharifizcom", times: ["20:02", "09:02"]}
+Checks twice a day, 8:02 PM and 9:02 AM (Ottawa time), and posts each new article once. Existing articles are never re-posted.
 """
 import html
 import re
@@ -49,11 +49,11 @@ def format_post(e, channel):
 
 
 def run(state, token, cfg):
-    """Checks the blog once a night at cfg["time"] (Ottawa time) and posts any new article.
-    If tonight's article isn't out yet at 8:30, it looks again every 15 minutes until 11 PM."""
+    """Checks the blog at each time in cfg["times"] (Ottawa time, default 20:02 and 09:02) and posts any article
+    not posted yet. If nothing new is out at check time, it looks again every 15 minutes for up to 3 hours."""
     url, channel = cfg["url"], cfg["channel"]
+    times = cfg.get("times") or [cfg.get("time", "20:02")]
     now = datetime.now(TZ)
-    h, m = map(int, cfg.get("time", "20:30").split(":"))
     today = str(now.date())
     if "blog_seen" not in state:  # first run (any time of day): articles already on the blog count as posted
         entries = bot.fetch_feed(url)
@@ -61,7 +61,11 @@ def run(state, token, cfg):
             state["blog_seen"] = [e.get("link", "") for e in entries]
             bot.log(f"blog: {len(entries)} existing posts marked as seen")
         return
-    if (now.hour, now.minute) < (h, m) or now.hour >= 23 or state.get("blog_day") == today:
+    done = state.setdefault("blog_done", {})  # check time -> date it found and posted something
+    mins = now.hour * 60 + now.minute
+    active = [t for t in times
+              if 0 <= mins - (int(t[:2]) * 60 + int(t[3:])) < 180 and done.get(t) != today]
+    if not active:
         return
     if time.time() - state.get("blog_checked", 0) < 900:
         return
@@ -77,7 +81,8 @@ def run(state, token, cfg):
             bot.log(f"blog posted: {e.get('title', '')[:80]}")
             time.sleep(2)
     if new:
-        state["blog_day"] = today  # done for tonight
+        for t in active:
+            done[t] = today  # done for this check time today
     state["blog_seen"] = state["blog_seen"][-200:]
 
 

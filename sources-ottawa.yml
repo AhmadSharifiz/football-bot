@@ -29,8 +29,8 @@ fetch_summary: true
 daily_weather: true     # Persian Ottawa forecast every morning at 6:30 (weather.py)
 ottawa_alerts: true     # instant alerts (alerts.py): EC weather warnings, City parking bans/advisories, school bus cancellations
 # NOT an Ottawa job: Ahmad's weblog -> his PM channel @sharifizcom (English title, summary, link), checked
-# once a night at 20:30 Ottawa time (blog.py). It only lives in this file because this loop runs around the clock.
-blog_feed: {url: "https://asharifi.wordpress.com/feed/", channel: "@sharifizcom", time: "20:30"}
+# twice a day, 20:02 and 09:02 Ottawa time, (blog.py). It only lives in this file because this loop runs around the clock.
+blog_feed: {url: "https://asharifi.wordpress.com/feed/", channel: "@sharifizcom", times: ["20:02", "09:02"]}
 
 # Hashtags: every post gets the defaults, plus a tag for each topic it mentions.
 default_hashtags: [اخبار_اتاوا]
