@@ -60,9 +60,10 @@
   "50716324",
   "50716767",
   "50717233",
-  "50717818"
+  "50717818",
+  "50719276"
  ],
- "last_run": 1794540319.3674648,
+ "last_run": 1794543989.1658955,
  "today": {
   "date": "2026-11-12",
   "jobs": [
@@ -215,6 +216,12 @@
     "city": "Surrey, BC",
     "employer": "Cobra Rebar Services Ltd",
     "msg": 48
+   },
+   {
+    "title": "Cost Engineer",
+    "city": "Ottawa, ON",
+    "employer": "PCL Construction",
+    "msg": 50
    }
   ]
  },
@@ -358,6 +365,13 @@
    "prov": "BC",
    "low": 83699,
    "high": 93600
+  },
+  {
+   "t": 1794543989.922702,
+   "role": "Project Controls",
+   "prov": "ON",
+   "low": 82500,
+   "high": 123700
   }
  ],
  "pairs": {
@@ -384,7 +398,8 @@
   "zgemi inc.|construction site supervisor": 1794522083.7848,
   "vermette contracting ltd|construction project manager": 1794522088.0168679,
   "maple reinders|construction manager": 1794525728.8653884,
-  "cobra rebar services ltd|estimator, construction": 1794529376.043871
+  "cobra rebar services ltd|estimator, construction": 1794529376.043871,
+  "pcl construction|cost engineer": 1794543989.9222841
  },
  "news_seen": [
   "t:264755b1702ef5db",
