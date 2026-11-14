@@ -4343,7 +4343,9 @@
   "4403e2e9f11356eb",
   "t:f72aa9d44f2c2ca3",
   "1a55f5f4eef82dc2",
-  "t:489a3a8b8c5f466f"
+  "t:489a3a8b8c5f466f",
+  "b94873063dc59f7b",
+  "t:d6d6f0ec67d396c1"
  ],
  "initialized": true,
  "sources": [
@@ -4371,7 +4373,7 @@
   "tg:varzesh3",
   "tg:varzeshmediatl"
  ],
- "last_run": 1794671452.9233253,
+ "last_run": 1794671633.8443184,
  "team_fa": {},
  "results_day": "2026-11-11",
  "fixtures_day": "2026-11-12"
