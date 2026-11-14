@@ -92,9 +92,10 @@
   "50724116",
   "50724574",
   "50724544",
-  "50724384"
+  "50724384",
+  "50725735"
  ],
- "last_run": 1794627909.5927289,
+ "last_run": 1794631774.1815617,
  "today": {
   "date": "2026-11-13",
   "jobs": [
@@ -271,6 +272,12 @@
     "city": "Nanaimo, BC",
     "employer": "NOOR CONTRUCTION INC",
     "msg": 81
+   },
+   {
+    "title": "Business Development Manager",
+    "city": "Burnaby, BC",
+    "employer": "Maple Reinders",
+    "msg": 83
    }
   ]
  },
@@ -596,6 +603,13 @@
    "prov": "BC",
    "low": 94994,
    "high": 94994
+  },
+  {
+   "t": 1794631790.0214837,
+   "role": "Project Manager",
+   "prov": "BC",
+   "low": 120000,
+   "high": 160000
   }
  ],
  "pairs": {
@@ -649,7 +663,8 @@
   "strassburger windows & doors|production planner": 1794609660.4333663,
   "hipperson construction|estimator, construction": 1794609664.2319279,
   "highbridge human capital|construction estimator": 1794613310.42521,
-  "noor contruction inc|construction manager": 1794613314.612488
+  "noor contruction inc|construction manager": 1794613314.612488,
+  "maple reinders|business development manager": 1794631790.0210426
  },
  "news_seen": [
   "t:264755b1702ef5db",
