@@ -94,9 +94,10 @@
   "50724544",
   "50724384",
   "50725735",
-  "50728084"
+  "50728084",
+  "50728614"
  ],
- "last_run": 1794681760.28203,
+ "last_run": 1794685841.927068,
  "today": {
   "date": "2026-11-14",
   "jobs": [
@@ -105,6 +106,12 @@
     "city": "North York, ON",
     "employer": "SolutionStack",
     "msg": 84
+   },
+   {
+    "title": "Construction Contract Administrator",
+    "city": "Delta, BC",
+    "employer": "A-Z ELECTRICAL SERVICES LTD",
+    "msg": 85
    }
   ]
  },
@@ -444,6 +451,13 @@
    "prov": "ON",
    "low": 119309,
    "high": 119309
+  },
+  {
+   "t": 1794685857.4710152,
+   "role": "Contract Administrator",
+   "prov": "BC",
+   "low": 80080,
+   "high": 80080
   }
  ],
  "pairs": {
@@ -499,7 +513,8 @@
   "highbridge human capital|construction estimator": 1794613310.42521,
   "noor contruction inc|construction manager": 1794613314.612488,
   "maple reinders|business development manager": 1794631790.0210426,
-  "solutionstack|system integration project manager": 1794677837.854479
+  "solutionstack|system integration project manager": 1794677837.854479,
+  "a-z electrical services ltd|construction contract administrator": 1794685857.4706702
  },
  "news_seen": [
   "t:264755b1702ef5db",
