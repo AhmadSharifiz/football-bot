@@ -96,29 +96,18 @@
   "50725735",
   "50728084",
   "50728614",
-  "50725856"
+  "50725856",
+  "50731628"
  ],
- "last_run": 1794740651.9655035,
+ "last_run": 1794744325.5416071,
  "today": {
-  "date": "2026-11-14",
+  "date": "2026-11-15",
   "jobs": [
    {
-    "title": "System Integration Project Manager",
-    "city": "North York, ON",
-    "employer": "SolutionStack",
-    "msg": 84
-   },
-   {
-    "title": "Construction Contract Administrator",
-    "city": "Delta, BC",
-    "employer": "A-Z ELECTRICAL SERVICES LTD",
-    "msg": 85
-   },
-   {
-    "title": "Engineering Service Project Manager",
-    "city": "Toronto, ON",
-    "employer": "Bell Canada",
-    "msg": 87
+    "title": "Industrial Engineering Project Manager",
+    "city": "Berthierville, QC",
+    "employer": "Savico Labrador Métal Works",
+    "msg": 88
    }
   ]
  },
@@ -472,6 +461,13 @@
    "prov": "ON",
    "low": 92394,
    "high": 221000
+  },
+  {
+   "t": 1794744326.6153383,
+   "role": "Project / Site Engineer",
+   "prov": "QC",
+   "low": 90000,
+   "high": 105000
   }
  ],
  "pairs": {
@@ -529,7 +525,8 @@
   "maple reinders|business development manager": 1794631790.0210426,
   "solutionstack|system integration project manager": 1794677837.854479,
   "a-z electrical services ltd|construction contract administrator": 1794685857.4706702,
-  "bell canada|engineering service project manager": 1794713562.708212
+  "bell canada|engineering service project manager": 1794713562.708212,
+  "savico labrador métal works|industrial engineering project manager": 1794744326.6149566
  },
  "news_seen": [
   "t:264755b1702ef5db",
