@@ -50,7 +50,8 @@ def format_post(e, channel):
 
 def run(state, token, cfg):
     """Checks the blog at each time in cfg["times"] (Ottawa time, default 20:02 and 09:02) and posts any article
-    not posted yet. If nothing new is out at check time, it looks again every 15 minutes for up to 3 hours."""
+    not posted yet, then keeps looking every 15 minutes for 3 hours, so a second article published later that
+    evening (or morning) is posted too."""
     url, channel = cfg["url"], cfg["channel"]
     times = cfg.get("times") or [cfg.get("time", "20:02")]
     now = datetime.now(TZ)
@@ -61,11 +62,9 @@ def run(state, token, cfg):
             state["blog_seen"] = [e.get("link", "") for e in entries]
             bot.log(f"blog: {len(entries)} existing posts marked as seen")
         return
-    done = state.setdefault("blog_done", {})  # check time -> date it found and posted something
     mins = now.hour * 60 + now.minute
-    active = [t for t in times
-              if 0 <= mins - (int(t[:2]) * 60 + int(t[3:])) < 180 and done.get(t) != today]
-    if not active:
+    active = [t for t in times if 0 <= mins - (int(t[:2]) * 60 + int(t[3:])) < 180]
+    if not active:  # outside the 3-hour window after each check time
         return
     if time.time() - state.get("blog_checked", 0) < 900:
         return
@@ -80,9 +79,6 @@ def run(state, token, cfg):
             state["blog_seen"].append(e["link"])
             bot.log(f"blog posted: {e.get('title', '')[:80]}")
             time.sleep(2)
-    if new:
-        for t in active:
-            done[t] = today  # done for this check time today
     state["blog_seen"] = state["blog_seen"][-200:]
 
 
