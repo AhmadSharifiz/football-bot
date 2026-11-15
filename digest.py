@@ -1,12 +1,17 @@
 """
-Daily project-management / construction-management digest.
-Once a day (after POST_TIME, Ottawa time) posts ONE message with up to 10 English articles:
+Weekly project-management / construction-management digest.
+Once a week (POST_DAY at POST_TIME, Ottawa time) posts up to 10 English articles from the past 7 days:
 Persian title (linked) + short Persian summary + source.
+Only articles squarely about project management or the construction industry are used: every headline must
+contain a core PM/CM term, noise (stock news, people moves, product launches, crime...) is dropped, and the
+most relevant articles of the week are picked first.
 
-Env: TELEGRAM_BOT_TOKEN, DIGEST_CHANNEL (default @sharifizcom), POST_TIME (default 07:30)
-Usage: python digest.py          post if it's time and today's digest hasn't gone out
+Env: TELEGRAM_BOT_TOKEN, DIGEST_CHANNEL (default @sharifizcom), POST_DAY (0=Mon .. 5=Sat, default 5),
+     POST_TIME (default 08:00)
+Usage: python digest.py          post if it's time and this week's digest hasn't gone out
        python digest.py --check  test every source and print a sample digest, post nothing
 """
+import re
 import html
 import json
 import os
@@ -24,13 +29,14 @@ import yaml
 ROOT = Path(__file__).parent
 STATE_FILE = ROOT / os.environ.get("DIGEST_STATE", "state-pm.json")
 SOURCES_FILE = ROOT / os.environ.get("DIGEST_SOURCES", "sources-pm.yml")
-TITLE = os.environ.get("DIGEST_TITLE", "خلاصه روزانه مدیریت پروژه و مدیریت ساخت")
+TITLE = os.environ.get("DIGEST_TITLE", "خلاصه هفتگی مدیریت پروژه و مدیریت ساخت")
 CHANNEL = os.environ.get("DIGEST_CHANNEL", "@sharifizcom")
-POST_TIME = os.environ.get("POST_TIME", "07:30")
+POST_TIME = os.environ.get("POST_TIME", "08:00")
+POST_DAY = int(os.environ.get("POST_DAY", "5"))  # Saturday: start of the work week in Iran, weekend in Canada
 TZ = ZoneInfo("America/Toronto")
 ITEMS = 10
 PER_SOURCE = 2
-MAX_AGE_DAYS = int(os.environ.get("DIGEST_MAX_AGE", "14"))
+MAX_AGE_DAYS = int(os.environ.get("DIGEST_MAX_AGE", "7"))
 SUMMARY_LEN = int(os.environ.get("DIGEST_SUMMARY_LEN", "750"))
 LIMIT = 4000  # Telegram allows 4096 characters per message
 
@@ -77,6 +83,32 @@ def save_state(state):
     STATE_FILE.write_text(json.dumps(state, ensure_ascii=False, indent=1), encoding="utf-8")
 
 
+# The headline must contain one of these (whole words / phrases), whatever the source.
+CORE = re.compile(r"\b(project management|project manager|project managers|project delivery|project planning|"
+                  r"project controls?|construction management|construction manager|construction project|"
+                  r"construction industry|construction sector|construction firms?|construction companies|"
+                  r"construction costs?|construction productivity|construction technology|contech|"
+                  r"general contractors?|subcontractors?|contractors?|schedul\w*|critical path|cpm|primavera|p6|"
+                  r"earned value|evm|cost control|cost estimat\w*|estimating|risk management|"
+                  r"contract management|claims?|delays?|change orders?|procurement|bim|lean construction|"
+                  r"last planner|wbs|work breakdown|baseline|megaprojects?|pmp|pmbok|prince2|agile|scrum|"
+                  r"stakeholders?|design-build|ipd|commissioning|closeout|handover|pmo|portfolio management|"
+                  r"program management|infrastructure projects?|jobsite|job site)\b", re.I)
+# Dropped even if they match: market/stock news, people moves, products, events, crime, adverts.
+NOISE = re.compile(r"\b(stocks?|shares|earnings|revenue|quarter(ly)?|q[1-4]|ipo|acquires?|acquisition|merger|"
+                   r"appoint\w*|names new|hires|joins|promoted|obituar\w*|dies|award\w*|webinar|podcast|"
+                   r"sponsored|giveaway|discount|launch(es|ed)?|unveils?|new product|truck|excavator|loader|"
+                   r"tractor|equipment review|sentenced|charged|arrest\w*|police|fraud|lawsuit filed|"
+                   r"election|vote|tariffs?|recipe|horoscope)\b", re.I)
+
+
+def relevance(e):
+    """Higher = more squarely about PM/CM. Headline matches count 3x the summary's."""
+    title = e.get("title", "") or ""
+    summary = re.sub(r"<[^>]+>", " ", e.get("summary", "") or "")
+    return 3 * len(CORE.findall(title)) + len(CORE.findall(summary[:1500]))
+
+
 def collect():
     cfg = yaml.safe_load(SOURCES_FILE.read_text(encoding="utf-8"))
     words = cfg.get("keywords", [])
@@ -101,12 +133,13 @@ def collect():
                 ts = time.mktime(t)
                 if now - ts > MAX_AGE_DAYS * 86400:
                     continue
-                if not src.get("focused") and not bot.mentions_any(e.get("title", ""), src.get("keywords", words)):
-                    continue
-                if exclude and bot.mentions_any(f"{e.get('title', '')} {e.get('summary', '')}", exclude):
+                title = e.get("title", "") or ""
+                if not CORE.search(title) or NOISE.search(title):
+                    continue  # every source, even a PM/CM site, must have a core term in the headline
+                if exclude and bot.mentions_any(f"{title} {e.get('summary', '')}", exclude):
                     continue
                 items.append({"src": label, "feed": src["name"], "topic": src.get("topic", "pm"),
-                              "e": e, "ts": ts})
+                              "e": e, "ts": ts, "score": relevance(e)})
                 kept += 1
             log(f"   {src['name']:<34} items={len(entries):<3} kept={kept}  {url[:70]}")
     return items
@@ -115,7 +148,7 @@ def collect():
 def pick(items, seen):
     fresh = [x for x in items
              if bot.item_key(x["e"]) not in seen and bot.title_key(x["e"].get("title", "")) not in seen]
-    fresh.sort(key=lambda x: -x["ts"])
+    fresh.sort(key=lambda x: (-x["score"], -x["ts"]))  # most relevant first, then newest
     chosen, per_src, titles = [], {}, set()
     for topic in ("cm", "pm", "cm", "pm", "cm", "pm", "cm", "pm", "cm", "pm") * 3:
         if len(chosen) >= ITEMS:
@@ -176,10 +209,13 @@ def item_link(e):
 
 def render(chosen, today):
     """Returns (list of message texts, items used). Splits into several messages if over Telegram's limit."""
+    from datetime import timedelta
     jy, jm, jd = jalali(today)
+    sy, sm, sd = jalali(today - timedelta(days=6))
+    start = f"{fa(sd)} {MONTHS[sm - 1]}" + (f" {fa(sy)}" if sy != jy else "")
     head = (f"📊 <b>{TITLE}</b>\n"
-            f"🗓 {fa(jd)} {MONTHS[jm - 1]} {fa(jy)}\n")
-    foot = "@sharifizcom\n#مدیریت_پروژه #مدیریت_ساخت #کنترل_پروژه"
+            f"🗓 هفته {start} تا {fa(jd)} {MONTHS[jm - 1]} {fa(jy)}\n")
+    foot = "@sharifizcom\n#خلاصه_هفتگی #مدیریت_پروژه #مدیریت_ساخت #کنترل_پروژه"
     blocks = []
     for x in chosen:
         e = x["e"]
@@ -225,16 +261,17 @@ def main():
     now = datetime.now(TZ)
     today = now.date().isoformat()
     state = load_state()
+    week = now.strftime("%G-W%V")
     if not check:
         hh, mm = map(int, POST_TIME.split(":"))
-        if state.get("last_date") == today or (now.hour, now.minute) < (hh, mm):
+        if now.weekday() != POST_DAY or state.get("last_week") == week or (now.hour, now.minute) < (hh, mm):
             return
     log("-- project management digest")
     items = collect()
     log(f"candidates: {len(items)}")
     chosen = pick(items, set(state["seen"]))
     if not chosen:
-        log("nothing new today")
+        log("nothing new this week")
         return
     texts, used = render(chosen, now.date())
     if check:
@@ -244,7 +281,7 @@ def main():
             log(f"\nsample message ({len(t)} chars):\n{t}")
         return
     if len(used) < 3:
-        log("fewer than 3 items, skipping today")
+        log("fewer than 3 items, skipping this week")
         return
     for t in texts:
         r = bot.requests.post(
@@ -262,6 +299,7 @@ def main():
     for x in used:
         state["seen"] += [bot.item_key(x["e"]), bot.title_key(x["e"].get("title", ""))]
     state["last_date"] = today
+    state["last_week"] = week
     save_state(state)
     log(f"digest posted to {CHANNEL}: {len(used)} items")
 
