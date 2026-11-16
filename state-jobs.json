@@ -99,23 +99,18 @@
   "50725856",
   "50731628",
   "50737086",
-  "50737473"
+  "50737473",
+  "50737776"
  ],
- "last_run": 1794812193.7105052,
+ "last_run": 1794815859.3051612,
  "today": {
-  "date": "2026-11-15",
+  "date": "2026-11-16",
   "jobs": [
    {
-    "title": "Industrial Engineering Project Manager",
-    "city": "Berthierville, QC",
-    "employer": "Savico Labrador Métal Works",
-    "msg": 88
-   },
-   {
-    "title": "Housing Construction Manager",
-    "city": "Fort Saskatchewan, AB Sherwood Park, AB",
-    "employer": "Super Homes",
-    "msg": 91
+    "title": "Cost Engineer",
+    "city": "Richmond, BC",
+    "employer": "PCL Construction",
+    "msg": 92
    }
   ]
  },
@@ -483,12 +478,16 @@
    "prov": "AB",
    "low": 100880,
    "high": 100880
+  },
+  {
+   "t": 1794815860.2365286,
+   "role": "Project Controls",
+   "prov": "BC",
+   "low": 95000,
+   "high": 120000
   }
  ],
  "pairs": {
-  "mercor|planner": 1794554925.032295,
-  "société immobilière bélanger|maintenance planner": 1794554929.0936527,
-  "acier bouchard - québec|mill superintendent": 1794554933.22262,
   "mainland masonry|construction project manager": 1794558563.4106276,
   "peter lucas project management inc.|construction manager": 1794569549.731127,
   "avl construction group inc|estimator, construction": 1794576832.0103507,
@@ -517,7 +516,8 @@
   "a-z electrical services ltd|construction contract administrator": 1794685857.4706702,
   "bell canada|engineering service project manager": 1794713562.708212,
   "savico labrador métal works|industrial engineering project manager": 1794744326.6149566,
-  "super homes|housing construction manager": 1794800500.4733472
+  "super homes|housing construction manager": 1794800500.4733472,
+  "pcl construction|cost engineer": 1794815860.2361772
  },
  "news_seen": [
   "t:264755b1702ef5db",
