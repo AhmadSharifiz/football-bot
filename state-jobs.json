@@ -113,9 +113,11 @@
   "50739860",
   "50740209",
   "50740272",
-  "50740435"
+  "50740435",
+  "50740482",
+  "50740618"
  ],
- "last_run": 1794852756.7908227,
+ "last_run": 1794857400.2565482,
  "today": {
   "date": "2026-11-16",
   "jobs": [
@@ -202,6 +204,18 @@
     "city": "Amherst, NS",
     "employer": "Town of Amherst",
     "msg": 110
+   },
+   {
+    "title": "Construction Project Manager",
+    "city": "Toronto, ON",
+    "employer": "SQUAREINCH CONTRACTORS LTD.",
+    "msg": 112
+   },
+   {
+    "title": "Construction Project Coordinator",
+    "city": "Lévis, QC",
+    "employer": "Société de transport de Lévis",
+    "msg": 113
    }
   ]
  },
@@ -653,10 +667,23 @@
    "prov": "NS",
    "low": 74595,
    "high": 86476
+  },
+  {
+   "t": 1794857401.6878097,
+   "role": "Project Manager",
+   "prov": "ON",
+   "low": 114400,
+   "high": 135200
+  },
+  {
+   "t": 1794857405.5601053,
+   "role": "Project Coordinator",
+   "prov": "QC",
+   "low": 93704,
+   "high": 122117
   }
  ],
  "pairs": {
-  "invistec consulting ltd|transportation planner": 1794595074.5118454,
   "village of masset|public works superintendent": 1794598732.6295562,
   "city homemakers service society|scheduler - transit system": 1794598736.4460115,
   "ridgeline project management|construction site supervisor": 1794598740.3095624,
@@ -687,7 +714,9 @@
   "remi bouchard inc.|electrical estimator - construction": 1794852757.632704,
   "atc developments ltd|construction estimator": 1794852761.463116,
   "city of kamloops|construction project manager": 1794852765.365678,
-  "town of amherst|land use planner": 1794852769.106975
+  "town of amherst|land use planner": 1794852769.106975,
+  "squareinch contractors ltd.|construction project manager": 1794857401.6874702,
+  "société de transport de lévis|construction project coordinator": 1794857405.5600467
  },
  "news_seen": [
   "t:264755b1702ef5db",
