@@ -767,7 +767,9 @@
   "0b47d4a7ab1546f0",
   "t:cc49a2b97220208b",
   "397a21c3b3990735",
-  "t:1a29667a2ceff362"
+  "t:1a29667a2ceff362",
+  "be5dcf461232fe90",
+  "t:8037e03c7f444734"
  ],
  "initialized": true,
  "sources": [
@@ -784,7 +786,7 @@
   "tg:ottawaevents",
   "tg:pandcommunity"
  ],
- "last_run": 1794788068.0882185,
+ "last_run": 1794788436.9509108,
  "weather_day": "2026-11-15",
  "blog_seen": [
   "https://asharifi.wordpress.com/2026/08/19/construction-project-management-the-lakeshore-heights-series/",
@@ -804,7 +806,7 @@
   "https://asharifi.wordpress.com/2026/11/14/time-impact-analysis-step-by-step/",
   "https://asharifi.wordpress.com/2026/11/14/project-scheduling-rules-19-tests-pmi-dod/"
  ],
- "alerts_checked": 1794788061.5665324,
+ "alerts_checked": 1794788302.0680122,
  "alerts_seen": [
   "1718fbba19213ecd",
   "33aa87996f76a250",
