@@ -118,9 +118,12 @@
   "50740618",
   "50740955",
   "50740972",
-  "50741164"
+  "50741164",
+  "50741539",
+  "50741429",
+  "50741505"
  ],
- "last_run": 1794861057.5610323,
+ "last_run": 1794864696.5200078,
  "today": {
   "date": "2026-11-16",
   "jobs": [
@@ -237,6 +240,24 @@
     "city": "Saint-Lambert-de-Lauzon, QC",
     "employer": "Groupe P. Bolduc",
     "msg": 116
+   },
+   {
+    "title": "Construction Project Manager",
+    "city": "Tillsonburg, ON",
+    "employer": "PK Construction Inc.",
+    "msg": 117
+   },
+   {
+    "title": "Maintenance Planner",
+    "city": "Trois-Rivières, QC",
+    "employer": "Les Gestions Thrace inc.",
+    "msg": 118
+   },
+   {
+    "title": "Painting Estimator - Construction",
+    "city": "Montréal, QC",
+    "employer": "peintres prestige montreal",
+    "msg": 119
    }
   ]
  },
@@ -723,6 +744,27 @@
    "prov": "QC",
    "low": 75000,
    "high": 85000
+  },
+  {
+   "t": 1794864697.7352645,
+   "role": "Project Manager",
+   "prov": "ON",
+   "low": 90000,
+   "high": 90000
+  },
+  {
+   "t": 1794864701.927281,
+   "role": "Scheduler / Planner",
+   "prov": "QC",
+   "low": 49920,
+   "high": 58240
+  },
+  {
+   "t": 1794864706.1723988,
+   "role": "Estimator / QS",
+   "prov": "QC",
+   "low": 52000,
+   "high": 104000
   }
  ],
  "pairs": {
@@ -758,7 +800,10 @@
   "société de transport de lévis|construction project coordinator": 1794857405.5600467,
   "safe & secure locksmith|general manager - goods production, utilities, transportation and construction": 1794861059.0938296,
   "canam ponts canada inc.|construction estimator": 1794861063.3800802,
-  "groupe p. bolduc|engineering service project manager": 1794861067.6731539
+  "groupe p. bolduc|engineering service project manager": 1794861067.6731539,
+  "pk construction inc.|construction project manager": 1794864697.7348108,
+  "les gestions thrace inc.|maintenance planner": 1794864701.9272022,
+  "peintres prestige montreal|painting estimator - construction": 1794864706.1723182
  },
  "news_seen": [
   "t:264755b1702ef5db",
@@ -783,7 +828,8 @@
   "t:ee80bccc38e8273a",
   "t:f205be5e2e43fe8a",
   "t:2b6f3d68529ed22d",
-  "t:05628858496760dc"
+  "t:05628858496760dc",
+  "t:8596cba97abf0c9f"
  ],
  "summary_day": "2026-11-15",
  "salary_week": "2026-W46"
