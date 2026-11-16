@@ -103,9 +103,11 @@
   "50737776",
   "50738211",
   "50738405",
-  "50738688"
+  "50738688",
+  "50738760",
+  "50739103"
  ],
- "last_run": 1794838131.71324,
+ "last_run": 1794841779.775427,
  "today": {
   "date": "2026-11-16",
   "jobs": [
@@ -132,6 +134,18 @@
     "city": "Montréal, QC",
     "employer": "4Refuel",
     "msg": 95
+   },
+   {
+    "title": "Organization And Productivity Project Officer",
+    "city": "Québec, QC",
+    "employer": "Centre de services scolaire des Premières-Seigneuries",
+    "msg": 96
+   },
+   {
+    "title": "Material Estimator",
+    "city": "Etobicoke, ON",
+    "employer": "Qualified Metal Fabricators Inc",
+    "msg": 97
    }
   ]
  },
@@ -527,11 +541,16 @@
    "prov": "QC",
    "low": 49920,
    "high": 60008
+  },
+  {
+   "t": 1794841784.7040725,
+   "role": "Estimator / QS",
+   "prov": "ON",
+   "low": 58240,
+   "high": 70720
   }
  ],
  "pairs": {
-  "consab international inc.|project manager, construction": 1794580470.6368005,
-  "pal airlines|crew scheduler - aeronautics": 1794580474.8538184,
   "ville de sainte-adèle|construction project coordinator": 1794584113.6761394,
   "defence construction canada|construction manager": 1794584117.6554055,
   "centurion fondation|construction general superintendent": 1794591410.434542,
@@ -558,7 +577,9 @@
   "pcl construction|cost engineer": 1794815860.2361772,
   "imp aerospace and defence|scheduler, flight crews": 1794823530.973957,
   "groupe ebr|industrial engineering project manager": 1794830828.2378376,
-  "4refuel|transportation route scheduler": 1794838133.0980158
+  "4refuel|transportation route scheduler": 1794838133.0980158,
+  "centre de services scolaire des premières-seigneuries|organization and productivity project officer": 1794841780.7088568,
+  "qualified metal fabricators inc|material estimator": 1794841784.703995
  },
  "news_seen": [
   "t:264755b1702ef5db",
@@ -577,7 +598,12 @@
   "t:dd1f4a66d3396d0c",
   "t:9a895cc0fd1b3fc1",
   "t:0b4f2876318f8909",
-  "t:4197350b361ec1eb"
+  "t:4197350b361ec1eb",
+  "t:87d0eea25b6e78c9",
+  "t:b2c81fb8ceac95cb",
+  "t:ee80bccc38e8273a",
+  "t:f205be5e2e43fe8a",
+  "t:2b6f3d68529ed22d"
  ],
  "summary_day": "2026-11-15",
  "salary_week": "2026-W46"
