@@ -105,9 +105,12 @@
   "50738405",
   "50738688",
   "50738760",
-  "50739103"
+  "50739103",
+  "50739150",
+  "50739543",
+  "50739748"
  ],
- "last_run": 1794841779.775427,
+ "last_run": 1794845452.688664,
  "today": {
   "date": "2026-11-16",
   "jobs": [
@@ -146,6 +149,24 @@
     "city": "Etobicoke, ON",
     "employer": "Qualified Metal Fabricators Inc",
     "msg": 97
+   },
+   {
+    "title": "Environmental Project Manager",
+    "city": "Oakville, ON",
+    "employer": "MTE Consultants Inc.",
+    "msg": 102
+   },
+   {
+    "title": "VFX Project Manager",
+    "city": "Mississauga, ON",
+    "employer": "Techno Weld Ltd",
+    "msg": 103
+   },
+   {
+    "title": "Logistics Planner",
+    "city": "Thunder Bay, ON",
+    "employer": "City of Thunder Bay",
+    "msg": 104
    }
   ]
  },
@@ -548,11 +569,30 @@
    "prov": "ON",
    "low": 58240,
    "high": 70720
+  },
+  {
+   "t": 1794845453.3376377,
+   "role": "Project Manager",
+   "prov": "ON",
+   "low": 96000,
+   "high": 135000
+  },
+  {
+   "t": 1794845457.0713398,
+   "role": "Project Manager",
+   "prov": "ON",
+   "low": 70000,
+   "high": 80000
+  },
+  {
+   "t": 1794845460.8537078,
+   "role": "Scheduler / Planner",
+   "prov": "ON",
+   "low": 65477,
+   "high": 65477
   }
  ],
  "pairs": {
-  "ville de sainte-adèle|construction project coordinator": 1794584113.6761394,
-  "defence construction canada|construction manager": 1794584117.6554055,
   "centurion fondation|construction general superintendent": 1794591410.434542,
   "jmk constructions|construction project manager": 1794591414.9019876,
   "victory homes ltd|residential construction manager": 1794591419.1124728,
@@ -579,7 +619,10 @@
   "groupe ebr|industrial engineering project manager": 1794830828.2378376,
   "4refuel|transportation route scheduler": 1794838133.0980158,
   "centre de services scolaire des premières-seigneuries|organization and productivity project officer": 1794841780.7088568,
-  "qualified metal fabricators inc|material estimator": 1794841784.703995
+  "qualified metal fabricators inc|material estimator": 1794841784.703995,
+  "mte consultants inc.|environmental project manager": 1794845453.3372548,
+  "techno weld ltd|vfx project manager": 1794845457.0712478,
+  "city of thunder bay|logistics planner": 1794845460.8536282
  },
  "news_seen": [
   "t:264755b1702ef5db",
@@ -603,7 +646,8 @@
   "t:b2c81fb8ceac95cb",
   "t:ee80bccc38e8273a",
   "t:f205be5e2e43fe8a",
-  "t:2b6f3d68529ed22d"
+  "t:2b6f3d68529ed22d",
+  "t:05628858496760dc"
  ],
  "summary_day": "2026-11-15",
  "salary_week": "2026-W46"
