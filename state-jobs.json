@@ -109,9 +109,13 @@
   "50739150",
   "50739543",
   "50739748",
-  "50739803"
+  "50739803",
+  "50739860",
+  "50740209",
+  "50740272",
+  "50740435"
  ],
- "last_run": 1794849112.710196,
+ "last_run": 1794852756.7908227,
  "today": {
   "date": "2026-11-16",
   "jobs": [
@@ -174,6 +178,30 @@
     "city": "Langford, BC",
     "employer": "COLECON CONTRACTING LTD",
     "msg": 106
+   },
+   {
+    "title": "Electrical Estimator - Construction",
+    "city": "Alma, QC",
+    "employer": "Remi bouchard inc.",
+    "msg": 107
+   },
+   {
+    "title": "Construction Estimator",
+    "city": "Victoria, BC",
+    "employer": "ATC Developments LTD",
+    "msg": 108
+   },
+   {
+    "title": "Construction Project Manager",
+    "city": "Kamloops, BC",
+    "employer": "City of Kamloops",
+    "msg": 109
+   },
+   {
+    "title": "Land Use Planner",
+    "city": "Amherst, NS",
+    "employer": "Town of Amherst",
+    "msg": 110
    }
   ]
  },
@@ -597,12 +625,37 @@
    "prov": "ON",
    "low": 65477,
    "high": 65477
+  },
+  {
+   "t": 1794852757.632971,
+   "role": "Estimator / QS",
+   "prov": "QC",
+   "low": 52000,
+   "high": 52000
+  },
+  {
+   "t": 1794852761.4631987,
+   "role": "Estimator / QS",
+   "prov": "BC",
+   "low": 89440,
+   "high": 89440
+  },
+  {
+   "t": 1794852765.3659651,
+   "role": "Project Manager",
+   "prov": "BC",
+   "low": 157338,
+   "high": 157338
+  },
+  {
+   "t": 1794852769.1070652,
+   "role": "Scheduler / Planner",
+   "prov": "NS",
+   "low": 74595,
+   "high": 86476
   }
  ],
  "pairs": {
-  "centurion fondation|construction general superintendent": 1794591410.434542,
-  "jmk constructions|construction project manager": 1794591414.9019876,
-  "victory homes ltd|residential construction manager": 1794591419.1124728,
   "invistec consulting ltd|transportation planner": 1794595074.5118454,
   "village of masset|public works superintendent": 1794598732.6295562,
   "city homemakers service society|scheduler - transit system": 1794598736.4460115,
@@ -630,7 +683,11 @@
   "mte consultants inc.|environmental project manager": 1794845453.3372548,
   "techno weld ltd|vfx project manager": 1794845457.0712478,
   "city of thunder bay|logistics planner": 1794845460.8536282,
-  "colecon contracting ltd|vice-president - goods production, utilities, transportation and construction": 1794849114.3453627
+  "colecon contracting ltd|vice-president - goods production, utilities, transportation and construction": 1794849114.3453627,
+  "remi bouchard inc.|electrical estimator - construction": 1794852757.632704,
+  "atc developments ltd|construction estimator": 1794852761.463116,
+  "city of kamloops|construction project manager": 1794852765.365678,
+  "town of amherst|land use planner": 1794852769.106975
  },
  "news_seen": [
   "t:264755b1702ef5db",
