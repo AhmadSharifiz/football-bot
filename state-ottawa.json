@@ -857,7 +857,9 @@
   "e949f37b95adb327",
   "t:56ddef3354e2eabb",
   "b45060d4d5d94c99",
-  "t:d163205278c95728"
+  "t:d163205278c95728",
+  "0b2faad7f6a8d5bc",
+  "t:f775d0125b816b62"
  ],
  "initialized": true,
  "sources": [
@@ -874,7 +876,7 @@
   "tg:ottawaevents",
   "tg:pandcommunity"
  ],
- "last_run": 1794869160.265206,
+ "last_run": 1794869549.746722,
  "weather_day": "2026-11-16",
  "blog_seen": [
   "https://asharifi.wordpress.com/2026/08/19/construction-project-management-the-lakeshore-heights-series/",
@@ -896,7 +898,7 @@
   "https://asharifi.wordpress.com/2026/11/15/three-week-lookahead-schedule/",
   "https://asharifi.wordpress.com/2026/11/15/project-progress-reports-complete-guide/"
  ],
- "alerts_checked": 1794869036.0410335,
+ "alerts_checked": 1794869544.257508,
  "alerts_seen": [
   "1718fbba19213ecd",
   "33aa87996f76a250",
