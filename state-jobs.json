@@ -101,9 +101,10 @@
   "50737086",
   "50737473",
   "50737776",
-  "50738211"
+  "50738211",
+  "50738405"
  ],
- "last_run": 1794827176.6493273,
+ "last_run": 1794830826.9375193,
  "today": {
   "date": "2026-11-16",
   "jobs": [
@@ -118,6 +119,12 @@
     "city": "Halifax, NS",
     "employer": "IMP Aerospace and Defence",
     "msg": 93
+   },
+   {
+    "title": "Industrial Engineering Project Manager",
+    "city": "Québec, QC",
+    "employer": "Groupe EBR",
+    "msg": 94
    }
   ]
  },
@@ -499,10 +506,16 @@
    "prov": "NS",
    "low": 45094,
    "high": 108576
+  },
+  {
+   "t": 1794830828.2382865,
+   "role": "Project / Site Engineer",
+   "prov": "QC",
+   "low": 70000,
+   "high": 100000
   }
  ],
  "pairs": {
-  "peter lucas project management inc.|construction manager": 1794569549.731127,
   "avl construction group inc|estimator, construction": 1794576832.0103507,
   "etc inc|vfx project manager": 1794576836.1926856,
   "consab international inc.|project manager, construction": 1794580470.6368005,
@@ -531,7 +544,8 @@
   "savico labrador métal works|industrial engineering project manager": 1794744326.6149566,
   "super homes|housing construction manager": 1794800500.4733472,
   "pcl construction|cost engineer": 1794815860.2361772,
-  "imp aerospace and defence|scheduler, flight crews": 1794823530.973957
+  "imp aerospace and defence|scheduler, flight crews": 1794823530.973957,
+  "groupe ebr|industrial engineering project manager": 1794830828.2378376
  },
  "news_seen": [
   "t:264755b1702ef5db",
