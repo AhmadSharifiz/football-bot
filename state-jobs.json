@@ -125,9 +125,10 @@
   "50741926",
   "50742026",
   "50742309",
-  "50742006"
+  "50742006",
+  "50742407"
  ],
- "last_run": 1794868342.4630117,
+ "last_run": 1794871993.000127,
  "today": {
   "date": "2026-11-16",
   "jobs": [
@@ -286,6 +287,12 @@
     "city": "Langley, BC",
     "employer": "Apollo Industries Ltd.",
     "msg": 124
+   },
+   {
+    "title": "Municipal Park Planner",
+    "city": "Sechelt, BC",
+    "employer": "Sunshine Coast Regional District",
+    "msg": 125
    }
   ]
  },
@@ -821,12 +828,16 @@
    "prov": "BC",
    "low": 54080,
    "high": 66560
+  },
+  {
+   "t": 1794871994.1884022,
+   "role": "Scheduler / Planner",
+   "prov": "BC",
+   "low": 104770,
+   "high": 104770
   }
  ],
  "pairs": {
-  "allteck limited partnership|construction project manager": 1794609656.7235289,
-  "strassburger windows & doors|production planner": 1794609660.4333663,
-  "hipperson construction|estimator, construction": 1794609664.2319279,
   "highbridge human capital|construction estimator": 1794613310.42521,
   "noor contruction inc|construction manager": 1794613314.612488,
   "maple reinders|business development manager": 1794631790.0210426,
@@ -860,7 +871,8 @@
   "smart art west ltd.|construction project manager": 1794868343.6757216,
   "ville de rivière-du-loup|urban renovation planner": 1794868347.792343,
   "nature's fare markets|contract administrator": 1794868351.811221,
-  "apollo industries ltd.|millwork estimator": 1794868355.9625235
+  "apollo industries ltd.|millwork estimator": 1794868355.9625235,
+  "sunshine coast regional district|municipal park planner": 1794871994.188241
  },
  "news_seen": [
   "t:264755b1702ef5db",
