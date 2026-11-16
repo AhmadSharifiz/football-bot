@@ -108,9 +108,10 @@
   "50739103",
   "50739150",
   "50739543",
-  "50739748"
+  "50739748",
+  "50739803"
  ],
- "last_run": 1794845452.688664,
+ "last_run": 1794849112.710196,
  "today": {
   "date": "2026-11-16",
   "jobs": [
@@ -167,6 +168,12 @@
     "city": "Thunder Bay, ON",
     "employer": "City of Thunder Bay",
     "msg": 104
+   },
+   {
+    "title": "Vice-President - Goods Production, Utilities, Transportation And Construction",
+    "city": "Langford, BC",
+    "employer": "COLECON CONTRACTING LTD",
+    "msg": 106
    }
   ]
  },
@@ -622,7 +629,8 @@
   "qualified metal fabricators inc|material estimator": 1794841784.703995,
   "mte consultants inc.|environmental project manager": 1794845453.3372548,
   "techno weld ltd|vfx project manager": 1794845457.0712478,
-  "city of thunder bay|logistics planner": 1794845460.8536282
+  "city of thunder bay|logistics planner": 1794845460.8536282,
+  "colecon contracting ltd|vice-president - goods production, utilities, transportation and construction": 1794849114.3453627
  },
  "news_seen": [
   "t:264755b1702ef5db",
