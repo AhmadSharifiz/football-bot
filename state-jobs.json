@@ -140,9 +140,12 @@
   "50746753",
   "50747185",
   "50746880",
-  "50747563"
+  "50747563",
+  "50747674",
+  "50748234",
+  "50748281"
  ],
- "last_run": 1794935246.3940258,
+ "last_run": 1794938984.3355174,
  "today": {
   "date": "2026-11-17",
   "jobs": [
@@ -217,6 +220,18 @@
     "city": "Penticton, BC",
     "employer": "Waycon Manufacturing Ltd.",
     "msg": 145
+   },
+   {
+    "title": "Construction Project Manager",
+    "city": "Paradise, NL",
+    "employer": "JMJ Holdings Ltd",
+    "msg": 146
+   },
+   {
+    "title": "VFX Project Manager",
+    "city": "Brockville, ON",
+    "employer": "Weatherhaven Global Resources",
+    "msg": 147
    }
   ]
  },
@@ -850,10 +865,23 @@
    "prov": "BC",
    "low": 85000,
    "high": 110000
+  },
+  {
+   "t": 1794938985.154758,
+   "role": "Project Manager",
+   "prov": "NL",
+   "low": 78647,
+   "high": 108275
+  },
+  {
+   "t": 1794938989.019609,
+   "role": "Project Manager",
+   "prov": "ON",
+   "low": 61800,
+   "high": 120000
   }
  ],
  "pairs": {
-  "solutionstack|system integration project manager": 1794677837.854479,
   "a-z electrical services ltd|construction contract administrator": 1794685857.4706702,
   "bell canada|engineering service project manager": 1794713562.708212,
   "savico labrador métal works|industrial engineering project manager": 1794744326.6149566,
@@ -898,7 +926,9 @@
   "solvest inc.|project manager - non-technical": 1794931577.2748413,
   "city of miramichi|construction project engineer": 1794935248.6662617,
   "apm maclean|estimator, construction": 1794935254.092235,
-  "waycon manufacturing ltd.|project estimator": 1794935259.302141
+  "waycon manufacturing ltd.|project estimator": 1794935259.302141,
+  "jmj holdings ltd|construction project manager": 1794938985.1542175,
+  "weatherhaven global resources|vfx project manager": 1794938989.019515
  },
  "news_seen": [
   "t:264755b1702ef5db",
