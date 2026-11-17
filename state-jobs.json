@@ -150,9 +150,12 @@
   "50748629",
   "50748664",
   "50748975",
-  "50749078"
+  "50749078",
+  "50749430",
+  "50749446",
+  "50749543"
  ],
- "last_run": 1794946323.7745116,
+ "last_run": 1794950009.043479,
  "today": {
   "date": "2026-11-17",
   "jobs": [
@@ -281,6 +284,24 @@
     "city": "Halifax, NS",
     "employer": "Bluedrop Training & Simulation",
     "msg": 155
+   },
+   {
+    "title": "Construction Site Supervisor",
+    "city": "Calgary, AB",
+    "employer": "TR Exteriors",
+    "msg": 156
+   },
+   {
+    "title": "Information Technology (IT) Project Manager - Cybersecurity",
+    "city": "Vancouver, BC",
+    "employer": "D3 Security Management Systems Inc",
+    "msg": 157
+   },
+   {
+    "title": "Construction Site Superintendent",
+    "city": "Toronto, ON",
+    "employer": "Anacond Contracting Inc.",
+    "msg": 158
    }
   ]
  },
@@ -977,6 +998,27 @@
    "prov": "NS",
    "low": 43680,
    "high": 91832
+  },
+  {
+   "t": 1794950022.5322437,
+   "role": "Superintendent",
+   "prov": "AB",
+   "low": 83200,
+   "high": 83200
+  },
+  {
+   "t": 1794950029.0793958,
+   "role": "Project Manager",
+   "prov": "BC",
+   "low": 111987,
+   "high": 111987
+  },
+  {
+   "t": 1794950052.8494277,
+   "role": "Superintendent",
+   "prov": "ON",
+   "low": 70000,
+   "high": 85000
   }
  ],
  "pairs": {
@@ -1032,7 +1074,10 @@
   "managing matters|business development manager": 1794942646.3041537,
   "promax concrete ltd.|construction site supervisor": 1794942650.5423045,
   "sheikh farid construction ltd|construction site supervisor": 1794946325.8285334,
-  "bluedrop training & simulation|non-technical project manager": 1794946330.81393
+  "bluedrop training & simulation|non-technical project manager": 1794946330.81393,
+  "tr exteriors|construction site supervisor": 1794950022.5319755,
+  "d3 security management systems inc|information technology (it) project manager - cybersecurity": 1794950029.0789757,
+  "anacond contracting inc.|construction site superintendent": 1794950052.8493423
  },
  "news_seen": [
   "t:264755b1702ef5db",
