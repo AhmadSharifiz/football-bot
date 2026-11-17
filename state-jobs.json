@@ -148,9 +148,11 @@
   "50748748",
   "50748578",
   "50748629",
-  "50748664"
+  "50748664",
+  "50748975",
+  "50749078"
  ],
- "last_run": 1794942631.9650493,
+ "last_run": 1794946323.7745116,
  "today": {
   "date": "2026-11-17",
   "jobs": [
@@ -267,6 +269,18 @@
     "city": "Maple Ridge, BC",
     "employer": "Promax Concrete Ltd.",
     "msg": 152
+   },
+   {
+    "title": "Construction Site Supervisor",
+    "city": "Edmonton, AB",
+    "employer": "Sheikh Farid Construction Ltd",
+    "msg": 154
+   },
+   {
+    "title": "Non-Technical Project Manager",
+    "city": "Halifax, NS",
+    "employer": "Bluedrop Training & Simulation",
+    "msg": 155
    }
   ]
  },
@@ -949,10 +963,23 @@
    "prov": "BC",
    "low": 81120,
    "high": 81120
+  },
+  {
+   "t": 1794946325.8287528,
+   "role": "Superintendent",
+   "prov": "AB",
+   "low": 79040,
+   "high": 79040
+  },
+  {
+   "t": 1794946330.814272,
+   "role": "Project Manager",
+   "prov": "NS",
+   "low": 43680,
+   "high": 91832
   }
  ],
  "pairs": {
-  "a-z electrical services ltd|construction contract administrator": 1794685857.4706702,
   "bell canada|engineering service project manager": 1794713562.708212,
   "savico labrador métal works|industrial engineering project manager": 1794744326.6149566,
   "super homes|housing construction manager": 1794800500.4733472,
@@ -1003,7 +1030,9 @@
   "bluedrop training & simulation|engineering service project manager": 1794942637.76862,
   "metro vancouver|project engineer, construction": 1794942642.1340961,
   "managing matters|business development manager": 1794942646.3041537,
-  "promax concrete ltd.|construction site supervisor": 1794942650.5423045
+  "promax concrete ltd.|construction site supervisor": 1794942650.5423045,
+  "sheikh farid construction ltd|construction site supervisor": 1794946325.8285334,
+  "bluedrop training & simulation|non-technical project manager": 1794946330.81393
  },
  "news_seen": [
   "t:264755b1702ef5db",
