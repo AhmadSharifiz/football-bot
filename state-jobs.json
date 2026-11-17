@@ -143,9 +143,14 @@
   "50747563",
   "50747674",
   "50748234",
-  "50748281"
+  "50748281",
+  "50748512",
+  "50748748",
+  "50748578",
+  "50748629",
+  "50748664"
  ],
- "last_run": 1794938984.3355174,
+ "last_run": 1794942631.9650493,
  "today": {
   "date": "2026-11-17",
   "jobs": [
@@ -232,6 +237,36 @@
     "city": "Brockville, ON",
     "employer": "Weatherhaven Global Resources",
     "msg": 147
+   },
+   {
+    "title": "Construction Site Supervisor",
+    "city": "Winnipeg, MB",
+    "employer": "Nest Renovations Inc.",
+    "msg": 148
+   },
+   {
+    "title": "Engineering Service Project Manager",
+    "city": "Halifax, NS",
+    "employer": "Bluedrop Training & Simulation",
+    "msg": 149
+   },
+   {
+    "title": "Project Engineer, Construction",
+    "city": "Burnaby, BC",
+    "employer": "Metro Vancouver",
+    "msg": 150
+   },
+   {
+    "title": "Business Development Manager",
+    "city": "Toronto, ON",
+    "employer": "Managing Matters",
+    "msg": 151
+   },
+   {
+    "title": "Construction Site Supervisor",
+    "city": "Maple Ridge, BC",
+    "employer": "Promax Concrete Ltd.",
+    "msg": 152
    }
   ]
  },
@@ -879,6 +914,41 @@
    "prov": "ON",
    "low": 61800,
    "high": 120000
+  },
+  {
+   "t": 1794942633.6368265,
+   "role": "Superintendent",
+   "prov": "MB",
+   "low": 72010,
+   "high": 72010
+  },
+  {
+   "t": 1794942637.7687654,
+   "role": "Project / Site Engineer",
+   "prov": "NS",
+   "low": 92394,
+   "high": 221000
+  },
+  {
+   "t": 1794942642.1341393,
+   "role": "Project / Site Engineer",
+   "prov": "BC",
+   "low": 108607,
+   "high": 108607
+  },
+  {
+   "t": 1794942646.3043053,
+   "role": "Project Manager",
+   "prov": "ON",
+   "low": 160000,
+   "high": 180000
+  },
+  {
+   "t": 1794942650.542339,
+   "role": "Superintendent",
+   "prov": "BC",
+   "low": 81120,
+   "high": 81120
   }
  ],
  "pairs": {
@@ -928,7 +998,12 @@
   "apm maclean|estimator, construction": 1794935254.092235,
   "waycon manufacturing ltd.|project estimator": 1794935259.302141,
   "jmj holdings ltd|construction project manager": 1794938985.1542175,
-  "weatherhaven global resources|vfx project manager": 1794938989.019515
+  "weatherhaven global resources|vfx project manager": 1794938989.019515,
+  "nest renovations inc.|construction site supervisor": 1794942633.6366868,
+  "bluedrop training & simulation|engineering service project manager": 1794942637.76862,
+  "metro vancouver|project engineer, construction": 1794942642.1340961,
+  "managing matters|business development manager": 1794942646.3041537,
+  "promax concrete ltd.|construction site supervisor": 1794942650.5423045
  },
  "news_seen": [
   "t:264755b1702ef5db",
@@ -959,7 +1034,8 @@
   "t:b4716cb1dcfe6a90",
   "t:53375bdb12c50aef",
   "t:f283ed2c7b88c00a",
-  "t:45c6c78cb4226a4d"
+  "t:45c6c78cb4226a4d",
+  "t:3ffdacf549723cd3"
  ],
  "summary_day": "2026-11-16",
  "salary_week": "2026-W46"
