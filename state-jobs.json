@@ -131,9 +131,11 @@
   "50743687",
   "50744629",
   "50744366",
-  "50745647"
+  "50745647",
+  "50746282",
+  "50746355"
  ],
- "last_run": 1794924152.101748,
+ "last_run": 1794927851.619601,
  "today": {
   "date": "2026-11-17",
   "jobs": [
@@ -154,6 +156,18 @@
     "city": "Halifax, NS",
     "employer": "IMP Aerospace and Defence",
     "msg": 131
+   },
+   {
+    "title": "Construction Project Coordinator",
+    "city": "Nanaimo, BC",
+    "employer": "Englobe Corp.",
+    "msg": 136
+   },
+   {
+    "title": "Maintenance Operations Superintendent",
+    "city": "Dorval, QC",
+    "employer": "Maison Donalda Boyer",
+    "msg": 137
    }
   ]
  },
@@ -724,6 +738,20 @@
    "prov": "NS",
    "low": 50960,
    "high": 201094
+  },
+  {
+   "t": 1794927854.1728067,
+   "role": "Project Coordinator",
+   "prov": "BC",
+   "low": 65000,
+   "high": 174221
+  },
+  {
+   "t": 1794927859.03242,
+   "role": "Superintendent",
+   "prov": "QC",
+   "low": 74880,
+   "high": 74880
   }
  ],
  "pairs": {
@@ -763,7 +791,9 @@
   "yil construction ltd|marketing project manager": 1794886607.5017977,
   "produits idéal tfc|trade contractor estimator - construction": 1794902032.576108,
   "soucy industriel|manufacturing plant superintendent": 1794902044.9108193,
-  "imp aerospace and defence|vice-president, engineering - goods production, utilities, transportation and construction": 1794913189.7396743
+  "imp aerospace and defence|vice-president, engineering - goods production, utilities, transportation and construction": 1794913189.7396743,
+  "englobe corp.|construction project coordinator": 1794927854.1725967,
+  "maison donalda boyer|maintenance operations superintendent": 1794927859.0322316
  },
  "news_seen": [
   "t:264755b1702ef5db",
@@ -793,7 +823,8 @@
   "t:c926752ba72cfd1f",
   "t:b4716cb1dcfe6a90",
   "t:53375bdb12c50aef",
-  "t:f283ed2c7b88c00a"
+  "t:f283ed2c7b88c00a",
+  "t:45c6c78cb4226a4d"
  ],
  "summary_day": "2026-11-16",
  "salary_week": "2026-W46"
