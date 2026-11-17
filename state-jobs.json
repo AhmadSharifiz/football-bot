@@ -153,9 +153,11 @@
   "50749078",
   "50749430",
   "50749446",
-  "50749543"
+  "50749543",
+  "50749820",
+  "50749843"
  ],
- "last_run": 1794950009.043479,
+ "last_run": 1794953634.9303596,
  "today": {
   "date": "2026-11-17",
   "jobs": [
@@ -302,6 +304,18 @@
     "city": "Toronto, ON",
     "employer": "Anacond Contracting Inc.",
     "msg": 158
+   },
+   {
+    "title": "Construction Project Manager",
+    "city": "Mississauga, ON",
+    "employer": "Bird Industrial Management Services",
+    "msg": 159
+   },
+   {
+    "title": "Engineering Project Manager",
+    "city": "Oldcastle, ON",
+    "employer": "DuroByte Inc.",
+    "msg": 160
    }
   ]
  },
@@ -1019,6 +1033,20 @@
    "prov": "ON",
    "low": 70000,
    "high": 85000
+  },
+  {
+   "t": 1794953635.963547,
+   "role": "Project Manager",
+   "prov": "ON",
+   "low": 260000,
+   "high": 290000
+  },
+  {
+   "t": 1794953639.8684175,
+   "role": "Project / Site Engineer",
+   "prov": "ON",
+   "low": 85000,
+   "high": 110000
   }
  ],
  "pairs": {
@@ -1077,7 +1105,9 @@
   "bluedrop training & simulation|non-technical project manager": 1794946330.81393,
   "tr exteriors|construction site supervisor": 1794950022.5319755,
   "d3 security management systems inc|information technology (it) project manager - cybersecurity": 1794950029.0789757,
-  "anacond contracting inc.|construction site superintendent": 1794950052.8493423
+  "anacond contracting inc.|construction site superintendent": 1794950052.8493423,
+  "bird industrial management services|construction project manager": 1794953635.9628968,
+  "durobyte inc.|engineering project manager": 1794953639.8683188
  },
  "news_seen": [
   "t:264755b1702ef5db",
