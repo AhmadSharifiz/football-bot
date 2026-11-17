@@ -133,9 +133,13 @@
   "50744366",
   "50745647",
   "50746282",
-  "50746355"
+  "50746355",
+  "50746451",
+  "50746453",
+  "50746734",
+  "50746753"
  ],
- "last_run": 1794927851.619601,
+ "last_run": 1794931564.610816,
  "today": {
   "date": "2026-11-17",
   "jobs": [
@@ -168,6 +172,30 @@
     "city": "Dorval, QC",
     "employer": "Maison Donalda Boyer",
     "msg": 137
+   },
+   {
+    "title": "Project Manager, Construction",
+    "city": "Toronto, ON",
+    "employer": "McCain Foods",
+    "msg": 139
+   },
+   {
+    "title": "Construction Project Coordinator",
+    "city": "Barrie, ON",
+    "employer": "Bertram Construction (Ontario) Ltd.",
+    "msg": 140
+   },
+   {
+    "title": "Organization And Productivity Project Manager",
+    "city": "Scarborough, ON",
+    "employer": "Grace Place",
+    "msg": 141
+   },
+   {
+    "title": "Project Manager - Non-Technical",
+    "city": "Cobourg, ON",
+    "employer": "Solvest Inc.",
+    "msg": 142
    }
   ]
  },
@@ -752,6 +780,34 @@
    "prov": "QC",
    "low": 74880,
    "high": 74880
+  },
+  {
+   "t": 1794931565.5207446,
+   "role": "Project Manager",
+   "prov": "ON",
+   "low": 97500,
+   "high": 130000
+  },
+  {
+   "t": 1794931569.3989275,
+   "role": "Project Coordinator",
+   "prov": "ON",
+   "low": 55000,
+   "high": 80000
+  },
+  {
+   "t": 1794931573.3330038,
+   "role": "Project Manager",
+   "prov": "ON",
+   "low": 76960,
+   "high": 76960
+  },
+  {
+   "t": 1794931577.2749383,
+   "role": "Project Manager",
+   "prov": "ON",
+   "low": 62400,
+   "high": 95680
   }
  ],
  "pairs": {
@@ -793,7 +849,11 @@
   "soucy industriel|manufacturing plant superintendent": 1794902044.9108193,
   "imp aerospace and defence|vice-president, engineering - goods production, utilities, transportation and construction": 1794913189.7396743,
   "englobe corp.|construction project coordinator": 1794927854.1725967,
-  "maison donalda boyer|maintenance operations superintendent": 1794927859.0322316
+  "maison donalda boyer|maintenance operations superintendent": 1794927859.0322316,
+  "mccain foods|project manager, construction": 1794931565.520325,
+  "bertram construction (ontario) ltd.|construction project coordinator": 1794931569.39885,
+  "grace place|organization and productivity project manager": 1794931573.3329163,
+  "solvest inc.|project manager - non-technical": 1794931577.2748413
  },
  "news_seen": [
   "t:264755b1702ef5db",
