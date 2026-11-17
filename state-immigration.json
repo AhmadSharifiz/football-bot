@@ -744,7 +744,13 @@
   "ffaca78194d72e1b",
   "t:17e4eb0bfdba34cd",
   "3279e96713812339",
-  "t:b83f93e0862c827c"
+  "t:b83f93e0862c827c",
+  "b28ac2020b4485fb",
+  "t:76829d010374a77b",
+  "a19a05fcd429e57b",
+  "t:d5a8ff37dbcce63f",
+  "54ab1ca527247507",
+  "t:6bad27cf896db7ec"
  ],
  "initialized": true,
  "sources": [
@@ -771,7 +777,7 @@
   "tg:maple_IRCC",
   "tg:meisamca"
  ],
- "last_run": 1794913172.4259417,
+ "last_run": 1794916827.855597,
  "ee_etag": "",
  "ee_modified": "Wed, 28 Oct 2026 13:37:19 GMT",
  "ee_last": 453
