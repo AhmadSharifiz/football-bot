@@ -164,9 +164,11 @@
   "50752667",
   "50752843",
   "50751422",
-  "50753384"
+  "50753384",
+  "50753405",
+  "50753453"
  ],
- "last_run": 1795012127.982697,
+ "last_run": 1795015865.8601675,
  "today": {
   "date": "2026-11-18",
   "jobs": [
@@ -211,6 +213,18 @@
     "city": "Moncton, NB",
     "employer": "Englobe Corp.",
     "msg": 171
+   },
+   {
+    "title": "Construction Manager",
+    "city": "Calgary, AB",
+    "employer": "Arkadian Homes Inc.",
+    "msg": 174
+   },
+   {
+    "title": "Electrical Estimator - Construction",
+    "city": "Saint-Bruno, QC",
+    "employer": "Mécanique Électrique C.M.P.L inc.",
+    "msg": 175
    }
   ]
  },
@@ -998,6 +1012,20 @@
    "prov": "NB",
    "low": 65000,
    "high": 174221
+  },
+  {
+   "t": 1795015867.5006979,
+   "role": "Construction Manager",
+   "prov": "AB",
+   "low": 118560,
+   "high": 118560
+  },
+  {
+   "t": 1795015872.16389,
+   "role": "Estimator / QS",
+   "prov": "QC",
+   "low": 80371,
+   "high": 80371
   }
  ],
  "pairs": {
@@ -1065,7 +1093,9 @@
   "ptag|planner": 1794997478.2558508,
   "profil élite|construction project manager": 1795004768.1485393,
   "cargill|maintenance planner": 1795012131.082718,
-  "englobe corp.|project manager, construction": 1795012137.2242873
+  "englobe corp.|project manager, construction": 1795012137.2242873,
+  "arkadian homes inc.|construction manager": 1795015867.500351,
+  "mécanique électrique c.m.p.l inc.|electrical estimator - construction": 1795015872.1638012
  },
  "news_seen": [
   "t:264755b1702ef5db",
