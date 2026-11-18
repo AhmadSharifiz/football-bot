@@ -157,179 +157,32 @@
   "50749820",
   "50749843",
   "50750227",
-  "50750261"
+  "50750261",
+  "50752277",
+  "50752073",
+  "50752163"
  ],
- "last_run": 1794979213.5785012,
+ "last_run": 1794982868.7672644,
  "today": {
-  "date": "2026-11-17",
+  "date": "2026-11-18",
   "jobs": [
    {
-    "title": "Trade Contractor Estimator - Construction",
-    "city": "Sherbrooke, QC",
-    "employer": "Produits Idéal TFC",
-    "msg": 129
-   },
-   {
-    "title": "Manufacturing Plant Superintendent",
-    "city": "Rivière-du-Loup, QC",
-    "employer": "Soucy Industriel",
-    "msg": 130
-   },
-   {
-    "title": "Vice-President, Engineering - Goods Production, Utilities, Transportation And Construction",
-    "city": "Halifax, NS",
-    "employer": "IMP Aerospace and Defence",
-    "msg": 131
-   },
-   {
-    "title": "Construction Project Coordinator",
-    "city": "Nanaimo, BC",
-    "employer": "Englobe Corp.",
-    "msg": 136
-   },
-   {
-    "title": "Maintenance Operations Superintendent",
-    "city": "Dorval, QC",
-    "employer": "Maison Donalda Boyer",
-    "msg": 137
-   },
-   {
-    "title": "Project Manager, Construction",
-    "city": "Toronto, ON",
-    "employer": "McCain Foods",
-    "msg": 139
-   },
-   {
-    "title": "Construction Project Coordinator",
-    "city": "Barrie, ON",
-    "employer": "Bertram Construction (Ontario) Ltd.",
-    "msg": 140
-   },
-   {
-    "title": "Organization And Productivity Project Manager",
-    "city": "Scarborough, ON",
-    "employer": "Grace Place",
-    "msg": 141
-   },
-   {
-    "title": "Project Manager - Non-Technical",
-    "city": "Cobourg, ON",
-    "employer": "Solvest Inc.",
-    "msg": 142
-   },
-   {
-    "title": "Construction Project Engineer",
-    "city": "Miramichi, NB",
-    "employer": "City of Miramichi",
-    "msg": 143
-   },
-   {
-    "title": "Estimator, Construction",
-    "city": "Brackley, PE",
-    "employer": "APM MacLean",
-    "msg": 144
-   },
-   {
-    "title": "Project Estimator",
-    "city": "Penticton, BC",
-    "employer": "Waycon Manufacturing Ltd.",
-    "msg": 145
-   },
-   {
     "title": "Construction Project Manager",
-    "city": "Paradise, NL",
-    "employer": "JMJ Holdings Ltd",
-    "msg": 146
+    "city": "Richmond, BC",
+    "employer": "PCL Construction",
+    "msg": 164
    },
    {
-    "title": "VFX Project Manager",
-    "city": "Brockville, ON",
-    "employer": "Weatherhaven Global Resources",
-    "msg": 147
-   },
-   {
-    "title": "Construction Site Supervisor",
-    "city": "Winnipeg, MB",
-    "employer": "Nest Renovations Inc.",
-    "msg": 148
+    "title": "Cost Estimator, Manufacturing",
+    "city": "Richmond, BC",
+    "employer": "PCL Construction",
+    "msg": 165
    },
    {
     "title": "Engineering Service Project Manager",
-    "city": "Halifax, NS",
-    "employer": "Bluedrop Training & Simulation",
-    "msg": 149
-   },
-   {
-    "title": "Project Engineer, Construction",
-    "city": "Burnaby, BC",
-    "employer": "Metro Vancouver",
-    "msg": 150
-   },
-   {
-    "title": "Business Development Manager",
-    "city": "Toronto, ON",
-    "employer": "Managing Matters",
-    "msg": 151
-   },
-   {
-    "title": "Construction Site Supervisor",
-    "city": "Maple Ridge, BC",
-    "employer": "Promax Concrete Ltd.",
-    "msg": 152
-   },
-   {
-    "title": "Construction Site Supervisor",
-    "city": "Edmonton, AB",
-    "employer": "Sheikh Farid Construction Ltd",
-    "msg": 154
-   },
-   {
-    "title": "Non-Technical Project Manager",
-    "city": "Halifax, NS",
-    "employer": "Bluedrop Training & Simulation",
-    "msg": 155
-   },
-   {
-    "title": "Construction Site Supervisor",
-    "city": "Calgary, AB",
-    "employer": "TR Exteriors",
-    "msg": 156
-   },
-   {
-    "title": "Information Technology (IT) Project Manager - Cybersecurity",
-    "city": "Vancouver, BC",
-    "employer": "D3 Security Management Systems Inc",
-    "msg": 157
-   },
-   {
-    "title": "Construction Site Superintendent",
-    "city": "Toronto, ON",
-    "employer": "Anacond Contracting Inc.",
-    "msg": 158
-   },
-   {
-    "title": "Construction Project Manager",
-    "city": "Mississauga, ON",
-    "employer": "Bird Industrial Management Services",
-    "msg": 159
-   },
-   {
-    "title": "Engineering Project Manager",
-    "city": "Oldcastle, ON",
-    "employer": "DuroByte Inc.",
-    "msg": 160
-   },
-   {
-    "title": "Planner",
-    "city": "Dartmouth, NS",
-    "employer": "P4G",
-    "msg": 161
-   },
-   {
-    "title": "Construction Project Manager",
-    "city": "London, ON",
-    "employer": "Eco Architectural Glass Inc",
-    "msg": 162
+    "city": "Sherbrooke, QC",
+    "employer": "Nord Quantique",
+    "msg": 166
    }
   ]
  },
@@ -1075,6 +928,27 @@
    "prov": "ON",
    "low": 70000,
    "high": 90000
+  },
+  {
+   "t": 1794982870.0519211,
+   "role": "Project Manager",
+   "prov": "BC",
+   "low": 155000,
+   "high": 185000
+  },
+  {
+   "t": 1794982874.3481476,
+   "role": "Estimator / QS",
+   "prov": "BC",
+   "low": 135000,
+   "high": 175000
+  },
+  {
+   "t": 1794982878.5744917,
+   "role": "Project / Site Engineer",
+   "prov": "QC",
+   "low": 95000,
+   "high": 125000
   }
  ],
  "pairs": {
@@ -1136,7 +1010,10 @@
   "bird industrial management services|construction project manager": 1794953635.9628968,
   "durobyte inc.|engineering project manager": 1794953639.8683188,
   "p4g|planner": 1794957285.9541762,
-  "eco architectural glass inc|construction project manager": 1794957290.3034713
+  "eco architectural glass inc|construction project manager": 1794957290.3034713,
+  "pcl construction|construction project manager": 1794982870.0515237,
+  "pcl construction|cost estimator, manufacturing": 1794982874.3480313,
+  "nord quantique|engineering service project manager": 1794982878.5743947
  },
  "news_seen": [
   "t:264755b1702ef5db",
