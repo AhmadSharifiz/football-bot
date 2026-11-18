@@ -161,9 +161,10 @@
   "50752277",
   "50752073",
   "50752163",
-  "50752667"
+  "50752667",
+  "50752843"
  ],
- "last_run": 1795001119.8856344,
+ "last_run": 1795004767.147517,
  "today": {
   "date": "2026-11-18",
   "jobs": [
@@ -190,6 +191,12 @@
     "city": "Vancouver, BC",
     "employer": "PTAG",
     "msg": 167
+   },
+   {
+    "title": "Construction Project Manager",
+    "city": "Alma, QC",
+    "employer": "Profil Élite",
+    "msg": 168
    }
   ]
  },
@@ -963,10 +970,16 @@
    "prov": "BC",
    "low": 166400,
    "high": 187200
+  },
+  {
+   "t": 1795004768.1491177,
+   "role": "Project Manager",
+   "prov": "QC",
+   "low": 80000,
+   "high": 130000
   }
  ],
  "pairs": {
-  "savico labrador métal works|industrial engineering project manager": 1794744326.6149566,
   "super homes|housing construction manager": 1794800500.4733472,
   "pcl construction|cost engineer": 1794815860.2361772,
   "imp aerospace and defence|scheduler, flight crews": 1794823530.973957,
@@ -1028,7 +1041,8 @@
   "pcl construction|construction project manager": 1794982870.0515237,
   "pcl construction|cost estimator, manufacturing": 1794982874.3480313,
   "nord quantique|engineering service project manager": 1794982878.5743947,
-  "ptag|planner": 1794997478.2558508
+  "ptag|planner": 1794997478.2558508,
+  "profil élite|construction project manager": 1795004768.1485393
  },
  "news_seen": [
   "t:264755b1702ef5db",
@@ -1060,7 +1074,8 @@
   "t:53375bdb12c50aef",
   "t:f283ed2c7b88c00a",
   "t:45c6c78cb4226a4d",
-  "t:3ffdacf549723cd3"
+  "t:3ffdacf549723cd3",
+  "t:e016dd8edf8264b4"
  ],
  "summary_day": "2026-11-17",
  "salary_week": "2026-W46"
