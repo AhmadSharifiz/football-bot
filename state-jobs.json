@@ -169,9 +169,12 @@
   "50753453",
   "50753732",
   "50753864",
-  "50754157"
+  "50754157",
+  "50754485",
+  "50754421",
+  "50754859"
  ],
- "last_run": 1795019545.8433652,
+ "last_run": 1795023194.2105327,
  "today": {
   "date": "2026-11-18",
   "jobs": [
@@ -246,6 +249,24 @@
     "city": "Calgary, AB",
     "employer": "DENALI DEV LTD.",
     "msg": 178
+   },
+   {
+    "title": "VFX Project Manager",
+    "city": "London, ON",
+    "employer": "LYNKED Inc.",
+    "msg": 180
+   },
+   {
+    "title": "Business Development Manager",
+    "city": "Grimsby, ON",
+    "employer": "Spaceless Marketing",
+    "msg": 181
+   },
+   {
+    "title": "Business Development Manager",
+    "city": "Edmonton, AB",
+    "employer": "AB Weeping Tiles",
+    "msg": 182
    }
   ]
  },
@@ -1068,6 +1089,27 @@
    "prov": "AB",
    "low": 83200,
    "high": 83200
+  },
+  {
+   "t": 1795023195.1876848,
+   "role": "Project Manager",
+   "prov": "ON",
+   "low": 65000,
+   "high": 75000
+  },
+  {
+   "t": 1795023199.125257,
+   "role": "Project Manager",
+   "prov": "ON",
+   "low": 40000,
+   "high": 42500
+  },
+  {
+   "t": 1795023203.0395808,
+   "role": "Project Manager",
+   "prov": "AB",
+   "low": 126194,
+   "high": 126194
   }
  ],
  "pairs": {
@@ -1140,7 +1182,10 @@
   "mécanique électrique c.m.p.l inc.|electrical estimator - construction": 1795015872.1638012,
   "grimard.ca|construction estimator": 1795019546.7876246,
   "hodess|construction project manager": 1795019550.550894,
-  "denali dev ltd.|construction site supervisor": 1795019554.2759216
+  "denali dev ltd.|construction site supervisor": 1795019554.2759216,
+  "lynked inc.|vfx project manager": 1795023195.1873112,
+  "spaceless marketing|business development manager": 1795023199.125166,
+  "ab weeping tiles|business development manager": 1795023203.0394938
  },
  "news_seen": [
   "t:264755b1702ef5db",
