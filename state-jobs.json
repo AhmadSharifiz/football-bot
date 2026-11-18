@@ -166,9 +166,12 @@
   "50751422",
   "50753384",
   "50753405",
-  "50753453"
+  "50753453",
+  "50753732",
+  "50753864",
+  "50754157"
  ],
- "last_run": 1795015865.8601675,
+ "last_run": 1795019545.8433652,
  "today": {
   "date": "2026-11-18",
   "jobs": [
@@ -225,6 +228,24 @@
     "city": "Saint-Bruno, QC",
     "employer": "Mécanique Électrique C.M.P.L inc.",
     "msg": 175
+   },
+   {
+    "title": "Construction Estimator",
+    "city": "Chicoutimi, QC",
+    "employer": "Grimard.ca",
+    "msg": 176
+   },
+   {
+    "title": "Construction Project Manager",
+    "city": "Woodbridge, ON",
+    "employer": "Hodess",
+    "msg": 177
+   },
+   {
+    "title": "Construction Site Supervisor",
+    "city": "Calgary, AB",
+    "employer": "DENALI DEV LTD.",
+    "msg": 178
    }
   ]
  },
@@ -1026,6 +1047,27 @@
    "prov": "QC",
    "low": 80371,
    "high": 80371
+  },
+  {
+   "t": 1795019546.7878878,
+   "role": "Estimator / QS",
+   "prov": "QC",
+   "low": 62400,
+   "high": 83200
+  },
+  {
+   "t": 1795019550.5511794,
+   "role": "Project Manager",
+   "prov": "ON",
+   "low": 110000,
+   "high": 140000
+  },
+  {
+   "t": 1795019554.276003,
+   "role": "Superintendent",
+   "prov": "AB",
+   "low": 83200,
+   "high": 83200
   }
  ],
  "pairs": {
@@ -1095,7 +1137,10 @@
   "cargill|maintenance planner": 1795012131.082718,
   "englobe corp.|project manager, construction": 1795012137.2242873,
   "arkadian homes inc.|construction manager": 1795015867.500351,
-  "mécanique électrique c.m.p.l inc.|electrical estimator - construction": 1795015872.1638012
+  "mécanique électrique c.m.p.l inc.|electrical estimator - construction": 1795015872.1638012,
+  "grimard.ca|construction estimator": 1795019546.7876246,
+  "hodess|construction project manager": 1795019550.550894,
+  "denali dev ltd.|construction site supervisor": 1795019554.2759216
  },
  "news_seen": [
   "t:264755b1702ef5db",
@@ -1130,7 +1175,8 @@
   "t:3ffdacf549723cd3",
   "t:e016dd8edf8264b4",
   "t:56347c17f75027a3",
-  "t:8e511d3c964324af"
+  "t:8e511d3c964324af",
+  "t:a7c0bb47c48441ac"
  ],
  "summary_day": "2026-11-17",
  "salary_week": "2026-W46"
