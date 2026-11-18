@@ -975,7 +975,9 @@
   "23e4c64c126a0f11",
   "t:3ce89cfa86d1fb16",
   "81545a9bddc820b5",
-  "t:4b1c3e0f8ec659da"
+  "t:4b1c3e0f8ec659da",
+  "623a52ffcad684f7",
+  "t:db659ad8db1b0b56"
  ],
  "initialized": true,
  "sources": [
@@ -992,7 +994,7 @@
   "tg:ottawaevents",
   "tg:pandcommunity"
  ],
- "last_run": 1794971014.4315398,
+ "last_run": 1794971382.5694265,
  "weather_day": "2026-11-17",
  "blog_seen": [
   "https://asharifi.wordpress.com/2026/08/19/construction-project-management-the-lakeshore-heights-series/",
@@ -1018,7 +1020,7 @@
   "https://asharifi.wordpress.com/2026/11/17/review-monthly-schedule-update/",
   "https://asharifi.wordpress.com/2026/11/17/nader-khorrami-rad-planning-control-lessons-pmbok-8/"
  ],
- "alerts_checked": 1794970891.0033255,
+ "alerts_checked": 1794971370.7003644,
  "alerts_seen": [
   "1718fbba19213ecd",
   "33aa87996f76a250",
