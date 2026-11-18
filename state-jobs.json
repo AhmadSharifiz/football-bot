@@ -160,9 +160,10 @@
   "50750261",
   "50752277",
   "50752073",
-  "50752163"
+  "50752163",
+  "50752667"
  ],
- "last_run": 1794993811.0984507,
+ "last_run": 1794997477.4856405,
  "today": {
   "date": "2026-11-18",
   "jobs": [
@@ -183,6 +184,12 @@
     "city": "Sherbrooke, QC",
     "employer": "Nord Quantique",
     "msg": 166
+   },
+   {
+    "title": "Planner",
+    "city": "Vancouver, BC",
+    "employer": "PTAG",
+    "msg": 167
    }
   ]
  },
@@ -949,6 +956,13 @@
    "prov": "QC",
    "low": 95000,
    "high": 125000
+  },
+  {
+   "t": 1794997478.2560194,
+   "role": "Scheduler / Planner",
+   "prov": "BC",
+   "low": 166400,
+   "high": 187200
   }
  ],
  "pairs": {
@@ -1013,7 +1027,8 @@
   "eco architectural glass inc|construction project manager": 1794957290.3034713,
   "pcl construction|construction project manager": 1794982870.0515237,
   "pcl construction|cost estimator, manufacturing": 1794982874.3480313,
-  "nord quantique|engineering service project manager": 1794982878.5743947
+  "nord quantique|engineering service project manager": 1794982878.5743947,
+  "ptag|planner": 1794997478.2558508
  },
  "news_seen": [
   "t:264755b1702ef5db",
