@@ -793,7 +793,15 @@
   "92abd37b8eee4308",
   "t:f57458f0ea0c3010",
   "a50732f03a98ee03",
-  "t:8554fa4e818dc922"
+  "t:8554fa4e818dc922",
+  "66439e339efcd690",
+  "t:156e8797dd778bfc",
+  "84abd299a0a1be67",
+  "t:2f0e8a04dd0037b6",
+  "d9bfedc701734db7",
+  "t:58211688d67817d1",
+  "05a75b127b879cc8",
+  "t:34431ee5232c300d"
  ],
  "initialized": true,
  "sources": [
@@ -820,7 +828,7 @@
   "tg:maple_IRCC",
   "tg:meisamca"
  ],
- "last_run": 1794978965.4399118,
+ "last_run": 1794982650.4684882,
  "ee_etag": "",
  "ee_modified": "Wed, 28 Oct 2026 13:37:19 GMT",
  "ee_last": 453
