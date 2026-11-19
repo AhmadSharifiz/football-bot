@@ -1121,7 +1121,9 @@
   "3815c3f58d15dd94",
   "t:c595936f2cfe03b5",
   "e74dadd0a3d9eef1",
-  "t:f08739d8d2342f94"
+  "t:f08739d8d2342f94",
+  "e33f6263ddde4ec0",
+  "t:171d17498e618eaa"
  ],
  "initialized": true,
  "sources": [
@@ -1138,7 +1140,7 @@
   "tg:ottawaevents",
   "tg:pandcommunity"
  ],
- "last_run": 1795108425.4816468,
+ "last_run": 1795108787.125641,
  "weather_day": "2026-11-19",
  "blog_seen": [
   "https://asharifi.wordpress.com/2026/08/19/construction-project-management-the-lakeshore-heights-series/",
@@ -1166,7 +1168,7 @@
   "https://asharifi.wordpress.com/2026/11/18/scope-gaps-between-trades/",
   "https://asharifi.wordpress.com/2026/11/18/residential-tower-construction-sequence-activities-logic/"
  ],
- "alerts_checked": 1795108302.2790568,
+ "alerts_checked": 1795108782.8514433,
  "alerts_seen": [
   "1718fbba19213ecd",
   "33aa87996f76a250",
