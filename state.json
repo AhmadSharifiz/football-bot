@@ -1,9 +1,5 @@
 {
  "seen": [
-  "t:59ff17888c7e3ff5",
-  "e0c8b0fa73cdc271",
-  "t:46a31036dac149d4",
-  "c35395d4fe1a4975",
   "t:dbfb1d9d020f21e7",
   "c35395d4fe1a4975",
   "eb725898e5312c1a",
@@ -5999,7 +5995,11 @@
   "t:466fd6037b45fc99",
   "64a1e1779f500126",
   "t:1a19151cfff0227a",
-  "64a1e1779f500126"
+  "64a1e1779f500126",
+  "b20a84eac06bb231",
+  "t:366c19cdb4607ce0",
+  "f62b9516f7d84991",
+  "t:263e6f56f480ef29"
  ],
  "initialized": true,
  "sources": [
@@ -6027,7 +6027,7 @@
   "tg:varzesh3",
   "tg:varzeshmediatl"
  ],
- "last_run": 1795093121.188607,
+ "last_run": 1795093300.6433089,
  "team_fa": {},
  "results_day": "2026-11-11",
  "fixtures_day": "2026-11-12"
