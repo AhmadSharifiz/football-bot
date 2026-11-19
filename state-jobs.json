@@ -182,161 +182,25 @@
   "50758392",
   "50758915",
   "50758931",
-  "50760687"
+  "50760687",
+  "50761226",
+  "50761322"
  ],
- "last_run": 1795070708.109623,
+ "last_run": 1795074358.7504528,
  "today": {
-  "date": "2026-11-18",
+  "date": "2026-11-19",
   "jobs": [
    {
-    "title": "Construction Project Manager",
-    "city": "Richmond, BC",
-    "employer": "PCL Construction",
-    "msg": 164
-   },
-   {
-    "title": "Cost Estimator, Manufacturing",
-    "city": "Richmond, BC",
-    "employer": "PCL Construction",
-    "msg": 165
-   },
-   {
-    "title": "Engineering Service Project Manager",
-    "city": "Sherbrooke, QC",
-    "employer": "Nord Quantique",
-    "msg": 166
-   },
-   {
-    "title": "Planner",
-    "city": "Vancouver, BC",
-    "employer": "PTAG",
-    "msg": 167
-   },
-   {
-    "title": "Construction Project Manager",
-    "city": "Alma, QC",
-    "employer": "Profil Élite",
-    "msg": 168
-   },
-   {
-    "title": "Maintenance Planner",
-    "city": "Guelph, ON",
-    "employer": "Cargill",
-    "msg": 170
-   },
-   {
-    "title": "Project Manager, Construction",
-    "city": "Moncton, NB",
-    "employer": "Englobe Corp.",
-    "msg": 171
-   },
-   {
-    "title": "Construction Manager",
-    "city": "Calgary, AB",
-    "employer": "Arkadian Homes Inc.",
-    "msg": 174
-   },
-   {
-    "title": "Electrical Estimator - Construction",
-    "city": "Saint-Bruno, QC",
-    "employer": "Mécanique Électrique C.M.P.L inc.",
-    "msg": 175
-   },
-   {
-    "title": "Construction Estimator",
-    "city": "Chicoutimi, QC",
-    "employer": "Grimard.ca",
-    "msg": 176
-   },
-   {
-    "title": "Construction Project Manager",
-    "city": "Woodbridge, ON",
-    "employer": "Hodess",
-    "msg": 177
-   },
-   {
-    "title": "Construction Site Supervisor",
-    "city": "Calgary, AB",
-    "employer": "DENALI DEV LTD.",
-    "msg": 178
-   },
-   {
-    "title": "VFX Project Manager",
-    "city": "London, ON",
-    "employer": "LYNKED Inc.",
-    "msg": 180
-   },
-   {
-    "title": "Business Development Manager",
-    "city": "Grimsby, ON",
-    "employer": "Spaceless Marketing",
-    "msg": 181
-   },
-   {
-    "title": "Business Development Manager",
-    "city": "Edmonton, AB",
-    "employer": "AB Weeping Tiles",
-    "msg": 182
-   },
-   {
-    "title": "Construction Manager",
-    "city": "Saguenay, QC",
-    "employer": "AE Fortin",
-    "msg": 185
-   },
-   {
-    "title": "VFX Project Manager",
-    "city": "Acheson, AB",
-    "employer": "Northgate Industries Ltd.",
-    "msg": 186
-   },
-   {
     "title": "Construction Project Coordinator",
-    "city": "Burnaby, BC",
-    "employer": "Vasto Builders Inc.",
-    "msg": 187
+    "city": "Saint-Augustin-de-Desmaures, QC",
+    "employer": "Armature Trépanier",
+    "msg": 197
    },
    {
-    "title": "VFX Project Manager",
-    "city": "Sherwood Park, AB",
-    "employer": "Teng Inc.",
-    "msg": 188
-   },
-   {
-    "title": "Construction Site Supervisor",
-    "city": "Calgary, AB",
-    "employer": "PRIME STONE CONSTRUCTION LTD.",
-    "msg": 189
-   },
-   {
-    "title": "Construction Project Coordinator",
-    "city": "Thornhill, ON",
-    "employer": "Limen Civil Ltd",
-    "msg": 190
-   },
-   {
-    "title": "Senior Estimator - Construction",
-    "city": "Hamilton, ON",
-    "employer": "Oakridge Landscape Contrators",
-    "msg": 192
-   },
-   {
-    "title": "Glazing Estimator",
-    "city": "Port Coquitlam, BC",
-    "employer": "Dura Seal Ltd.",
-    "msg": 193
-   },
-   {
-    "title": "Engineering Service Project Manager",
-    "city": "Sun Peaks, BC",
-    "employer": "Sun Peaks Mountain Resort Municipality",
-    "msg": 194
-   },
-   {
-    "title": "Planner",
-    "city": "Toronto, ON",
-    "employer": "Mercor",
-    "msg": 196
+    "title": "Urban Planner",
+    "city": "Val-d'Or, QC",
+    "employer": "Ville de Val-d'Or",
+    "msg": 198
    }
   ]
  },
@@ -1250,6 +1114,20 @@
    "prov": "ON",
    "low": 166400,
    "high": 166400
+  },
+  {
+   "t": 1795074359.6510522,
+   "role": "Project Coordinator",
+   "prov": "QC",
+   "low": 72800,
+   "high": 116480
+  },
+  {
+   "t": 1795074363.5066345,
+   "role": "Scheduler / Planner",
+   "prov": "QC",
+   "low": 77240,
+   "high": 88488
   }
  ],
  "pairs": {
@@ -1334,7 +1212,9 @@
   "oakridge landscape contrators|senior estimator - construction": 1795045137.9786763,
   "dura seal ltd.|glazing estimator": 1795048797.3333488,
   "sun peaks mountain resort municipality|engineering service project manager": 1795048801.5231473,
-  "mercor|planner": 1795063383.6990094
+  "mercor|planner": 1795063383.6990094,
+  "armature trépanier|construction project coordinator": 1795074359.6508396,
+  "ville de val-d'or|urban planner": 1795074363.5065522
  },
  "news_seen": [
   "t:264755b1702ef5db",
