@@ -204,9 +204,12 @@
   "50765028",
   "50765034",
   "50765497",
-  "50765934"
+  "50765934",
+  "50766006",
+  "50766269",
+  "50766272"
  ],
- "last_run": 1795125492.5277305,
+ "last_run": 1795129153.5039532,
  "today": {
   "date": "2026-11-19",
   "jobs": [
@@ -335,6 +338,24 @@
     "city": "Concord, ON",
     "employer": "Bento Reno Group",
     "msg": 221
+   },
+   {
+    "title": "VFX Project Manager",
+    "city": "Kelowna, BC",
+    "employer": "West Point Projects Inc.",
+    "msg": 222
+   },
+   {
+    "title": "Construction Project Manager",
+    "city": "Maple Creek, SK",
+    "employer": "Blue Hills Construction Corporation",
+    "msg": 223
+   },
+   {
+    "title": "Truck Scheduler",
+    "city": "Saint-Marc-des-Carrières, QC",
+    "employer": "Construction & Pavage Portneuf inc.",
+    "msg": 224
    }
   ]
  },
@@ -1395,13 +1416,30 @@
    "prov": "ON",
    "low": 80600,
    "high": 80600
+  },
+  {
+   "t": 1795129154.737084,
+   "role": "Project Manager",
+   "prov": "BC",
+   "low": 120000,
+   "high": 140000
+  },
+  {
+   "t": 1795129159.0929775,
+   "role": "Project Manager",
+   "prov": "SK",
+   "low": 70000,
+   "high": 130000
+  },
+  {
+   "t": 1795129163.35649,
+   "role": "Scheduler / Planner",
+   "prov": "QC",
+   "low": 54080,
+   "high": 54080
   }
  ],
  "pairs": {
-  "smart art west ltd.|construction project manager": 1794868343.6757216,
-  "ville de rivière-du-loup|urban renovation planner": 1794868347.792343,
-  "nature's fare markets|contract administrator": 1794868351.811221,
-  "apollo industries ltd.|millwork estimator": 1794868355.9625235,
   "sunshine coast regional district|municipal park planner": 1794871994.188241,
   "city of north vancouver|project co-ordinator, construction": 1794875640.9272993,
   "yil construction ltd|marketing project manager": 1794886607.5017977,
@@ -1478,7 +1516,10 @@
   "université de moncton|construction operations manager": 1795118181.7502005,
   "trident navigation|marine superintendent": 1795118185.9515104,
   "west coast shoring|estimator, construction": 1795121844.4091554,
-  "bento reno group|construction site supervisor": 1795125493.5984826
+  "bento reno group|construction site supervisor": 1795125493.5984826,
+  "west point projects inc.|vfx project manager": 1795129154.736464,
+  "blue hills construction corporation|construction project manager": 1795129159.0928757,
+  "construction & pavage portneuf inc.|truck scheduler": 1795129163.3564184
  },
  "news_seen": [
   "t:264755b1702ef5db",
