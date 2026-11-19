@@ -197,9 +197,12 @@
   "50764073",
   "50764212",
   "50764142",
-  "50764570"
+  "50764570",
+  "50764706",
+  "50764919",
+  "50764956"
  ],
- "last_run": 1795110861.9122365,
+ "last_run": 1795114530.8691416,
  "today": {
   "date": "2026-11-19",
   "jobs": [
@@ -286,6 +289,24 @@
     "city": "Calgary, AB",
     "employer": "PS CONSTRUCTION LTD.",
     "msg": 214
+   },
+   {
+    "title": "Contract Manager",
+    "city": "Zephyr, ON",
+    "employer": "Orbit Garant Drilling Services Inc.",
+    "msg": 215
+   },
+   {
+    "title": "Construction Estimator",
+    "city": "Burnaby, BC",
+    "employer": "A & A EXCAVATING LTD.",
+    "msg": 216
+   },
+   {
+    "title": "Assistant Project Manager, Construction",
+    "city": "Calgary, AB",
+    "employer": "Water Tech Mechanical Inc.",
+    "msg": 217
    }
   ]
  },
@@ -1297,13 +1318,30 @@
    "prov": "AB",
    "low": 79040,
    "high": 79040
+  },
+  {
+   "t": 1795114532.0321074,
+   "role": "Contract Administrator",
+   "prov": "ON",
+   "low": 80000,
+   "high": 100000
+  },
+  {
+   "t": 1795114536.4435358,
+   "role": "Estimator / QS",
+   "prov": "BC",
+   "low": 86320,
+   "high": 86320
+  },
+  {
+   "t": 1795114540.7259536,
+   "role": "Project Manager",
+   "prov": "AB",
+   "low": 52000,
+   "high": 72800
   }
  ],
  "pairs": {
-  "remi bouchard inc.|electrical estimator - construction": 1794852757.632704,
-  "atc developments ltd|construction estimator": 1794852761.463116,
-  "city of kamloops|construction project manager": 1794852765.365678,
-  "town of amherst|land use planner": 1794852769.106975,
   "squareinch contractors ltd.|construction project manager": 1794857401.6874702,
   "société de transport de lévis|construction project coordinator": 1794857405.5600467,
   "safe & secure locksmith|general manager - goods production, utilities, transportation and construction": 1794861059.0938296,
@@ -1385,7 +1423,10 @@
   "peter funk construction|construction manager": 1795107230.7415545,
   "singh builders ltd|construction site supervisor": 1795107234.710227,
   "frecon construction limited|construction senior project manager": 1795110862.8136854,
-  "ps construction ltd.|construction site supervisor": 1795110866.7997706
+  "ps construction ltd.|construction site supervisor": 1795110866.7997706,
+  "orbit garant drilling services inc.|contract manager": 1795114532.031822,
+  "a & a excavating ltd.|construction estimator": 1795114536.4434488,
+  "water tech mechanical inc.|assistant project manager, construction": 1795114540.7256744
  },
  "news_seen": [
   "t:264755b1702ef5db",
