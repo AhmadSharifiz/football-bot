@@ -179,9 +179,11 @@
   "50757215",
   "50757296",
   "50757644",
-  "50758392"
+  "50758392",
+  "50758915",
+  "50758931"
  ],
- "last_run": 1795045136.5179565,
+ "last_run": 1795048795.814545,
  "today": {
   "date": "2026-11-18",
   "jobs": [
@@ -316,6 +318,18 @@
     "city": "Hamilton, ON",
     "employer": "Oakridge Landscape Contrators",
     "msg": 192
+   },
+   {
+    "title": "Glazing Estimator",
+    "city": "Port Coquitlam, BC",
+    "employer": "Dura Seal Ltd.",
+    "msg": 193
+   },
+   {
+    "title": "Engineering Service Project Manager",
+    "city": "Sun Peaks, BC",
+    "employer": "Sun Peaks Mountain Resort Municipality",
+    "msg": 194
    }
   ]
  },
@@ -1208,6 +1222,20 @@
    "prov": "ON",
    "low": 80000,
    "high": 80000
+  },
+  {
+   "t": 1795048797.3336236,
+   "role": "Estimator / QS",
+   "prov": "BC",
+   "low": 80000,
+   "high": 90000
+  },
+  {
+   "t": 1795048801.5233593,
+   "role": "Project / Site Engineer",
+   "prov": "BC",
+   "low": 95927,
+   "high": 95927
   }
  ],
  "pairs": {
@@ -1290,7 +1318,9 @@
   "teng inc.|vfx project manager": 1795037798.3108425,
   "prime stone construction ltd.|construction site supervisor": 1795037802.298933,
   "limen civil ltd|construction project coordinator": 1795041446.1471765,
-  "oakridge landscape contrators|senior estimator - construction": 1795045137.9786763
+  "oakridge landscape contrators|senior estimator - construction": 1795045137.9786763,
+  "dura seal ltd.|glazing estimator": 1795048797.3333488,
+  "sun peaks mountain resort municipality|engineering service project manager": 1795048801.5231473
  },
  "news_seen": [
   "t:264755b1702ef5db",
