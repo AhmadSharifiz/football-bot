@@ -217,9 +217,16 @@
   "50769360",
   "50769350",
   "50769353",
-  "50769609"
+  "50769609",
+  "50769694",
+  "50769705",
+  "50769745",
+  "50769778",
+  "50769792",
+  "50770158",
+  "50770169"
  ],
- "last_run": 1795191251.6171017,
+ "last_run": 1795194900.1042144,
  "today": {
   "date": "2026-11-20",
   "jobs": [
@@ -276,6 +283,48 @@
     "city": "Etobicoke, ON",
     "employer": "Nekison Engineering and Contractors Limited",
     "msg": 240
+   },
+   {
+    "title": "Engineering Service Project Manager",
+    "city": "Campbell River, BC",
+    "employer": "City of Campbell River",
+    "msg": 241
+   },
+   {
+    "title": "Economic Development Coordinator",
+    "city": "Shawinigan, QC",
+    "employer": "Alli-és économique et social",
+    "msg": 242
+   },
+   {
+    "title": "Transportation Superintendent",
+    "city": "Chipman, NB",
+    "employer": "Department of Transportation / Ministère des Transports",
+    "msg": 243
+   },
+   {
+    "title": "Planner",
+    "city": "Canborough, ON",
+    "employer": "Hire Resolve.com",
+    "msg": 244
+   },
+   {
+    "title": "Planner",
+    "city": "Yellowknife, NT",
+    "employer": "City of Yellowknife",
+    "msg": 245
+   },
+   {
+    "title": "Construction General Manager",
+    "city": "North York, ON",
+    "employer": "Ostim Ltd.",
+    "msg": 246
+   },
+   {
+    "title": "Software Development Project Manager",
+    "city": "Not Available",
+    "employer": "Quisitive",
+    "msg": 247
    }
   ]
  },
@@ -1427,12 +1476,51 @@
    "prov": "ON",
    "low": 80080,
    "high": 80080
+  },
+  {
+   "t": 1795194901.5524702,
+   "role": "Project / Site Engineer",
+   "prov": "BC",
+   "low": 110928,
+   "high": 110928
+  },
+  {
+   "t": 1795194905.8306663,
+   "role": "Project Coordinator",
+   "prov": "QC",
+   "low": 80000,
+   "high": 80000
+  },
+  {
+   "t": 1795194909.8874733,
+   "role": "Superintendent",
+   "prov": "NB",
+   "low": 65000,
+   "high": 166254
+  },
+  {
+   "t": 1795194914.0626416,
+   "role": "Scheduler / Planner",
+   "prov": "ON",
+   "low": 42000,
+   "high": 42000
+  },
+  {
+   "t": 1795194918.1744277,
+   "role": "Scheduler / Planner",
+   "prov": "NT",
+   "low": 99541,
+   "high": 99541
+  },
+  {
+   "t": 1795194922.4557505,
+   "role": "Project Manager",
+   "prov": "ON",
+   "low": 124800,
+   "high": 128960
   }
  ],
  "pairs": {
-  "city of miramichi|construction project engineer": 1794935248.6662617,
-  "apm maclean|estimator, construction": 1794935254.092235,
-  "waycon manufacturing ltd.|project estimator": 1794935259.302141,
   "jmj holdings ltd|construction project manager": 1794938985.1542175,
   "weatherhaven global resources|vfx project manager": 1794938989.019515,
   "nest renovations inc.|construction site supervisor": 1794942633.6366868,
@@ -1507,7 +1595,14 @@
   "cégep de sherbrooke|construction project superintendent": 1795187612.60882,
   "the mason group|construction project manager": 1795187617.658055,
   "affordable housing association nova scotia|vfx project manager": 1795187621.9107013,
-  "nekison engineering and contractors limited|construction estimator": 1795191252.561273
+  "nekison engineering and contractors limited|construction estimator": 1795191252.561273,
+  "city of campbell river|engineering service project manager": 1795194901.5521624,
+  "alli-és économique et social|economic development coordinator": 1795194905.8305905,
+  "department of transportation / ministère des transports|transportation superintendent": 1795194909.887398,
+  "hire resolve.com|planner": 1795194914.0625722,
+  "city of yellowknife|planner": 1795194918.1743574,
+  "ostim ltd.|construction general manager": 1795194922.4555535,
+  "quisitive|software development project manager": 1795194926.6495314
  },
  "news_seen": [
   "t:264755b1702ef5db",
@@ -1555,7 +1650,8 @@
   "t:b69ffeef5c48b151",
   "t:56c5e09f87cafa64",
   "t:71b3a095cb0a7acb",
-  "t:ba1d721bbb2a3dbe"
+  "t:ba1d721bbb2a3dbe",
+  "t:5458de30b1fd04f9"
  ],
  "summary_day": "2026-11-19",
  "salary_week": "2026-W46"
