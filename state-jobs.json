@@ -227,9 +227,14 @@
   "50770169",
   "50770620",
   "50770706",
-  "50770861"
+  "50770861",
+  "50771183",
+  "50771295",
+  "50771287",
+  "50771265",
+  "50771301"
  ],
- "last_run": 1795205873.7675004,
+ "last_run": 1795209510.6741304,
  "today": {
   "date": "2026-11-20",
   "jobs": [
@@ -346,6 +351,36 @@
     "city": "Mount Pearl, NL",
     "employer": "J & T Construction Ltd.",
     "msg": 251
+   },
+   {
+    "title": "Environmental Planner",
+    "city": "Sudbury, ON",
+    "employer": "Conservation Sudbury",
+    "msg": 252
+   },
+   {
+    "title": "Construction Project Manager",
+    "city": "Sault Ste. Marie, ON",
+    "employer": "S. & T. Electrical Contractors Limited",
+    "msg": 253
+   },
+   {
+    "title": "Superintendent, Construction",
+    "city": "Sault Ste. Marie, ON",
+    "employer": "S. & T. Electrical Contractors Limited",
+    "msg": 254
+   },
+   {
+    "title": "Construction Project Coordinator",
+    "city": "Sault Ste. Marie, ON",
+    "employer": "S. & T. Electrical Contractors Limited",
+    "msg": 255
+   },
+   {
+    "title": "Construction General Manager",
+    "city": "Toronto, ON",
+    "employer": "OSTIM LTD",
+    "msg": 256
    }
   ]
  },
@@ -1560,12 +1595,44 @@
    "prov": "NL",
    "low": 75000,
    "high": 75000
+  },
+  {
+   "t": 1795209511.56094,
+   "role": "Scheduler / Planner",
+   "prov": "ON",
+   "low": 90917,
+   "high": 101338
+  },
+  {
+   "t": 1795209515.190983,
+   "role": "Project Manager",
+   "prov": "ON",
+   "low": 85000,
+   "high": 125000
+  },
+  {
+   "t": 1795209519.0753024,
+   "role": "Superintendent",
+   "prov": "ON",
+   "low": 95000,
+   "high": 135000
+  },
+  {
+   "t": 1795209522.773024,
+   "role": "Project Coordinator",
+   "prov": "ON",
+   "low": 58000,
+   "high": 80000
+  },
+  {
+   "t": 1795209526.471309,
+   "role": "Project Manager",
+   "prov": "ON",
+   "low": 124800,
+   "high": 128960
   }
  ],
  "pairs": {
-  "tr exteriors|construction site supervisor": 1794950022.5319755,
-  "d3 security management systems inc|information technology (it) project manager - cybersecurity": 1794950029.0789757,
-  "anacond contracting inc.|construction site superintendent": 1794950052.8493423,
   "bird industrial management services|construction project manager": 1794953635.9628968,
   "durobyte inc.|engineering project manager": 1794953639.8683188,
   "p4g|planner": 1794957285.9541762,
@@ -1638,7 +1705,12 @@
   "quisitive|software development project manager": 1795194926.6495314,
   "sunstar homes inc|construction site supervisor": 1795202217.7261963,
   "de koning group|planner": 1795202221.79466,
-  "j & t construction ltd.|vfx project manager": 1795205874.4807386
+  "j & t construction ltd.|vfx project manager": 1795205874.4807386,
+  "conservation sudbury|environmental planner": 1795209511.560772,
+  "s. & t. electrical contractors limited|construction project manager": 1795209515.1906207,
+  "s. & t. electrical contractors limited|superintendent, construction": 1795209519.075211,
+  "s. & t. electrical contractors limited|construction project coordinator": 1795209522.772945,
+  "ostim ltd|construction general manager": 1795209526.4712164
  },
  "news_seen": [
   "t:264755b1702ef5db",
