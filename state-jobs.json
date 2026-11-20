@@ -224,9 +224,11 @@
   "50769778",
   "50769792",
   "50770158",
-  "50770169"
+  "50770169",
+  "50770620",
+  "50770706"
  ],
- "last_run": 1795198556.8056533,
+ "last_run": 1795202216.4013243,
  "today": {
   "date": "2026-11-20",
   "jobs": [
@@ -325,6 +327,18 @@
     "city": "Not Available",
     "employer": "Quisitive",
     "msg": 247
+   },
+   {
+    "title": "Construction Site Supervisor",
+    "city": "Calgary, AB",
+    "employer": "Sunstar homes Inc",
+    "msg": 249
+   },
+   {
+    "title": "Planner",
+    "city": "Port Carling, ON",
+    "employer": "de Koning Group",
+    "msg": 250
    }
   ]
  },
@@ -1518,14 +1532,23 @@
    "prov": "ON",
    "low": 124800,
    "high": 128960
+  },
+  {
+   "t": 1795202217.726485,
+   "role": "Superintendent",
+   "prov": "AB",
+   "low": 83200,
+   "high": 83200
+  },
+  {
+   "t": 1795202221.794742,
+   "role": "Scheduler / Planner",
+   "prov": "ON",
+   "low": 60000,
+   "high": 90000
   }
  ],
  "pairs": {
-  "nest renovations inc.|construction site supervisor": 1794942633.6366868,
-  "bluedrop training & simulation|engineering service project manager": 1794942637.76862,
-  "metro vancouver|project engineer, construction": 1794942642.1340961,
-  "managing matters|business development manager": 1794942646.3041537,
-  "promax concrete ltd.|construction site supervisor": 1794942650.5423045,
   "sheikh farid construction ltd|construction site supervisor": 1794946325.8285334,
   "bluedrop training & simulation|non-technical project manager": 1794946330.81393,
   "tr exteriors|construction site supervisor": 1794950022.5319755,
@@ -1600,7 +1623,9 @@
   "hire resolve.com|planner": 1795194914.0625722,
   "city of yellowknife|planner": 1795194918.1743574,
   "ostim ltd.|construction general manager": 1795194922.4555535,
-  "quisitive|software development project manager": 1795194926.6495314
+  "quisitive|software development project manager": 1795194926.6495314,
+  "sunstar homes inc|construction site supervisor": 1795202217.7261963,
+  "de koning group|planner": 1795202221.79466
  },
  "news_seen": [
   "t:264755b1702ef5db",
