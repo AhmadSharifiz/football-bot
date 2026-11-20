@@ -212,9 +212,13 @@
   "50767907",
   "50768550",
   "50768611",
-  "50768595"
+  "50768595",
+  "50769282",
+  "50769360",
+  "50769350",
+  "50769353"
  ],
- "last_run": 1795183946.2923996,
+ "last_run": 1795187606.9100215,
  "today": {
   "date": "2026-11-20",
   "jobs": [
@@ -241,6 +245,30 @@
     "city": "Vernon, BC",
     "employer": "Nature's Fare Markets",
     "msg": 230
+   },
+   {
+    "title": "Estimator, Construction",
+    "city": "Nisku, AB",
+    "employer": "Edvan Custom Metal Processing Ltd",
+    "msg": 233
+   },
+   {
+    "title": "Construction Project Superintendent",
+    "city": "Sherbrooke, QC",
+    "employer": "Cégep de Sherbrooke",
+    "msg": 234
+   },
+   {
+    "title": "Construction Project Manager",
+    "city": "Kingston, ON",
+    "employer": "The Mason Group",
+    "msg": 235
+   },
+   {
+    "title": "VFX Project Manager",
+    "city": "Halifax, NS",
+    "employer": "Affordable Housing Association Nova Scotia",
+    "msg": 236
    }
   ]
  },
@@ -1357,11 +1385,37 @@
    "prov": "BC",
    "low": 84000,
    "high": 92500
+  },
+  {
+   "t": 1795187608.2907197,
+   "role": "Estimator / QS",
+   "prov": "AB",
+   "low": 52000,
+   "high": 66560
+  },
+  {
+   "t": 1795187612.6089058,
+   "role": "Superintendent",
+   "prov": "QC",
+   "low": 57547,
+   "high": 105578
+  },
+  {
+   "t": 1795187617.6583328,
+   "role": "Project Manager",
+   "prov": "ON",
+   "low": 95500,
+   "high": 110000
+  },
+  {
+   "t": 1795187621.910792,
+   "role": "Project Manager",
+   "prov": "NS",
+   "low": 80000,
+   "high": 90000
   }
  ],
  "pairs": {
-  "englobe corp.|construction project coordinator": 1794927854.1725967,
-  "maison donalda boyer|maintenance operations superintendent": 1794927859.0322316,
   "mccain foods|project manager, construction": 1794931565.520325,
   "bertram construction (ontario) ltd.|construction project coordinator": 1794931569.39885,
   "grace place|organization and productivity project manager": 1794931573.3329163,
@@ -1438,7 +1492,11 @@
   "newergy industries inc.|construction site supervisor": 1795154732.3801937,
   "imp aerospace and defence|cost estimator, manufacturing": 1795165686.5391002,
   "nova scotia power inc.|engineering service project manager": 1795173004.3029559,
-  "nature's fare markets|contract manager": 1795173008.5539844
+  "nature's fare markets|contract manager": 1795173008.5539844,
+  "edvan custom metal processing ltd|estimator, construction": 1795187608.290443,
+  "cégep de sherbrooke|construction project superintendent": 1795187612.60882,
+  "the mason group|construction project manager": 1795187617.658055,
+  "affordable housing association nova scotia|vfx project manager": 1795187621.9107013
  },
  "news_seen": [
   "t:264755b1702ef5db",
@@ -1483,7 +1541,10 @@
   "t:93ec0f6fd22a6dae",
   "t:372ce70a88b27a06",
   "t:7e6e94fecce6b442",
-  "t:b69ffeef5c48b151"
+  "t:b69ffeef5c48b151",
+  "t:56c5e09f87cafa64",
+  "t:71b3a095cb0a7acb",
+  "t:ba1d721bbb2a3dbe"
  ],
  "summary_day": "2026-11-19",
  "salary_week": "2026-W46"
