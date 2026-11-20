@@ -226,9 +226,10 @@
   "50770158",
   "50770169",
   "50770620",
-  "50770706"
+  "50770706",
+  "50770861"
  ],
- "last_run": 1795202216.4013243,
+ "last_run": 1795205873.7675004,
  "today": {
   "date": "2026-11-20",
   "jobs": [
@@ -339,6 +340,12 @@
     "city": "Port Carling, ON",
     "employer": "de Koning Group",
     "msg": 250
+   },
+   {
+    "title": "VFX Project Manager",
+    "city": "Mount Pearl, NL",
+    "employer": "J & T Construction Ltd.",
+    "msg": 251
    }
   ]
  },
@@ -1546,11 +1553,16 @@
    "prov": "ON",
    "low": 60000,
    "high": 90000
+  },
+  {
+   "t": 1795205874.4811149,
+   "role": "Project Manager",
+   "prov": "NL",
+   "low": 75000,
+   "high": 75000
   }
  ],
  "pairs": {
-  "sheikh farid construction ltd|construction site supervisor": 1794946325.8285334,
-  "bluedrop training & simulation|non-technical project manager": 1794946330.81393,
   "tr exteriors|construction site supervisor": 1794950022.5319755,
   "d3 security management systems inc|information technology (it) project manager - cybersecurity": 1794950029.0789757,
   "anacond contracting inc.|construction site superintendent": 1794950052.8493423,
@@ -1625,7 +1637,8 @@
   "ostim ltd.|construction general manager": 1795194922.4555535,
   "quisitive|software development project manager": 1795194926.6495314,
   "sunstar homes inc|construction site supervisor": 1795202217.7261963,
-  "de koning group|planner": 1795202221.79466
+  "de koning group|planner": 1795202221.79466,
+  "j & t construction ltd.|vfx project manager": 1795205874.4807386
  },
  "news_seen": [
   "t:264755b1702ef5db",
