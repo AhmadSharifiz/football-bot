@@ -232,9 +232,13 @@
   "50771295",
   "50771287",
   "50771265",
-  "50771301"
+  "50771301",
+  "50771524",
+  "50771735",
+  "50771667",
+  "50771896"
  ],
- "last_run": 1795209510.6741304,
+ "last_run": 1795213918.7180724,
  "today": {
   "date": "2026-11-20",
   "jobs": [
@@ -381,6 +385,24 @@
     "city": "Toronto, ON",
     "employer": "OSTIM LTD",
     "msg": 256
+   },
+   {
+    "title": "Project Manager, Construction",
+    "city": "Laval, QC",
+    "employer": "Entreprises de construction Dawco inc.",
+    "msg": 263
+   },
+   {
+    "title": "Construction Superintendent",
+    "city": "St. Thomas, ON",
+    "employer": "Maple Reinders",
+    "msg": 264
+   },
+   {
+    "title": "Planner",
+    "city": "Markham, ON",
+    "employer": "ADECCO",
+    "msg": 265
    }
   ]
  },
@@ -1630,11 +1652,30 @@
    "prov": "ON",
    "low": 124800,
    "high": 128960
+  },
+  {
+   "t": 1795213919.5773017,
+   "role": "Project Manager",
+   "prov": "QC",
+   "low": 140000,
+   "high": 150000
+  },
+  {
+   "t": 1795213923.3977423,
+   "role": "Superintendent",
+   "prov": "ON",
+   "low": 100000,
+   "high": 130000
+  },
+  {
+   "t": 1795213927.2176542,
+   "role": "Scheduler / Planner",
+   "prov": "ON",
+   "low": 60000,
+   "high": 65000
   }
  ],
  "pairs": {
-  "bird industrial management services|construction project manager": 1794953635.9628968,
-  "durobyte inc.|engineering project manager": 1794953639.8683188,
   "p4g|planner": 1794957285.9541762,
   "eco architectural glass inc|construction project manager": 1794957290.3034713,
   "pcl construction|construction project manager": 1794982870.0515237,
@@ -1710,7 +1751,10 @@
   "s. & t. electrical contractors limited|construction project manager": 1795209515.1906207,
   "s. & t. electrical contractors limited|superintendent, construction": 1795209519.075211,
   "s. & t. electrical contractors limited|construction project coordinator": 1795209522.772945,
-  "ostim ltd|construction general manager": 1795209526.4712164
+  "ostim ltd|construction general manager": 1795209526.4712164,
+  "entreprises de construction dawco inc.|project manager, construction": 1795213919.5767195,
+  "maple reinders|construction superintendent": 1795213923.397662,
+  "adecco|planner": 1795213927.2175846
  },
  "news_seen": [
   "t:264755b1702ef5db",
