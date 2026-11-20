@@ -1,20 +1,5 @@
 {
  "seen": [
-  "t:c7fcd3e41ff504c4",
-  "38beb218f68f5f02",
-  "t:b204f82b575af984",
-  "1ccd1ccd6075e038",
-  "t:873f1034e6f6c113",
-  "603de800e9f1c43c",
-  "t:0b22d0e3accdab5e",
-  "603de800e9f1c43c",
-  "34cd10d65be7b012",
-  "t:a3d2555673f75cd4",
-  "34cd10d65be7b012",
-  "a8c07ba6212b8f82",
-  "t:1758bc511e27a962",
-  "a8c07ba6212b8f82",
-  "9fbb6a4cb7739d5a",
   "t:9a3f887928e7768f",
   "637672fe3890270b",
   "t:0f7e84e0ba3ba937",
@@ -5999,7 +5984,22 @@
   "t:8ed9d8695aed8fa2",
   "bea586b4050c4b0e",
   "3d5df0bc6c915b0d",
-  "t:bc282d287e426231"
+  "t:bc282d287e426231",
+  "976365f34a1960a0",
+  "t:53cd05fabb9b23f6",
+  "d3d74d61b6d787e0",
+  "t:5e77643bbb4834ef",
+  "9f30626eed9196a1",
+  "t:aaf290e1fc2a28ac",
+  "c87e3294d3d106ab",
+  "t:4509a7c360729d1a",
+  "c87e3294d3d106ab",
+  "00b43b7a8210286a",
+  "t:f7dddb823f25ac51",
+  "00b43b7a8210286a",
+  "b77e608f2903ed39",
+  "t:c66a4229c9ca135c",
+  "b77e608f2903ed39"
  ],
  "initialized": true,
  "sources": [
@@ -6027,7 +6027,7 @@
   "tg:varzesh3",
   "tg:varzeshmediatl"
  ],
- "last_run": 1795161585.6091013,
+ "last_run": 1795161903.2908692,
  "team_fa": {},
  "results_day": "2026-11-11",
  "fixtures_day": "2026-11-12"
