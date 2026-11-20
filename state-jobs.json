@@ -236,9 +236,10 @@
   "50771524",
   "50771735",
   "50771667",
-  "50771896"
+  "50771896",
+  "50771928"
  ],
- "last_run": 1795213918.7180724,
+ "last_run": 1795217558.1549628,
  "today": {
   "date": "2026-11-20",
   "jobs": [
@@ -403,6 +404,12 @@
     "city": "Markham, ON",
     "employer": "ADECCO",
     "msg": 265
+   },
+   {
+    "title": "Construction Site Supervisor",
+    "city": "Scarborough, ON",
+    "employer": "Seaforth Building Group",
+    "msg": 266
    }
   ]
  },
@@ -1673,11 +1680,16 @@
    "prov": "ON",
    "low": 60000,
    "high": 65000
+  },
+  {
+   "t": 1795217559.51341,
+   "role": "Superintendent",
+   "prov": "ON",
+   "low": 82000,
+   "high": 85000
   }
  ],
  "pairs": {
-  "p4g|planner": 1794957285.9541762,
-  "eco architectural glass inc|construction project manager": 1794957290.3034713,
   "pcl construction|construction project manager": 1794982870.0515237,
   "pcl construction|cost estimator, manufacturing": 1794982874.3480313,
   "nord quantique|engineering service project manager": 1794982878.5743947,
@@ -1754,7 +1766,8 @@
   "ostim ltd|construction general manager": 1795209526.4712164,
   "entreprises de construction dawco inc.|project manager, construction": 1795213919.5767195,
   "maple reinders|construction superintendent": 1795213923.397662,
-  "adecco|planner": 1795213927.2175846
+  "adecco|planner": 1795213927.2175846,
+  "seaforth building group|construction site supervisor": 1795217559.5131392
  },
  "news_seen": [
   "t:264755b1702ef5db",
