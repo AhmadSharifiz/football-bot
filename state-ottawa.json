@@ -1263,7 +1263,9 @@
   "d2ae16ffd0b07a6e",
   "t:5d3774240a25dbb1",
   "572df36f9335e64f",
-  "t:78aab52550d014df"
+  "t:78aab52550d014df",
+  "fc16c9b9e5f07f81",
+  "t:33abec8ef3307bfc"
  ],
  "initialized": true,
  "sources": [
@@ -1280,7 +1282,7 @@
   "tg:ottawaevents",
   "tg:pandcommunity"
  ],
- "last_run": 1795209020.5884917,
+ "last_run": 1795209380.9985573,
  "weather_day": "2026-11-20",
  "blog_seen": [
   "https://asharifi.wordpress.com/2026/08/19/construction-project-management-the-lakeshore-heights-series/",
@@ -1310,7 +1312,7 @@
   "https://asharifi.wordpress.com/2026/11/19/time-and-material-work-control/",
   "https://asharifi.wordpress.com/2026/11/19/single-family-home-construction-sequence-activities-logic/"
  ],
- "alerts_checked": 1795209007.2919009,
+ "alerts_checked": 1795209248.0935237,
  "alerts_seen": [
   "1718fbba19213ecd",
   "33aa87996f76a250",
